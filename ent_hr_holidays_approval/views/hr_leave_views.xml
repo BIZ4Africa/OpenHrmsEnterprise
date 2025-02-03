@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_leave_view_form_manager" model="ir.ui.view">
+        <field name="name">
+            hr.leave.view.form.inherit.ent.hr.holiday.approval.manager
+        </field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='holiday_type']" position="replace">
+                <field name="holiday_type" string="Mode"/>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="replace">
+                <field name="employee_id"
+                       required="holiday_type == 'employee'"
+                       invisible="holiday_type != 'employee'"/>
+            </xpath>
+            <xpath expr="//field[@name='mode_company_id']" position="replace">
+                <field name="mode_company_id"
+                       required="holiday_type == 'company'"
+                       invisible="holiday_type != 'company'"
+                />
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="replace">
+                <field name="category_id" required="holiday_type == 'category'"
+                       invisible="holiday_type !='category'"
+                />
+            </xpath>
+            <xpath expr="//field[@name='department_id']" position="replace">
+                <field name="department_id"
+                       required="holiday_type =='department'"
+                       invisible="holiday_type not in ('employee', 'department')"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_leave_view_form" model="ir.ui.view">
+        <field name="name">hr.leave.view.form.inherit.ent.hr.holiday.approval
+        </field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[last()]" position="after">
+                <group>
+                    <field name="is_multi_level_validation" invisible="1"/>
+                    <field name="is_button_visibility" invisible="1"/>
+                </group>
+                <notebook
+                        invisible="is_multi_level_validation != True">
+                    <page string="Validation Status">
+                        <field name="leave_approvals_ids" mode="tree">
+                            <tree string="Users" editable="false"
+                                  create="false" delete="false">
+                                <field name="validating_users_id"/>
+                                <field name="is_validation_status"/>
+                                <field name="leave_comments"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="validating_users_id"/>
+                                    <field name="leave_comments"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+            <xpath expr="//button[@name='action_approve']"
+                   position='attributes'>
+                <attribute name="invisible">is_button_visibility != False
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_leave_action" model="ir.actions.server">
+        <field name="name">Approvals</field>
+        <field name="model_id" ref="model_hr_leave"/>
+        <field name="binding_model_id" ref="model_hr_leave"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model._get_approval_requests()
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_open_leave_approvals"
+            name="Approval Requests"
+            parent="hr_holidays.menu_hr_holidays_management"
+            action="hr_leave_action"
+            sequence="1"/>
+
+</odoo>

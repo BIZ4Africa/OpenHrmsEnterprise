@@ -22,7 +22,7 @@
 ################################################################################
 {
     'name': "Enterprise Open HRMS - HR Dashboard",
-    'version': '1.0.1',
+    'version': '17.0.1.0.1',
     'category': 'Generic Modules/Human Resources',
     'summary': """Open HRMS HR dashboard,facilitates with various 
      metrics helping easy to view, understand, and share data.Experience the 
