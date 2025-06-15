@@ -34,7 +34,7 @@ class HrEmployeeFamily(models.Model):
 
     employee_id = fields.Many2one(comodel_name='hr.employee', string="Employee",
                                   help='Select corresponding Employee',
-                                  invisible=1)
+                                  )
     relation_id = fields.Many2one(comodel_name='hr.employee.relation',
                                   string="Relation",
                                   help="Relationship with the employee")

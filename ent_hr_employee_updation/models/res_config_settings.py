@@ -30,6 +30,6 @@ class ResConfigSettings(models.TransientModel):
     notice_period = fields.Boolean(string='Notice Period',
                                    help="Provide Notice Period for Employees",
                                    config_parameter='ent_hr_employee_updation.notice_period')
-    no_of_days = fields.Integer(strig="Notice period days",
+    no_of_days = fields.Integer(string="Notice period days",
                                 help="Number of Days of Notice Period",
                                 config_parameter='ent_hr_employee_updation.no_of_days')
