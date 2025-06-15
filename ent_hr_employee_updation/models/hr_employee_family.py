@@ -30,6 +30,7 @@ GENDER_SELECTION = [('male', 'Male'),
 class HrEmployeeFamily(models.Model):
     """Table for keep employee family information"""
     _name = 'hr.employee.family'
+    _inherit = ["mail.thread"]
     _description = 'HR Employee Family'
 
     employee_id = fields.Many2one(comodel_name='hr.employee', string="Employee",

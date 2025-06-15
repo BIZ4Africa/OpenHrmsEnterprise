@@ -559,10 +559,10 @@ class HrEmployeePublic(models.Model):
         help="Employee joining date computed from the contract start date",
         compute='_compute_joining_date', store=True)
     id_expiry_date = fields.Date(
-        string='Expiry Date',
+        string='ID Expiry Date',
         help='Expiry date of Identification ID')
     passport_expiry_date = fields.Date(
-        string='Expiry Date',
+        string='Passport Expiry Date',
         help='Expiry date of Passport ID')
     resign_date = fields.Date(string="Resign Date", readonly=True,
                               help="Date of the resignation")
