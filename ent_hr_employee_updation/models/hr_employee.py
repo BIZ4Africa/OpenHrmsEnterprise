@@ -84,13 +84,13 @@ class HrEmployee(models.Model):
     id_attachment_ids = fields.Many2many(
         comodel_name='ir.attachment', relation='id_attachment_rel',
         column1='id_ref', column2='attach_ref',
-        string="Attachment",
+        string="ID Attachment",
         help='You can attach the copy of your Id')
     passport_attachment_ids = fields.Many2many(
         comodel_name='ir.attachment',
         relation='passport_attachment_rel',
         column1='passport_ref', column2='attach_ref1',
-        string="Attachment",
+        string="Passport Attachment",
         help='You can attach the copy of Passport')
     fam_ids = fields.One2many(
         comodel_name='hr.employee.family', inverse_name='employee_id',
