@@ -70,28 +70,28 @@ class HrEmployee(models.Model):
 
     personal_mobile = fields.Char(
         string='Mobile',
-        help="Personal mobile number of the employee")
+        help="Personal mobile number of the employee", groups="hr.group_hr_user")
     joining_date = fields.Date(
         string='Joining Date',
         help="Employee joining date computed from the contract start date",
         compute='_compute_joining_date', store=True)
     id_expiry_date = fields.Date(
         string='ID Expiry Date',
-        help='Expiry date of Identification ID')
+        help='Expiry date of Identification ID', groups="hr.group_hr_user")
     passport_expiry_date = fields.Date(
         string='Passport Expiry Date',
-        help='Expiry date of Passport ID')
+        help='Expiry date of Passport ID', groups="hr.group_hr_user")
     id_attachment_ids = fields.Many2many(
         comodel_name='ir.attachment', relation='id_attachment_rel',
         column1='id_ref', column2='attach_ref',
         string="ID Attachment",
-        help='You can attach the copy of your Id')
+        help='You can attach the copy of your Id', groups="hr.group_hr_user")
     passport_attachment_ids = fields.Many2many(
         comodel_name='ir.attachment',
         relation='passport_attachment_rel',
         column1='passport_ref', column2='attach_ref1',
         string="Passport Attachment",
-        help='You can attach the copy of Passport')
+        help='You can attach the copy of Passport', groups="hr.group_hr_user")
     fam_ids = fields.One2many(
         comodel_name='hr.employee.family', inverse_name='employee_id',
         string='Family', help='Family Information')
