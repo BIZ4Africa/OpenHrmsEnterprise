@@ -74,7 +74,7 @@ class HrEmployee(models.Model):
     joining_date = fields.Date(
         string='Joining Date',
         help="Employee joining date computed from the contract start date",
-        compute='_compute_joining_date', store=True)
+        compute='_compute_joining_date', store=True, groups="hr.group_hr_user")
     id_expiry_date = fields.Date(
         string='ID Expiry Date',
         help='Expiry date of Identification ID', groups="hr.group_hr_user")
@@ -94,7 +94,7 @@ class HrEmployee(models.Model):
         help='You can attach the copy of Passport', groups="hr.group_hr_user")
     fam_ids = fields.One2many(
         comodel_name='hr.employee.family', inverse_name='employee_id',
-        string='Family', help='Family Information')
+        string='Family', help='Family Information', groups="hr.group_hr_user")
 
     @api.depends('contract_id')
     def _compute_joining_date(self):
