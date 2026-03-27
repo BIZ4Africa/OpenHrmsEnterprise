@@ -34,13 +34,10 @@ class HRContract(models.Model):
     is_approve = fields.Boolean(string="Is Approve",
                                 help="Ensure the approval")
     state = fields.Selection(
-        selection=[
-            ('draft', 'New'),
-            ('probation', 'Probation'),
-            ('open', 'Running'),
-            ('close', 'Expired'),
-            ('cancel', 'Cancelled'),
-        ], string='Status', help="Ensure the record state"
+        selection_add=[('probation', 'Probation')],
+        ondelete={'probation': 'set default'},
+        string='Status',
+        help="Ensure the record state",
     )
     probation_id = fields.Many2one('hr.training',
                                    string="Probation",
@@ -60,7 +57,7 @@ class HRContract(models.Model):
                                   ('hourly', 'Hourly Wage')],
                                  string="Wage Type", help="Choose "
                                                           "wage type")
-    hourly_wage = fields.Monetary(string='Hourly Wage', digits=(16, 2),
+    hourly_wage = fields.Monetary(string='Hourly Wage',
                                   default=0, required=True, tracking=True,
                                   help="Employee's hourly gross wage.")
 
