@@ -38,15 +38,15 @@ class GosiPayslip(models.Model):
     nationality = fields.Char(string='Nationality', required=True,
                               help="Employee nationality")
     type_gosi = fields.Char(string='Type', required=True,
-                            track_visibility='onchange',
+                            tracking=True,
                             help="Choose a gosi type")
     dob = fields.Char(string='Date Of Birth', required=True,
                       help="Enter Date of Birth")
     gos_numb = fields.Char(string='GOSI Number', required=True,
-                           track_visibility='onchange',
+                           tracking=True,
                            help="Enter Gosi number")
     issued_dat = fields.Char(string='Issued Date', required=True,
-                             track_visibility='onchange',
+                             tracking=True,
                              help="Issued date")
     name = fields.Char(string='Reference', required=True, copy=False,
                        readonly=True,

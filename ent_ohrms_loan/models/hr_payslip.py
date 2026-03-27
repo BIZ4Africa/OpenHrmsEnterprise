@@ -20,7 +20,7 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import models
+from odoo import Command, models
 
 
 class HrPayslip(models.Model):
@@ -51,7 +51,7 @@ class HrPayslip(models.Model):
                             if data.date_from <= line.date <= data.date_to:
                                 if not line.paid:
                                     amount = line.amount
-                                    name = loan_line.id
+                                    name = loan_line[:1].id
                                     data.input_data_line(name, amount, line)
         return super(HrPayslip, self).compute_sheet()
 
@@ -65,14 +65,21 @@ class HrPayslip(models.Model):
 
     def input_data_line(self, name, amount, loan):
         """Add loan details to payslip as other input"""
-        check_lines = []
-        new_name = self.env['hr.payslip.input.type'].search([
-            ('input_id', '=', name)])
-        line = (0, 0, {
-            'input_type_id': new_name.id,
-            'amount': amount,
-            'name': 'LO',
-            'loan_line_id': loan.id
+        input_type = self.env['hr.payslip.input.type'].search(
+            [('input_id', '=', name)],
+            limit=1,
+        )
+        if not input_type:
+            input_type = self.env['hr.payslip.input.type'].create({
+                'name': 'Loan',
+                'code': 'LO',
+                'input_id': name,
+            })
+        self.write({
+            'input_line_ids': [Command.create({
+                'input_type_id': input_type.id,
+                'amount': amount,
+                'name': 'LO',
+                'loan_line_id': loan.id,
+            })],
         })
-        check_lines.append(line)
-        self.input_line_ids = check_lines

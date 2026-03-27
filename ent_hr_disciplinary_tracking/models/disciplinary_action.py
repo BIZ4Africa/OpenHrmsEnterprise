@@ -34,7 +34,7 @@ class DisciplinaryAction(models.Model):
         ('explain', 'Waiting Explanation'),
         ('submitted', 'Waiting Action'),
         ('action', 'Action Validated'),
-        ('cancel', 'Cancelled')], default='draft', track_visibility='onchange',
+        ('cancel', 'Cancelled')], default='draft', tracking=True,
         string="State",
         help="Disciplinary action record states")
     name = fields.Char(string='Reference', required=True, copy=False,

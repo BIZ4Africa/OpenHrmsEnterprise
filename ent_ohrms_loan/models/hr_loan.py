@@ -95,8 +95,8 @@ class HrLoan(models.Model):
 
     def _compute_loan_amount(self):
         """ calculate the total amount paid towards the loan. """
-        total_paid = 0.0
         for loan in self:
+            total_paid = 0.0
             for line in loan.loan_line_ids:
                 if line.paid:
                     total_paid += line.amount
