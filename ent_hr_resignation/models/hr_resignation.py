@@ -89,14 +89,14 @@ class HrResignation(models.Model):
         """To get employee joining date"""
         self.joined_date = self.employee_id.joining_date
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Assigning the sequence for the record"""
-        if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code(
-                'hr.resignation') or _('New')
-        res = super(HrResignation, self).create(vals)
-        return res
+        for vals in vals_list:
+            if vals.get('name', _('New')) == _('New'):
+                vals['name'] = self.env['ir.sequence'].next_by_code(
+                    'hr.resignation') or _('New')
+        return super(HrResignation, self).create(vals_list)
 
     @api.constrains('employee_id')
     def check_employee(self):

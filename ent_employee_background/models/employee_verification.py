@@ -113,12 +113,13 @@ class EmployeeVerification(models.Model):
             raise UserError(_("Agency is not assigned. Please select one "
                               "of the Agency."))
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Super the Create operation"""
-        seq = self.env['ir.sequence'].next_by_code('res.users') or '/'
-        vals['verification'] = seq
-        return super(EmployeeVerification, self).create(vals)
+        for vals in vals_list:
+            seq = self.env['ir.sequence'].next_by_code('res.users') or '/'
+            vals['verification'] = seq
+        return super(EmployeeVerification, self).create(vals_list)
 
     def unlink(self):
         """Super unlink() function"""

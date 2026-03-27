@@ -31,11 +31,12 @@ class HrLawsuit(models.Model):
     _description = 'Hr Lawsuit Management'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Create a new sequence"""
-        vals['name'] = self.env['ir.sequence'].next_by_code('hr.lawsuit')
-        return super(HrLawsuit, self).create(vals)
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.lawsuit')
+        return super(HrLawsuit, self).create(vals_list)
 
     def action_won(self):
         """Method to change the auction state into won"""

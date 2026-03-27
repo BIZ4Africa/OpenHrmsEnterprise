@@ -32,17 +32,17 @@ class ResUsers(models.Model):
                                   ondelete='restrict', auto_join=True,
                                   help='Employee-related data of the user')
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """ This code is to create an employee while creating a user. """
-        result = super(ResUsers, self).create(vals)
-        val = self.search([('share', '=', False)])
-        for record in val:
-            if result.id == record.id:
-                result['employee_id'] = self.env['hr.employee'].sudo().create(
+        result = super(ResUsers, self).create(vals_list)
+        non_shared = self.search([('share', '=', False)])
+        for record in result:
+            if record.id in non_shared.ids:
+                record['employee_id'] = self.env['hr.employee'].sudo().create(
                     {
-                        'name': result['name'],
-                        'user_id': result['id'],
-                        'private_street': result['partner_id'].name
+                        'name': record['name'],
+                        'user_id': record['id'],
+                        'private_street': record['partner_id'].name
                     })
         return result
