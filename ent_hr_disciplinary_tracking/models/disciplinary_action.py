@@ -69,12 +69,13 @@ class DisciplinaryAction(models.Model):
     joined_date = fields.Date(string="Joined Date",
                               help="Employee joining date")
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Super create to add sequence"""
-        vals['name'] = self.env['ir.sequence'].next_by_code(
-            'disciplinary.action')
-        return super(DisciplinaryAction, self).create(vals)
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code(
+                'disciplinary.action')
+        return super(DisciplinaryAction, self).create(vals_list)
 
     @api.depends('read_only')
     def get_user(self):

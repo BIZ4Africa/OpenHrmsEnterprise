@@ -88,19 +88,19 @@ class HRContract(models.Model):
             self.write({'state': 'open',
                         'is_approve': False})
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals_list):
         """ Function for create a record based on probation
         details in a model """
-        if vals_list['trial_date_end'] and vals_list['state'] == 'probation':
-            dtl = self.env['hr.training'].create({
-                'employee_id': vals_list['employee_id'],
-                'start_date': vals_list['date_start'],
-                'end_date': vals_list['trial_date_end'],
-            })
-            vals_list['probation_id'] = dtl.id
-        res = super(HRContract, self).create(vals_list)
-        return res
+        for vals in vals_list:
+            if vals.get('trial_date_end') and vals.get('state') == 'probation':
+                dtl = self.env['hr.training'].create({
+                    'employee_id': vals['employee_id'],
+                    'start_date': vals['date_start'],
+                    'end_date': vals['trial_date_end'],
+                })
+                vals['probation_id'] = dtl.id
+        return super(HRContract, self).create(vals_list)
 
     def write(self, vals):
         """ Function for checking stage changing and creating probation

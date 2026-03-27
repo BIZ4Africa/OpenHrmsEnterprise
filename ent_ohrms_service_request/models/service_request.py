@@ -73,11 +73,12 @@ class ServiceRequest(models.Model):
                        readonly=True, help="Reference",
                        default=lambda self: _('New'))
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Sequence number"""
-        vals['name'] = self.env['ir.sequence'].next_by_code('service.request')
-        return super(ServiceRequest, self).create(vals)
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('service.request')
+        return super(ServiceRequest, self).create(vals_list)
 
     @api.depends('read_only')
     def get_user(self):

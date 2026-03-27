@@ -52,11 +52,12 @@ class GosiPayslip(models.Model):
                        readonly=True,
                        default=lambda self: _('New'), help="Enter reference")
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Supering the create method to add the sequence"""
-        vals['name'] = self.env['ir.sequence'].next_by_code('gosi.payslip')
-        return super(GosiPayslip, self).create(vals)
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('gosi.payslip')
+        return super(GosiPayslip, self).create(vals_list)
 
     @api.onchange('employee_id')
     def _onchange_employee(self):

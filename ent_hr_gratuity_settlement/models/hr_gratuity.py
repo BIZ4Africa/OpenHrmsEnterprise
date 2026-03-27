@@ -109,11 +109,12 @@ class HRGratuity(models.Model):
                                   string="Currency", readonly=True,
                                   help="Currency")
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """ assigning the sequence for the record """
-        vals['name'] = self.env['ir.sequence'].next_by_code('hr.gratuity')
-        return super(HRGratuity, self).create(vals)
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.gratuity')
+        return super(HRGratuity, self).create(vals_list)
 
     @api.onchange('employee_id')
     def _onchange_employee_id(self):
