@@ -1,0 +1,249 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ent_hr_employee_updation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-12 03:21+0000\n"
+"PO-Revision-Date: 2020-02-12 03:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__id_attachment_ids
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__passport_attachment_ids
+msgid "Attachment"
+msgstr "Attachment"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__relation
+msgid "Contact"
+msgstr "Contact"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__member_contact
+msgid "Contact No"
+msgstr "Contact No"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_emergency_contact__number
+msgid "Contact Number"
+msgstr "Contact Number"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__create_uid
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__create_date
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields.selection,name:ent_hr_employee_updation.selection__hr_employee_family__relation__daughter
+msgid "Daughter"
+msgstr "Daughter"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__display_name
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__emergency_contacts
+msgid "Emergency Contact"
+msgstr "Emergency Contact"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Emergency Contacts"
+msgstr "Emergency Contacts"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_employee
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__employee_id
+msgid "Employee"
+msgstr "Employee"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__employee_obj
+msgid "Employee Obj"
+msgstr "Employee Obj"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__id_expiry_date
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__passport_expiry_date
+msgid "Expiry Date"
+msgstr "Expiry Date"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__id_expiry_date
+msgid "Expiry date of Identification ID"
+msgstr "Date d'expiration de l'identifiant"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__passport_expiry_date
+msgid "Expiry date of Passport ID"
+msgstr "Date d'expiration de la pièce d'identité du passeport"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__fam_ids
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Family"
+msgstr "Family"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__fam_ids
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Family Information"
+msgstr "Family Information"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields.selection,name:ent_hr_employee_updation.selection__hr_employee_family__relation__father
+msgid "Father"
+msgstr "Father"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_emergency_contact
+msgid "HR Emergency Contact"
+msgstr "Contact d'urgence RH"
+
+#. module: ent_hr_employee_updation
+#: model:ir.actions.server,name:ent_hr_employee_updation.employee_data_reminder_ir_actions_server
+#: model:ir.cron,cron_name:ent_hr_employee_updation.employee_data_reminder
+#: model:ir.cron,name:ent_hr_employee_updation.employee_data_reminder
+msgid "HR Employee Data Expiration"
+msgstr "Expiration des données des employés RH"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_employee_family
+msgid "HR Employee Family"
+msgstr "Famille d'employés des RH"
+
+#. module: ent_hr_employee_updation
+#: model:ir.ui.menu,name:ent_hr_employee_updation.hr_management_menu
+msgid "HR Management"
+msgstr "HR Management"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__id
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ent_hr_employee_updation
+#: code:addons/ent_hr_employee_updation/models/hr_employee.py:0
+#, python-format
+msgid "ID-%s Expired On %s"
+msgstr "ID-%s expiré le %s"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Identification ID"
+msgstr "Identification ID"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__joining_date
+msgid "Joining Date"
+msgstr "Joining Date"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact____last_update
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__write_uid
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__write_date
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__personal_mobile
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields.selection,name:ent_hr_employee_updation.selection__hr_employee_family__relation__mother
+msgid "Mother"
+msgstr "Mother"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__member_name
+msgid "Name"
+msgstr "Name"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_emergency_contact__number
+msgid "Number"
+msgstr "Number"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Passport ID"
+msgstr "Passport ID"
+
+#. module: ent_hr_employee_updation
+#: code:addons/ent_hr_employee_updation/models/hr_employee.py:0
+#, python-format
+msgid "Passport-%s Expired On %s"
+msgstr "Passeport-%s expiré le %s"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_emergency_contact__relation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__relation
+msgid "Relation with employee"
+msgstr "Relation avec l'employé"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__relation
+msgid "Relationship"
+msgstr "Relationship"
+
+#. module: ent_hr_employee_updation
+#: model:ir.ui.menu,name:ent_hr_employee_updation.employee_report_menu
+msgid "Reports"
+msgstr "Reports"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__employee_id
+msgid "Select corresponding Employee"
+msgstr "Sélectionnez l'employé correspondant"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields.selection,name:ent_hr_employee_updation.selection__hr_employee_family__relation__son
+msgid "Son"
+msgstr "Son"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields.selection,name:ent_hr_employee_updation.selection__hr_employee_family__relation__wife
+msgid "Wife"
+msgstr "Wife"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__passport_attachment_ids
+msgid "You can attach the copy of Passport"
+msgstr "Vous pouvez joindre la copie du passeport"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__id_attachment_ids
+msgid "You can attach the copy of your Id"
+msgstr "Vous pouvez joindre la copie de votre pièce d'identité"
