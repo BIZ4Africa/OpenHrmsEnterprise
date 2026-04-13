@@ -1,0 +1,715 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ent_hr_custody
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-12 06:59+0000\n"
+"PO-Revision-Date: 2020-02-12 06:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ent_hr_custody
+#: model:mail.template,body_html:ent_hr_custody.custody_email_notification_template
+msgid ""
+"\n"
+"                    \n"
+"                          <p>Dear ${(object.employee.name)},<br/><br/>\n"
+"                          You are in possession of the company asset\n"
+"                          <strong>\"${(object.custody_name.name)}\"</strong>\n"
+"                          since <strong>${(object.return_date)}.</strong><br/><br/>\n"
+"                          Please kindly return the property as soon as possible.<br/><br/></p>\n"
+"                          Regards,<br/><br/>\n"
+"                          ${(object.company_id.name)}\n"
+"            "
+msgstr ""
+"<p>Cher ${(object.employee.name)},<br/><br/>\n"
+"                          Vous êtes en possession du patrimoine de l'entreprise\n"
+"                          <strong>\"${(object.custody_name.name)}\"</strong>\n"
+"                          depuis <strong>${(object.return_date)}.</strong><br/><br/>\n"
+"                          Veuillez restituer la propriété dès que possible.<br/><br/></p>\n"
+"                          Cordialement,<br/><br/>\n"
+"                          ${(object.company_id.name)}"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_employee__custody_count
+msgid "# Custody"
+msgstr "# Garde à vue"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_employee__equipment_count
+msgid "# Equipments"
+msgstr "# Équipements"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/custody.py:0
+#, python-format
+msgid "/web#id=%s&view_type=form&model=hr.custody&menu_id="
+msgstr "/web#id=%s&view_type=form&model=hr.custody&menu_id="
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_needaction
+msgid "Action Needed"
+msgstr "Action Needed"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_ids
+msgid "Activities"
+msgstr "Activities"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité Exception Décoration"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_state
+msgid "Activity State"
+msgstr "Activity State"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Approve"
+msgstr "Approve"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__hr_custody__state__approved
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__report_custody__state__approved
+msgid "Approved"
+msgstr "Approved"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__asset_true
+msgid "Asset Exists"
+msgstr "Asset Exists"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__asset_id
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__custody_property__property_selection__asset
+msgid "Assets"
+msgstr "Assets"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_attachment_count
+msgid "Attachment Count"
+msgstr "Attachment Count"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_refuse_view_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.contract_renewal_view_form
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: ent_hr_custody
+#: model_terms:ir.actions.act_window,help:ent_hr_custody.action_hr_custody
+#: model_terms:ir.actions.act_window,help:ent_hr_custody.custody_property_action
+msgid "Click to Create a New Record."
+msgstr "Cliquez pour créer un nouvel enregistrement."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__name
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__name
+msgid "Code"
+msgstr "Code"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__company_id
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__company_id
+msgid "Company"
+msgstr "Company"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__create_uid
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__create_uid
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__create_uid
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__create_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__create_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__create_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/hr_employee.py:0
+#: code:addons/ent_hr_custody/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:ent_hr_custody.action_hr_custody
+#: model:ir.ui.menu,name:ent_hr_custody.hr_custody_main_menu
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.view_employee_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_search_view
+#, python-format
+msgid "Custody"
+msgstr "Custody"
+
+#. module: ent_hr_custody
+#: model:ir.actions.act_window,name:ent_hr_custody.report_custody_action
+#: model:ir.model,name:ent_hr_custody.model_report_custody
+#: model:ir.ui.menu,name:ent_hr_custody.menu_custody_analysis
+msgid "Custody Analysis"
+msgstr "Custody Analysis"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_search_view
+msgid "Custody Name"
+msgstr "Custody Name"
+
+#. module: ent_hr_custody
+#: model:ir.actions.act_window,name:ent_hr_custody.contract_renewal_action
+#: model:ir.ui.menu,name:ent_hr_custody.hr_custody_menu
+msgid "Custody Request"
+msgstr "Custody Request"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/custody.py:0
+#: code:addons/ent_hr_custody/models/custody.py:0
+#: code:addons/ent_hr_custody/models/custody.py:0
+#, python-format
+msgid "Custody is not available now"
+msgstr "La garde n'est pas disponible pour le moment"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__desc
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_property_view_form
+msgid "Description"
+msgstr "Description"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__display_name
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__display_name
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__display_name
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__display_name
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__hr_custody__state__draft
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__report_custody__state__draft
+msgid "Draft"
+msgstr "Draft"
+
+#. module: ent_hr_custody
+#: model:ir.model,name:ent_hr_custody.model_hr_employee
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__employee
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__employee
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_search_view
+msgid "Employee"
+msgstr "Employee"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/hr_employee.py:0
+#: code:addons/ent_hr_custody/models/hr_employee.py:0
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_property_view_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.view_employee_form
+#, python-format
+msgid "Equipments"
+msgstr "Equipments"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_follower_ids
+msgid "Followers"
+msgstr "Followers"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Abonnés (chaînes)"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (partenaires)"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_search_view
+msgid "Group By"
+msgstr "Group By"
+
+#. module: ent_hr_custody
+#: model:ir.actions.server,name:ent_hr_custody.hr_custody_data_reminders_ir_actions_server
+#: model:ir.cron,cron_name:ent_hr_custody.hr_custody_data_reminders
+#: model:ir.cron,name:ent_hr_custody.hr_custody_data_reminders
+msgid "HR Custody Return Notification"
+msgstr "Notification de retour de garde RH"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/custody.py:0
+#, python-format
+msgid ""
+"Hi %s,<br>As per the %s you took %s on %s for the reason of %s. S0 here we "
+"remind you that you have to return that on or before %s. Otherwise, you can "
+"renew the reference number(%s) by extending the return date through "
+"following link.<br> <div style = \"text-align: center; margin-top: "
+"16px;\"><a href = \"%s\"style = \"padding: 5px 10px; font-size: 12px; line-"
+"height: 18px; color: #FFFFFF; border-color:#875A7B;text-decoration: none; "
+"display: inline-block; margin-bottom: 0px; font-weight: 400;text-align: "
+"center; vertical-align: middle; cursor: pointer; white-space: nowrap; "
+"background-image: none; background-color: #875A7B; border: 1px solid "
+"#875A7B; border-radius:3px;\">Renew %s</a></div>"
+msgstr ""
+"Bonjour %s,<br>Conformément au %s, vous avez pris %s sur %s pour la raison "
+"de %s. S0, nous vous rappelons ici que vous devez le rendre au plus tard au "
+"%s. Sinon, vous pouvez renouveler le numéro de référence (%s) en prolongeant"
+" la date de retour via le lien suivant.<br> <div style = \"text-align: "
+"center; margin-top: 16px;\"><a href = \"%s\"style = \"padding: 5px 10px; "
+"font-size: 12px; line-height: 18px; color: #FFFFFF; border-"
+"color:#875A7B;text-decoration: none; affichage : bloc en ligne ; marge "
+"inférieure : 0 px ; poids de la police : 400 ; alignement du texte : "
+"centre ; alignement vertical : milieu ; curseur : espace blanc : nowrap ; "
+"couleur d'arrière-plan : #875A7B ; \"> Renouveller %s</a></div>"
+
+#. module: ent_hr_custody
+#: model:ir.model,name:ent_hr_custody.model_hr_custody
+msgid "Hr Custody Management"
+msgstr "Gestion de la garde des ressources humaines"
+
+#. module: ent_hr_custody
+#: model:ir.model,name:ent_hr_custody.model_contract_renewal
+msgid "Hr Custody Name"
+msgstr "Nom de garde des RH"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__id
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__id
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__id
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__id
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_exception_icon
+msgid "Icon"
+msgstr "Icon"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_needaction
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+"Si cette case est cochée, les nouveaux messages nécessitent votre attention."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_has_error
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si coché, certains messages ont une erreur de livraison."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__image
+msgid "Image"
+msgstr "Image"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_is_follower
+msgid "Is Follower"
+msgstr "Is Follower"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property____last_update
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody____last_update
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody____last_update
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse____last_update
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__write_uid
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__write_uid
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__write_uid
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__write_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__write_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__write_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__mail_send
+msgid "Mail Send"
+msgstr "Mail Send"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Main Attachment"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__image_medium
+msgid "Medium-sized image"
+msgstr "Medium-sized image"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_custody_property__image_medium
+msgid ""
+"Medium-sized image of this provider. It is automatically resized as a "
+"128x128px image, with aspect ratio preserved. Use this field in form views "
+"or some kanban views."
+msgstr ""
+"Image de taille moyenne de ce fournisseur. Elle est automatiquement "
+"redimensionnée en une image de 128 x 128 px, avec les proportions "
+"préservées. Utilisez ce champ dans les vues de formulaire ou dans certaines "
+"vues Kanban."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur de livraison du message"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_property_view_form
+msgid "Name"
+msgstr "Name"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Date limite de la prochaine activité"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de l'activité suivante"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type d'activité suivant"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__custody_property__property_selection__empty
+msgid "No Connection"
+msgstr "No Connection"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/custody.py:0
+#, python-format
+msgid "No asset module found. Kindly install the asset module."
+msgstr "Aucun module d'actif trouvé. Veuillez installer le module d'actifs."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__notes
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: ent_hr_custody
+#: model:mail.template,subject:ent_hr_custody.custody_email_notification_template
+msgid "Notification to return company asset-${object.custody_name.name}"
+msgstr ""
+"Notification de restitution des actifs de "
+"l'entreprise-${object.custody_name.name}"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Nombre de messages non lus"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_refuse_view_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.contract_renewal_view_form
+msgid "Proceed"
+msgstr "Proceed"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__product_id
+msgid "Product"
+msgstr "Product"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__custody_property__property_selection__product
+msgid "Products"
+msgstr "Products"
+
+#. module: ent_hr_custody
+#: model:ir.actions.act_window,name:ent_hr_custody.custody_property_action
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__custody_name
+#: model:ir.ui.menu,name:ent_hr_custody.custody_property_menu
+msgid "Property"
+msgstr "Property"
+
+#. module: ent_hr_custody
+#: model:ir.model,name:ent_hr_custody.model_custody_property
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__name
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__custody_name
+msgid "Property Name"
+msgstr "Property Name"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__property_selection
+msgid "Property from"
+msgstr "Property from"
+
+#. module: ent_hr_custody
+#: code:addons/ent_hr_custody/models/custody.py:0
+#, python-format
+msgid "REMINDER On %s"
+msgstr "RAPPEL Le %s"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__purpose
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__purpose
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_refuse__reason
+msgid "Reason"
+msgstr "Reason"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Refuse"
+msgstr "Refuse"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__hr_custody__state__rejected
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__report_custody__state__rejected
+msgid "Refused"
+msgstr "Refused"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__rejected_reason
+msgid "Rejected Reason"
+msgstr "Rejected Reason"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Renew"
+msgstr "Renew"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__renew_reject
+msgid "Renew Reject"
+msgstr "Renew Reject"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__renew_rejected_reason
+msgid "Renew Rejected Reason"
+msgstr "Renouveler le motif du rejet"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__renew_return_date
+msgid "Renew Return Date"
+msgstr "Renouveler la date de retour"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Renewal Approval"
+msgstr "Renewal Approval"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_contract_renewal__returned_date
+msgid "Renewal Date"
+msgstr "Renewal Date"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.contract_renewal_view_form
+msgid "Renewal Request"
+msgstr "Renewal Request"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__renew_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__renew_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__renew_return_date
+msgid "Renewal Return Date"
+msgstr "Date de retour de renouvellement"
+
+#. module: ent_hr_custody
+#: model:ir.ui.menu,name:ent_hr_custody.custody_report_menu_root
+msgid "Report"
+msgstr "Report"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__date_request
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__date_request
+msgid "Requested Date"
+msgstr "Requested Date"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__activity_user_id
+msgid "Responsible User"
+msgstr "Responsible User"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Return"
+msgstr "Return"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__return_date
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__return_date
+msgid "Return Date"
+msgstr "Return Date"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__hr_custody__state__returned
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__report_custody__state__returned
+msgid "Returned"
+msgstr "Returned"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur de livraison SMS"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Send For Approval"
+msgstr "Envoyer pour approbation"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Send Mail"
+msgstr "Send Mail"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_view_form
+msgid "Set to Draft"
+msgstr "Définir sur Brouillon"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_custody_property__image_small
+msgid "Small-sized image"
+msgstr "Small-sized image"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_custody_property__image_small
+msgid ""
+"Small-sized image of this provider. It is automatically resized as a 64x64px"
+" image, with aspect ratio preserved. Use this field anywhere a small image "
+"is required."
+msgstr ""
+"Image en petite taille de ce fournisseur. Elle est automatiquement "
+"redimensionnée en une image de 64 x 64 px, avec les proportions préservées. "
+"Utilisez ce champ partout où une petite image est requise."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__state
+#: model:ir.model.fields,field_description:ent_hr_custody.field_report_custody__state
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.hr_custody_search_view
+msgid "Status"
+msgstr "Status"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date de l'activité est aujourd'hui\n"
+"Prévu : Activités futures."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_custody_property__image
+msgid ""
+"This field holds the image used for this provider, limited to 1024x1024px"
+msgstr ""
+"Ce champ contient l'image utilisée pour ce fournisseur, limitée à "
+"1024x1024px"
+
+#. module: ent_hr_custody
+#: model_terms:ir.actions.act_window,help:ent_hr_custody.report_custody_action
+msgid "This report allows you to analyse all Custody Requests."
+msgstr "Ce rapport vous permet d'analyser toutes les demandes de garde."
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.report_custody_view_pivot
+msgid "Ticket Analysis"
+msgstr "Ticket Analysis"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d’activité exceptionnelle enregistrée."
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_unread
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Compteur de messages non lus"
+
+#. module: ent_hr_custody
+#: model:ir.actions.act_window,name:ent_hr_custody.custody_refuse_action
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_refuse_view_form
+msgid "Update Reason"
+msgstr "Update Reason"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__hr_custody__state__to_approve
+#: model:ir.model.fields.selection,name:ent_hr_custody.selection__report_custody__state__to_approve
+msgid "Waiting For Approval"
+msgstr "En attente d'approbation"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,field_description:ent_hr_custody.field_hr_custody__website_message_ids
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: ent_hr_custody
+#: model:ir.model.fields,help:ent_hr_custody.field_hr_custody__website_message_ids
+msgid "Website communication history"
+msgstr "Historique des communications du site Web"
+
+#. module: ent_hr_custody
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.custody_refuse_view_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_custody.contract_renewal_view_form
+msgid "or"
+msgstr "or"
+
+#. module: ent_hr_custody
+#: model:ir.model,name:ent_hr_custody.model_custody_refuse
+msgid "custody.refuse"
+msgstr "custody.refuse"

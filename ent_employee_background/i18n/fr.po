@@ -1,0 +1,390 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ent_employee_background
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-12 05:28+0000\n"
+"PO-Revision-Date: 2020-02-12 05:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ent_employee_background
+#: model:mail.template,body_html:ent_employee_background.assign_agency_email_template
+msgid ""
+"\n"
+"                \n"
+"              <p>Dear ${object.agency_id.name},<p>\n"
+"              <p>A new request is created to varify our employee <b> ${object.employee.name} </b> .\n"
+"               To complete the Employee Verification process collect the required details and submit it as soon as possible.<p>\n"
+"              <p>You can reply to this email if you have any questions.</p>\n"
+"              <p>Thank you,</p>\n"
+"            \n"
+"\t        "
+msgstr ""
+"<p>Cher ${object.agency_id.name},<p>\n"
+"              <p>Une nouvelle demande est créée pour modifier notre employé <b> ${object.employee.name} </b> .\n"
+"               Pour terminer le processus de vérification des employés, collectez les informations requises et soumettez-les dès que possible.<p>\n"
+"              <p>Vous pouvez répondre à cet e-mail si vous avez des questions.</p>\n"
+"              <p>Merci,</p>"
+
+#. module: ent_employee_background
+#: model:mail.template,report_name:ent_employee_background.assign_agency_email_template
+msgid "${(object.resume_applicant or '').replace('/','_')}"
+msgstr "${(object.resume_applicant ou '').replace('/','_')}"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_home_menu_employee
+msgid "<span style=\"padding-left:8px;\">Employees</span>"
+msgstr "<span style=\"padding-left:8px;\">Employés</span>"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__address
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_records
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Address"
+msgstr "Address"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__agency
+msgid "Agency"
+msgstr "Agency"
+
+#. module: ent_employee_background
+#: code:addons/ent_employee_background/models/employee_verification.py:0
+#, python-format
+msgid "Agency is not assigned. Please select one of the Agency."
+msgstr "L'agence n'est pas attribuée. Veuillez sélectionner une des agences."
+
+#. module: ent_employee_background
+#: model:ir.actions.act_window,name:ent_employee_background.approved_employee_verification
+msgid "Approved Verification"
+msgstr "Approved Verification"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.employee_disciplinary_form
+msgid "Assign to agency"
+msgstr "Assign to agency"
+
+#. module: ent_employee_background
+#: model:ir.model.fields.selection,name:ent_employee_background.selection__employee_verification__state__assign
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "Assigned"
+msgstr "Assigned"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__assigned_by_id
+msgid "Assigned By"
+msgstr "Assigned By"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__assigned_date
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Assigned Date"
+msgstr "Assigned Date"
+
+#. module: ent_employee_background
+#: model:ir.actions.act_window,name:ent_employee_background.assigned_employee_verification
+msgid "Assigned Verification"
+msgstr "Assigned Verification"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__agency_attachment_id
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.employee_disciplinary_form
+msgid "Attachment"
+msgstr "Attachment"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_employee_verification__agency_attachment_id
+msgid "Attachment from Agency"
+msgstr "Attachment from Agency"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__field_check
+msgid "Check"
+msgstr "Check"
+
+#. module: ent_employee_background
+#: model_terms:ir.actions.act_window,help:ent_employee_background.action_employee_verification
+msgid "Click to create a new Employee verification."
+msgstr "Cliquez pour créer une nouvelle vérification d'employé."
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__company_id
+msgid "Company"
+msgstr "Company"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "Completed"
+msgstr "Completed"
+
+#. module: ent_employee_background
+#: model:ir.model,name:ent_employee_background.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__description_by_agency
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Description"
+msgstr "Description"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Download"
+msgstr "Download"
+
+#. module: ent_employee_background
+#: model:ir.model.fields.selection,name:ent_employee_background.selection__employee_verification__state__draft
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "Draft"
+msgstr "Draft"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__employee
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_records
+msgid "Employee"
+msgstr "Employee"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_completed
+msgid "Employee Details"
+msgstr "Employee Details"
+
+#. module: ent_employee_background
+#: model:ir.actions.act_window,name:ent_employee_background.action_employee_verification
+#: model:ir.ui.menu,name:ent_employee_background.employee_verification_menu
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.employee_disciplinary_form
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.employee_disciplinary_tree
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_home_agent
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "Employee Verification"
+msgstr "Employee Verification"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_res_partner__verification_agent
+#: model:ir.model.fields,field_description:ent_employee_background.field_res_users__verification_agent
+msgid "Employee Verification agent"
+msgstr "Employee Verification agent"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_home_menu_employee
+msgid "Employees"
+msgstr "Employees"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_employee_verification__address_id
+msgid ""
+"Enter here the private address of the employee, not the one linked to your "
+"company."
+msgstr ""
+"Saisissez ici l'adresse privée du salarié, et non celle liée à votre "
+"entreprise."
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__expected_date
+msgid "Expected Date"
+msgstr "Expected Date"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Expected completion Date"
+msgstr "Expected completion Date"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_employee_verification__expected_date
+msgid "Expected date of completion of background varification"
+msgstr "Date prévue d'achèvement de la vérification des antécédents"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "Group By"
+msgstr "Group By"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__id
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__verification
+msgid "ID"
+msgstr "ID"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.employee_disciplinary_form
+msgid "Information from Agency"
+msgstr "Information from Agency"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.res_partner_agent_form
+msgid "Is Agent"
+msgstr "Is Agent"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification____last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_res_partner__verification_agent
+#: model:ir.model.fields,help:ent_employee_background.field_res_users__verification_agent
+msgid "Mark it if the partner is an Employee Verification Agent"
+msgstr "Marquez-le si le partenaire est un agent de vérification des employés"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Name"
+msgstr "Name"
+
+#. module: ent_employee_background
+#: code:addons/ent_employee_background/models/employee_verification.py:0
+#, python-format
+msgid "No attachments available."
+msgstr "No attachments available."
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_records
+msgid "Order Date"
+msgstr "Order Date"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Personal Details"
+msgstr "Personal Details"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Private details"
+msgstr "Private details"
+
+#. module: ent_employee_background
+#: model:ir.actions.act_window,name:ent_employee_background.refused_employee_verification
+msgid "Refused Verification"
+msgstr "Refused Verification"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__resume_uploaded_ids
+msgid "Resume of Applicant"
+msgstr "Resume of Applicant"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "State"
+msgstr "State"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__state
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.search_view_employee
+msgid "Status"
+msgstr "Status"
+
+#. module: ent_employee_background
+#: model:ir.actions.act_window,name:ent_employee_background.submitted_employee_verification
+msgid "Submitted Verification"
+msgstr "Submitted Verification"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "There are currently no orders for your account."
+msgstr "Il n'y a actuellement aucune commande pour votre compte."
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_records
+msgid "There are currently no quotations for your account."
+msgstr "Il n'y a actuellement aucun devis pour votre compte."
+
+#. module: ent_employee_background
+#: code:addons/ent_employee_background/models/employee_verification.py:0
+#, python-format
+msgid "There should be at least address or resume of the employee."
+msgstr ""
+"Il devrait y avoir au moins l'adresse ou le curriculum vitae de l'employé."
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Upload"
+msgstr "Upload"
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
+msgid "Upload file if any"
+msgstr "Téléchargez le fichier le cas échéant"
+
+#. module: ent_employee_background
+#: model:ir.model.fields.selection,name:ent_employee_background.selection__employee_verification__state__submit
+msgid "Varification Completed"
+msgstr "Varification Completed"
+
+#. module: ent_employee_background
+#: model:mail.template,subject:ent_employee_background.assign_agency_email_template
+msgid "Verification of ${object.employee.name}"
+msgstr "Verification of ${object.employee.name}"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_employee_verification__resume_uploaded_ids
+msgid "You can attach the copy of your document"
+msgstr "Vous pouvez joindre la copie de votre document"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_employee_verification__agency
+msgid "You can choose a Verification Agent"
+msgstr "Vous pouvez choisir un agent de vérification"
+
+#. module: ent_employee_background
+#: model:ir.model.fields,help:ent_employee_background.field_employee_verification__employee
+msgid "You can choose the employee for background verification"
+msgstr "Vous pouvez choisir l'employé pour la vérification des antécédents"
+
+#. module: ent_employee_background
+#: code:addons/ent_employee_background/models/employee_verification.py:0
+#, python-format
+msgid "You cannot delete the verification created."
+msgstr "Vous ne pouvez pas supprimer la vérification créée."
+
+#. module: ent_employee_background
+#: code:addons/ent_employee_background/controllers/portal.py:0
+#, python-format
+msgid "You need to Enter description or attact a file before submit."
+msgstr ""
+"Vous devez saisir une description ou joindre un fichier avant de le "
+"soumettre."
+
+#. module: ent_employee_background
+#: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_completed
+msgid "Your report successfully submitted"
+msgstr "Votre rapport soumis avec succès"
+
+#. module: ent_employee_background
+#: model:ir.model,name:ent_employee_background.model_employee_verification
+msgid "employee.verification"
+msgstr "employee.verification"
