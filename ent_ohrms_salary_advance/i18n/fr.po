@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-27 13:07+0000\n"
-"PO-Revision-Date: 2026-03-27 15:12+0200\n"
+"PO-Revision-Date: 2026-04-13 14:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -30,54 +30,54 @@ msgstr "Activités"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Décoration d'exception d'activité"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "État de l'activité"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icône du type d'activité"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__advance
 #: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_advance
 msgid "Advance"
-msgstr ""
+msgstr "Avance"
 
 #. module: ent_ohrms_salary_advance
 #: model:hr.salary.rule,name:ent_ohrms_salary_advance.hr_payslip_rule_advance
 msgid "Advance Salary"
-msgstr ""
+msgstr "Avance sur salaire"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__advance
 msgid "Advance amount"
-msgstr ""
+msgstr "Montant de l'avance"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
 msgid "Approve"
-msgstr ""
+msgstr "Approuver"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__approve
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
 msgid "Approved"
-msgstr ""
+msgstr "Approuvé"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
 msgid "Approved Requests"
-msgstr ""
+msgstr "Demandes approuvées"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
@@ -122,90 +122,90 @@ msgstr "Créé par"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__credit_id
 msgid "Credit Account"
-msgstr ""
+msgstr "Compte à créditer"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__credit_id
 msgid "Credit account"
-msgstr ""
+msgstr "Compte à créditer"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "Devise"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__date
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__debit_id
 msgid "Debit Account"
-msgstr ""
+msgstr "Compte à débiter"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__debit_id
 msgid "Debit account"
-msgstr ""
+msgstr "Compte à débiter"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__department_id
 msgid "Department"
-msgstr ""
+msgstr "Département"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom d'affichage"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__employee_id
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__employee_id
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
 msgid "Employee"
-msgstr ""
+msgstr "Employé"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__employee_contract_id
 msgid "Employee's contract"
-msgstr ""
+msgstr "Contrat de l'employé"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__exceed_condition
 msgid "Exceed than Maximum"
-msgstr ""
+msgstr "Dépassement du maximum"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icône Font Awesome ie fa-tasks"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__id
@@ -215,74 +215,74 @@ msgstr ""
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône qui indique une exception d'activité."
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si cette case est cochée, les nouveaux messages nécessitent votre attention."
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_error
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si cette case est cochée, certains messages présentent une erreur de livraison."
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est abonné"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__journal_id
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__journal_id
 msgid "Journal"
-msgstr ""
+msgstr "Journal"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__max_percent
 msgid "Max.Salary Advance Percentage"
-msgstr ""
+msgstr "Pourcentage maximal d'avance sur salaire"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__max_percent
 msgid "Maximum salary advance percentage"
-msgstr ""
+msgstr "Pourcentage maximal d'avance sur salaire"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur de livraison du message"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Échéance de mon activité"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_my_approved_requests
 msgid "My Approved Salary Advance"
-msgstr ""
+msgstr "Mon avance sur salaire approuvée"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
@@ -303,7 +303,7 @@ msgstr "Nouvelles demandes"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Prochain événement du calendrier des activités"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_date_deadline
@@ -333,12 +333,12 @@ msgstr "Nombre d'erreurs"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Nombre de messages nécessitant une action"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec erreur de livraison"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model,name:ent_ohrms_salary_advance.model_hr_payslip
@@ -358,38 +358,38 @@ msgstr "Mode de paiement"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Évaluations"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__reason
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__reason
 msgid "Reason"
-msgstr ""
+msgstr "Motif"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
 msgid "Reject"
-msgstr ""
+msgstr "Rejeter"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__reject
 msgid "Rejected"
-msgstr ""
+msgstr "Rejeté"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_current_user
 msgid "Request Salary Advance"
-msgstr ""
+msgstr "Demande d'avance sur salaire"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Responsable"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Erreur de livraison de SMS"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_approved_request
@@ -400,17 +400,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_tree
 msgid "Salary Advance"
-msgstr ""
+msgstr "Avance sur salaire"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_to_approve_request
 msgid "Salary Advance To Approve"
-msgstr ""
+msgstr "Avance sur salaire à approuver"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__advance_date
 msgid "Salary Advance-After days"
-msgstr ""
+msgstr "Avance sur salaire après jours"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model,name:ent_ohrms_salary_advance.model_hr_payroll_structure
@@ -420,17 +420,17 @@ msgstr "Structure salariale"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__advance_date
 msgid "Salary advance after days"
-msgstr ""
+msgstr "Avance sur salaire après jours"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
 msgid "Search"
-msgstr ""
+msgstr "Chercher"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__currency_id
 msgid "Select Currency"
-msgstr ""
+msgstr "Choisir la devise"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
@@ -450,16 +450,20 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Statut basé sur les activités\n"
+"En retard : La date d’échéance est dépassée\n"
+"Aujourd’hui : L’activité a lieu aujourd’hui\n"
+"Planifié : Activités futures."
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__date
 msgid "Submit date"
-msgstr ""
+msgstr "Date de soumission"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__submit
@@ -474,7 +478,7 @@ msgstr "Requêtes soumises"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__exceed_condition
 msgid "The Advance is greater than the maximum percentage in salary structure"
-msgstr ""
+msgstr "L'avance est supérieure au pourcentage maximal prévu dans la structure salariale"
 
 #. module: ent_ohrms_salary_advance
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
@@ -489,19 +493,19 @@ msgstr "A soumettre"
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type d'activité exceptionnelle enregistrée."
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__waiting_approval
 msgid "Waiting Approval"
-msgstr ""
+msgstr "En attente d'approbation"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site Web"
 
 #. module: ent_ohrms_salary_advance
 #: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique de la communication du site Web"

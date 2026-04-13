@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-26 11:21+0000\n"
-"PO-Revision-Date: 2026-04-13 12:30+0200\n"
+"PO-Revision-Date: 2026-04-13 14:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -30,7 +30,7 @@ msgstr "Activités"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Icône qui indique une exception d'activité"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__activity_state
@@ -40,12 +40,12 @@ msgstr "État de l'activité"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icône du type d'activité"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__amount
 msgid "Amount"
-msgstr ""
+msgstr "Montant"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
@@ -65,27 +65,27 @@ msgstr "Nombre de pièces jointes"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__balance_amount
 msgid "Balance Amount"
-msgstr ""
+msgstr "Montant du solde"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__balance_amount
 msgid "Balance amount"
-msgstr ""
+msgstr "Montant du solde"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields.selection,name:ent_ohrms_loan.selection__hr_loan__state__cancel
 msgid "Canceled"
-msgstr ""
+msgstr "Annulé"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.actions.act_window,help:ent_ohrms_loan.hr_loan_action
 msgid "Click to create a new Loan request."
-msgstr ""
+msgstr "Cliquez ici pour créer une nouvelle demande de prêt."
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__company_id
@@ -95,78 +95,78 @@ msgstr ""
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_payroll_structure__company_id
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_salary_rule__company_id
 msgid "Company"
-msgstr ""
+msgstr "Société"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
 msgid "Compute Installment"
-msgstr ""
+msgstr "Calculer les échéances"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_employee__loan_count
 msgid "Count of Loans."
-msgstr ""
+msgstr "Nombre de prêts."
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__create_uid
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__create_date
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__currency_id
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "Devise"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__date
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__date
 msgid "Date of the loan"
-msgstr ""
+msgstr "Date du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__payment_date
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan_line__date
 msgid "Date of the payment"
-msgstr ""
+msgstr "Date de paiement"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__department_id
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_search
 msgid "Department"
-msgstr ""
+msgstr "Département"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__department_id
 msgid "Department of employee"
-msgstr ""
+msgstr "Département de l'employé"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__loan_line_ids
 msgid "Details of the Loan Repayment"
-msgstr ""
+msgstr "Détails du remboursement du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__display_name
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom d'affichage"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields.selection,name:ent_ohrms_loan.selection__hr_loan__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #. module: ent_ohrms_loan
 #: model:ir.model,name:ent_ohrms_loan.model_hr_employee
@@ -179,22 +179,22 @@ msgstr "Employé"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__employee_id
 msgid "Employee for the loan"
-msgstr ""
+msgstr "Employé pour le prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan_line__employee_id
 msgid "Employee of Loan Line"
-msgstr ""
+msgstr "Ligne du prêt de l'employé"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__activity_type_icon
@@ -204,7 +204,7 @@ msgstr ""
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__id
@@ -215,124 +215,124 @@ msgstr ""
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône qui indique une exception d'activité."
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si cette case est cochée, les nouveaux messages nécessitent votre attention."
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__message_has_error
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si cette case est cochée, certains messages présentent une erreur de livraison."
 
 #. module: ent_ohrms_loan
 #: model:ir.model,name:ent_ohrms_loan.model_hr_loan_line
 msgid "Installment Line"
-msgstr ""
+msgstr "Ligne d'échéance"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
 msgid "Installments"
-msgstr ""
+msgstr "Échéances"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est abonné"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__job_position_id
 msgid "Job Position"
-msgstr ""
+msgstr "Poste"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__job_position_id
 msgid "Job position of employee"
-msgstr ""
+msgstr "Poste de l'employé"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__write_uid
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__write_date
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: ent_ohrms_loan
 #: model:hr.salary.rule,name:ent_ohrms_loan.hr_salary_rule_loan
 #: model:ir.ui.menu,name:ent_ohrms_loan.hr_loan_menu_for_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_search
 msgid "Loan"
-msgstr ""
+msgstr "Prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__loan_amount
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan_line__amount
 msgid "Loan Amount"
-msgstr ""
+msgstr "Montant du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_employee__loan_count
 msgid "Loan Count"
-msgstr ""
+msgstr "Nombre de prêts"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_payslip_input__loan_line_id
 msgid "Loan Installment"
-msgstr ""
+msgstr "Nombre d'échéances"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__loan_line_ids
 msgid "Loan Line"
-msgstr ""
+msgstr "Ligne du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__name
 msgid "Loan Name"
-msgstr ""
+msgstr "Nom du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__loan_id
 msgid "Loan Ref."
-msgstr ""
+msgstr "Réf. du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan_line__loan_id
 msgid "Loan Reference"
-msgstr ""
+msgstr "Référence du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model,name:ent_ohrms_loan.model_hr_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
 msgid "Loan Request"
-msgstr ""
+msgstr "Demande de prêt"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_tree
 msgid "Loan Requests"
-msgstr ""
+msgstr "Demandes de prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__loan_amount
 msgid "Loan amount"
-msgstr ""
+msgstr "Montant du prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_payslip_input__loan_line_id
 msgid "Loan installment in Payslip Input"
-msgstr ""
+msgstr "Entrée du prêt dans la fiche de paie"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan_line__paid
@@ -442,7 +442,7 @@ msgstr "Date de paiement"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__payment_date
 msgid "Payment Start Date"
-msgstr ""
+msgstr "Date de début des remboursements"
 
 #. module: ent_ohrms_loan
 #: model:ir.model,name:ent_ohrms_loan.model_hr_payslip_input
@@ -457,12 +457,12 @@ msgstr "Type d'entrée de la fiche de paie"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan_line__payslip_id
 msgid "Payslip Ref."
-msgstr ""
+msgstr "Réf. de la fiche de paie"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan_line__payslip_id
 msgid "Payslip Reference"
-msgstr ""
+msgstr "Référence de la fiche de paie"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
@@ -478,17 +478,17 @@ msgstr "Refusé"
 #: model:ir.actions.act_window,name:ent_ohrms_loan.hr_loan_action
 #: model:ir.ui.menu,name:ent_ohrms_loan.hr_loan_menu_creates_request_for_loan
 msgid "Request for Loan"
-msgstr ""
+msgstr "Demande de prêt"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Responsable"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Erreur de livraison de SMS"
 
 #. module: ent_ohrms_loan
 #: model:ir.model,name:ent_ohrms_loan.model_hr_salary_rule
@@ -504,7 +504,7 @@ msgstr "Structure salariale"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_payslip_input_type__input_id
 msgid "Salary rule in Payslip Input"
-msgstr ""
+msgstr "Règle salariale dans la fiche de paie"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__state
@@ -529,6 +529,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Statut basé sur les activités\n"
+"En retard : La date d’échéance est dépassée\n"
+"Aujourd’hui : L’activité a lieu aujourd’hui\n"
+"Planifié : Activités futures"
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.ui.view,arch_db:ent_ohrms_loan.hr_loan_view_form
@@ -543,7 +547,7 @@ msgstr "Soumis"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__total_amount
 msgid "Total Amount"
-msgstr ""
+msgstr "Montant total"
 
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,field_description:ent_ohrms_loan.field_hr_loan__total_paid_amount
@@ -563,7 +567,7 @@ msgstr "Montant total payé"
 #. module: ent_ohrms_loan
 #: model:ir.model.fields,help:ent_ohrms_loan.field_hr_loan__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type d'activité exceptionnelle enregistrée."
 
 #. module: ent_ohrms_loan
 #: model_terms:ir.actions.act_window,help:ent_ohrms_loan.hr_loan_action
