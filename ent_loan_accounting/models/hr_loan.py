@@ -40,15 +40,14 @@ class HrLoan(models.Model):
     journal_id = fields.Many2one(comodel_name='account.journal',
                                  string="Journal",
                                  help="Select journal for employee")
-    state = fields.Selection([
-        ('draft', 'Draft'),
-        ('waiting_approval_1', 'Submitted'),
-        ('waiting_approval_2', 'Waiting Approval'),
-        ('approve', 'Approved'),
-        ('refuse', 'Refused'),
-        ('cancel', 'Canceled'),
-    ], string="State", default='draft', track_visibility='onchange',
-        copy=False)
+    state = fields.Selection(
+        selection_add=[('waiting_approval_2', 'Waiting Approval')],
+        ondelete={'waiting_approval_2': 'set default'},
+        string="State",
+        default='draft',
+        tracking=True,
+        copy=False,
+    )
 
     def action_approve(self):
         """ This creates an invoice in account.move with loan request details.
