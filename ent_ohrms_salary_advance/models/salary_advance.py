@@ -109,12 +109,12 @@ class SalaryAdvance(models.Model):
         """ Reject action for the advance salary request. """
         self.state = 'reject'
 
-    @api.model
-    def create(self, vals):
-        """ inheriting create method for adding sequence for the request. """
-        vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
-        res_id = super(SalaryAdvance, self).create(vals)
-        return res_id
+    @api.model_create_multi
+    def create(self, vals_list):
+        """Inherit create for adding sequence values in batch mode."""
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
+        return super(SalaryAdvance, self).create(vals_list)
 
     def approve_request(self):
         """ This Approves the employee salary advance request. """
