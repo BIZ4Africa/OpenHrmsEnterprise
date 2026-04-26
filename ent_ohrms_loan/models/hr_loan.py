@@ -36,12 +36,15 @@ class HrLoan(models.Model):
     def default_get(self, field_list):
         """ Retrieve default values for specified fields. """
         result = super(HrLoan, self).default_get(field_list)
-        if result.get('user_id'):
-            ts_user_id = result['user_id']
-        else:
-            ts_user_id = self.env.context.get('user_id', self.env.user.id)
-        result['employee_id'] = self.env['hr.employee'].search(
-            [('user_id', '=', ts_user_id)], limit=1).id
+        if 'employee_id' in field_list:
+            if result.get('user_id'):
+                ts_user_id = result['user_id']
+            else:
+                ts_user_id = self.env.context.get('user_id', self.env.user.id)
+            employee = self.env['hr.employee'].search(
+                [('user_id', '=', ts_user_id)], limit=1)
+            if employee:
+                result['employee_id'] = employee.id
         return result
 
     def _compute_loan_amount(self):
