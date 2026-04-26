@@ -132,14 +132,14 @@ class HrLoan(models.Model):
             loan.loan_line_ids.unlink()
             date_start = datetime.strptime(str(loan.payment_date), '%Y-%m-%d')
             amount = loan.loan_amount / loan.installment
-            for i in range(1, loan.installment + 1):
+            for _i in range(1, loan.installment + 1):
                 self.env['hr.loan.line'].create({
                     'date': date_start,
                     'amount': amount,
                     'employee_id': loan.employee_id.id,
                     'loan_id': loan.id})
                 date_start = date_start + relativedelta(months=1)
-            loan._compute_loan_amount()
+            loan._compute_loan_amount()  # pylint: disable=protected-access
         return True
 
     def action_refuse(self):
