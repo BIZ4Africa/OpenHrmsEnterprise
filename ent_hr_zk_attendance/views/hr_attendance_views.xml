@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Attendance Report -->
+    <record id="view_attendance_tree" model="ir.ui.view">
+        <field name="name">hr.attendance.view.list.inherit.ent.hr.zk.attendance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <list string="Employee attendances">
+                <field name="worked_hours" type="measure"/>
+            </list>
+        </field>
+    </record>
+    <!-- Attendance filter -->
+    <record id="hr_attendance_view_filter" model="ir.ui.view">
+        <field name="name">hr.attendance.view.search.inherit.ent.hr.zk.attendance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="arch" type="xml">
+            <search string="Hr Attendance Search">
+                <group expand="0" string="Group By">
+                    <separator/>
+                    <filter name="date" string="Date"
+                            context="{'group_by':'check_in:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
