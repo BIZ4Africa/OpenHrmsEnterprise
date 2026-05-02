@@ -22,4 +22,4 @@
 from . import hr_leave
 from . import hr_leave_type
 
-from . import hr_leave_allocation_generate_multi_wizard
+# from . import hr_leave_allocation_generate_multi_wizard  # Odoo 17: Base model does not exist
