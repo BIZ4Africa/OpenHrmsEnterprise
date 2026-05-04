@@ -35,7 +35,7 @@ class HrLoan(models.Model):
     name = fields.Char(string="Loan Name", default="/", readonly=True,
                        help="Name of the loan")
     date = fields.Date(string="Date", default=fields.Date.today(),
-                       readonly=True, help="Date of the loan")
+                       help="Date of the loan")
     employee_id = fields.Many2one(comodel_name='hr.employee', string="Employee",
                                   required=True, help="Employee for the loan")
     department_id = fields.Many2one(comodel_name='hr.department',
