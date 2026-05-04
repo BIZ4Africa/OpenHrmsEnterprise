@@ -94,7 +94,7 @@ class HrLoan(models.Model):
                     'credit': loan.loan_amount > 0.0 and
                               loan.loan_amount or 0.0,
                     'loan_id': loan.id,
-                    'partner_id': loan.employee_id.address_home_id.id or False,
+                    'partner_id': loan.employee_id.work_contact_id.id or False,
                 }
                 vals = {
                     'ref': move_ref,
@@ -151,7 +151,7 @@ class HrLoan(models.Model):
                 'debit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
                 'credit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
                 'loan_id': loan.id,
-                'partner_id': loan.employee_id.address_home_id.id or False,
+                'partner_id': loan.employee_id.work_contact_id.id or False,
             }
             vals = {
                 'narration': loan.employee_id.name,
