@@ -90,7 +90,7 @@ class HrLoan(models.Model):
                     'loan_id': loan.id,
                 }
                 vals = {
-                    'name': 'Loan For' + ' ' + loan.name + ' ' + loan.employee_id.name,
+                    'name': 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name,
                     'narration': loan.employee_id.name,
                     'ref': loan.name,
                     'journal_id': loan.journal_id.id,
