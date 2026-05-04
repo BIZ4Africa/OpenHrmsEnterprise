@@ -20,9 +20,14 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import account_move
-from . import account_move_line
-from . import hr_loan
-from . import hr_loan_line
-from . import hr_payslip
-from . import res_config_settings
+from odoo import fields, models
+
+
+class AccountMove(models.Model):
+    """ Inheriting account.move for reverse link to hr.loan. """
+    _inherit = "account.move"
+
+    loan_ids = fields.One2many(comodel_name='hr.loan',
+                               inverse_name='move_id',
+                               string='Related Loans',
+                               help="Loans linked to this accounting entry")

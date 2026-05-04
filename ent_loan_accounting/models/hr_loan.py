@@ -30,7 +30,7 @@ class HrLoan(models.Model):
     _inherit = 'hr.loan'
 
     employee_account_id = fields.Many2one(comodel_name='account.account',
-                                          string="Loan Account",
+                                          string="Employee Account",
                                           help="Select employee chart of "
                                                "accounts")
     treasury_account_id = fields.Many2one(comodel_name='account.account',
@@ -40,6 +40,10 @@ class HrLoan(models.Model):
     journal_id = fields.Many2one(comodel_name='account.journal',
                                  string="Journal",
                                  help="Select journal for employee")
+    move_id = fields.Many2one(comodel_name='account.move',
+                              string="Accounting Entry",
+                              readonly=True,
+                              help="Related journal entry for this loan")
     state = fields.Selection(
         selection_add=[('waiting_approval_2', 'Waiting Approval'), ('approve',)],
         ondelete={'waiting_approval_2': 'set default'},
@@ -90,6 +94,7 @@ class HrLoan(models.Model):
                     'credit': loan.loan_amount > 0.0 and
                               loan.loan_amount or 0.0,
                     'loan_id': loan.id,
+                    'partner_id': loan.employee_id.address_home_id.id or False,
                 }
                 vals = {
                     'ref': move_ref,
@@ -100,7 +105,20 @@ class HrLoan(models.Model):
                 }
                 move = self.env['account.move'].create(vals)
                 move.action_post()
+                loan.move_id = move.id
             self.write({'state': 'approve'})
+        return True
+
+    def action_reset_to_draft(self):
+        """ Reset loan to draft state and unpost related account move.
+        """
+        for loan in self:
+            if loan.move_id:
+                if loan.move_id.state == 'posted':
+                    loan.move_id.button_draft()
+                loan.move_id.unlink()
+                loan.move_id = False
+        self.write({'state': 'draft'})
         return True
 
     def action_double_approve(self):
@@ -133,6 +151,7 @@ class HrLoan(models.Model):
                 'debit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
                 'credit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
                 'loan_id': loan.id,
+                'partner_id': loan.employee_id.address_home_id.id or False,
             }
             vals = {
                 'narration': loan.employee_id.name,
@@ -143,5 +162,6 @@ class HrLoan(models.Model):
             }
             move = self.env['account.move'].create(vals)
             move.action_post()
+            loan.move_id = move.id
         self.write({'state': 'approve'})
         return True
