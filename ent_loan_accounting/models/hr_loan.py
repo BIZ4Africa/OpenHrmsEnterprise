@@ -68,8 +68,10 @@ class HrLoan(models.Model):
                 raise UserError(
                     'You must compute Loan Request before Approved')
             for loan in self:
+                line_name = 'Loan ' + loan.name + ' ' + loan.employee_id.name
+                move_ref = 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name
                 debit_vals = {
-                    'name': loan.employee_id.name,
+                    'name': line_name,
                     'account_id': loan.treasury_account_id.id,
                     'journal_id': loan.journal_id.id,
                     'date': date.today(),
@@ -79,7 +81,7 @@ class HrLoan(models.Model):
                     'loan_id': loan.id,
                 }
                 credit_vals = {
-                    'name': loan.employee_id.name,
+                    'name': line_name,
                     'account_id': loan.employee_account_id.id,
                     'journal_id': loan.journal_id.id,
                     'date': date.today(),
@@ -90,9 +92,8 @@ class HrLoan(models.Model):
                     'loan_id': loan.id,
                 }
                 vals = {
-                    'name': 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name,
+                    'ref': move_ref,
                     'narration': loan.employee_id.name,
-                    'ref': loan.name,
                     'journal_id': loan.journal_id.id,
                     'date': date.today(),
                     'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
@@ -113,8 +114,10 @@ class HrLoan(models.Model):
         if not self.loan_line_ids:
             raise UserError('You must compute Loan Request before Approved')
         for loan in self:
+            line_name = 'Loan ' + loan.name + ' ' + loan.employee_id.name
+            move_ref = 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name
             debit_vals = {
-                'name': loan.employee_id.name,
+                'name': line_name,
                 'account_id': loan.treasury_account_id.id,
                 'journal_id': loan.journal_id.id,
                 'date': date.today(),
@@ -123,7 +126,7 @@ class HrLoan(models.Model):
                 'loan_id': loan.id,
             }
             credit_vals = {
-                'name': loan.employee_id.name,
+                'name': line_name,
                 'account_id': loan.employee_account_id.id,
                 'journal_id': loan.journal_id.id,
                 'date': date.today(),
@@ -132,9 +135,8 @@ class HrLoan(models.Model):
                 'loan_id': loan.id,
             }
             vals = {
-                'name': 'Loan For' + ' ' + loan.name + ' ' + loan.employee_id.name,
                 'narration': loan.employee_id.name,
-                'ref': loan.name,
+                'ref': move_ref,
                 'journal_id': loan.journal_id.id,
                 'date': date.today(),
                 'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
