@@ -41,7 +41,8 @@
                            statusbar_visible="draft,waiting_approval_1,approve"/>
                 </header>
             </xpath>
-            <xpath expr="//field[@name='loan_amount']" position="after">
+            <xpath expr="//notebook" position="inside">
+                <page string="Accounting" groups="account.group_account_user,account.group_account_manager">
                 <field name="employee_account_id"
                        invisible="state == 'draft'"
                        readonly="state in ('approve', 'refuse')"/>
@@ -52,6 +53,7 @@
                        readonly="state in ('approve', 'refuse')"/>
                 <field name="move_id" readonly="1" 
                        invisible="state != 'approve'"/>
+                       </page>
             </xpath>
         </field>
     </record>
