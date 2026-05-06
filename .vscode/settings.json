@@ -1,0 +1,41 @@
+{
+  "odooVersion": "18.0",
+  "python.defaultInterpreterPath": "../../../envs/18.0/bin/python3",
+  "python.analysis.extraPaths": [
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/odoo",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/enterprise",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/addons",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/projects/18.0/OpenHrmsEnterprise"
+  ],
+  "python.autoComplete.extraPaths": [
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/odoo",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/enterprise",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/addons",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/projects/18.0/OpenHrmsEnterprise"
+  ],
+  "terminal.integrated.env.linux": {
+    "ODOO_VERSION": "18.0",
+    "PYTHONPATH": "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/odoo:/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0/addons:/home/vincent/Workspace/BIZ4AOdooDevMaster/projects/18.0/OpenHrmsEnterprise",
+    "ODOO_SOURCES": "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources/18.0"
+  },
+  "git.ignoredRepositories": [
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/sources",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/envs",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/templates",
+    "/home/vincent/Workspace/BIZ4AOdooDevMaster/projects/*/.git"
+  ],
+  "scm.defaultViewMode": "tree",
+  "scm.repositories.visible": 1,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  }
+}
