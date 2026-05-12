@@ -43,17 +43,21 @@
             </xpath>
             <xpath expr="//notebook" position="inside">
                 <page string="Accounting" groups="account.group_account_user,account.group_account_manager">
-                <field name="employee_account_id"
-                       invisible="state == 'draft'"
-                       readonly="state in ('approve', 'refuse')"/>
-                <field name="treasury_account_id"
-                       invisible="state == 'draft'"
-                       readonly="state in ('approve', 'refuse')"/>
-                <field name="journal_id" invisible="state == 'draft'"
-                       readonly="state in ('approve', 'refuse')"/>
-                <field name="move_id" readonly="1" 
-                       invisible="state != 'approve'"/>
-                       </page>
+                    <group>
+                        <field name="employee_account_id"
+                               invisible="state == 'draft'"
+                               readonly="state in ('approve', 'refuse')"/>
+                        <field name="treasury_account_id"
+                               invisible="state == 'draft'"
+                               readonly="state in ('approve', 'refuse')"/>
+                        <field name="journal_id"
+                               invisible="state == 'draft'"
+                               readonly="state in ('approve', 'refuse')"/>
+                        <field name="move_id"
+                               readonly="1" 
+                               invisible="state != 'approve'"/>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
