@@ -1,0 +1,205 @@
+name: Translation Export
+
+on:
+  push:
+    branches:
+      - "[0-9][0-9].[0-9]" # e.g. 18.0, 19.0
+      - "[0-9].[0-9]"      # e.g. 8.0, 9.0
+  workflow_dispatch:       # allow manual trigger for testing
+
+permissions:
+  contents: write  # needed to push fr.po commits back to the branch
+
+concurrency:
+  group: translation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  export-translations:
+    name: Export fr.po translations
+    runs-on: ubuntu-22.04
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout repository (no submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Detect Odoo version from branch
+        id: version
+        run: |
+          BRANCH="${GITHUB_REF##*/}"
+          MAJOR=$(echo "$BRANCH" | cut -d. -f1)
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          # Python version requirements:
+          # Odoo 16+  → Python 3.10+
+          # Odoo 18+  → Python 3.12 recommended
+          if [ "$MAJOR" -ge 18 ]; then
+            echo "python_version=3.12" >> "$GITHUB_OUTPUT"
+          elif [ "$MAJOR" -ge 16 ]; then
+            echo "python_version=3.10" >> "$GITHUB_OUTPUT"
+          else
+            echo "python_version=3.8" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python ${{ steps.version.outputs.python_version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ steps.version.outputs.python_version }}
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            libxml2-dev libxslt1-dev \
+            libsasl2-dev libldap2-dev \
+            libpq-dev node-less \
+            gettext
+
+      - name: Clone Odoo ${{ steps.version.outputs.branch }}
+        run: |
+          git clone --depth=1 \
+            --branch=${{ steps.version.outputs.branch }} \
+            --single-branch \
+            https://github.com/odoo/odoo.git /opt/odoo
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-odoo-${{ steps.version.outputs.branch }}-${{ hashFiles('/opt/odoo/requirements.txt') }}
+          restore-keys: |
+            pip-odoo-${{ steps.version.outputs.branch }}-
+
+      - name: Install Odoo Python dependencies
+        run: pip install -r /opt/odoo/requirements.txt
+
+      - name: Find modules (excluding submodules and .git)
+        id: modules
+        run: |
+          # Collect submodule paths (if any) to exclude them
+          SUBMODULE_PATHS=$(git config --file .gitmodules --get-regexp path 2>/dev/null \
+            | awk '{print $2}' || true)
+
+          MODULE_LIST=""
+          while IFS= read -r MANIFEST; do
+            MODULE_DIR=$(dirname "$MANIFEST")
+            MODULE_NAME=$(basename "$MODULE_DIR")
+
+            # Skip paths inside submodules
+            SKIP=false
+            for SM in $SUBMODULE_PATHS; do
+              if [[ "$MODULE_DIR" == "./$SM"* || "$MODULE_DIR" == "$SM"* ]]; then
+                echo "Skipping submodule path: $MODULE_DIR"
+                SKIP=true
+                break
+              fi
+            done
+            [ "$SKIP" = true ] && continue
+
+            # Collect as "module_name:module_dir" pairs
+            MODULE_LIST="${MODULE_LIST}${MODULE_NAME}:${MODULE_DIR}"$'\n'
+          done < <(find . -name "__manifest__.py" -not -path "*/.git/*" | sort)
+
+          if [ -z "$MODULE_LIST" ]; then
+            echo "No Odoo modules found in this repository."
+          else
+            echo "Modules found:"
+            echo "$MODULE_LIST"
+          fi
+          # Store for next step (via temp file to avoid env size limits)
+          echo "$MODULE_LIST" > /tmp/odoo_modules.txt
+
+      - name: Initialise translation database
+        run: |
+          PGPASSWORD=odoo psql -h localhost -U odoo postgres \
+            -c "CREATE DATABASE odoo_i18n;"
+
+          python /opt/odoo/odoo-bin \
+            --db_host=localhost --db_port=5432 \
+            --db_user=odoo --db_password=odoo \
+            -d odoo_i18n \
+            --addons-path=/opt/odoo/addons,$GITHUB_WORKSPACE \
+            --load-language=fr_FR \
+            -i base \
+            --stop-after-init \
+            --without-demo=all \
+            --no-http
+
+      - name: Install modules and export translations
+        run: |
+          set -e
+
+          while IFS=: read -r MODULE_NAME MODULE_DIR; do
+            [ -z "$MODULE_NAME" ] && continue
+
+            echo "──────────────────────────────────────"
+            echo "Installing module: $MODULE_NAME"
+
+            # Install the module (allow failure – skip if unresolvable deps)
+            python /opt/odoo/odoo-bin \
+              --db_host=localhost --db_port=5432 \
+              --db_user=odoo --db_password=odoo \
+              -d odoo_i18n \
+              --addons-path=/opt/odoo/addons,$GITHUB_WORKSPACE \
+              -i "$MODULE_NAME" \
+              --stop-after-init \
+              --without-demo=all \
+              --no-http 2>&1 | tail -10 || {
+                echo "⚠️  Could not install $MODULE_NAME – skipping translation export."
+                continue
+              }
+
+            # Create i18n directory if needed
+            I18N_DIR="${MODULE_DIR}/i18n"
+            mkdir -p "$I18N_DIR"
+
+            echo "Exporting fr.po for: $MODULE_NAME"
+            python /opt/odoo/odoo-bin \
+              --db_host=localhost --db_port=5432 \
+              --db_user=odoo --db_password=odoo \
+              -d odoo_i18n \
+              --addons-path=/opt/odoo/addons,$GITHUB_WORKSPACE \
+              --i18n-export="${I18N_DIR}/fr.po" \
+              --modules="$MODULE_NAME" \
+              --language=fr_FR \
+              --stop-after-init \
+              --no-http 2>&1 | tail -5 || {
+                echo "⚠️  Translation export failed for $MODULE_NAME."
+                continue
+              }
+
+            echo "✔  Exported: ${I18N_DIR}/fr.po"
+          done < /tmp/odoo_modules.txt
+
+      - name: Commit and push updated translations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage all fr.po files (new and modified)
+          find . -path "*/i18n/fr.po" -not -path "*/.git/*" | xargs git add --
+
+          if git diff --cached --quiet; then
+            echo "No translation changes to commit."
+          else
+            git commit -m "[I18N] Auto-export French translations [skip ci]"
+            git remote set-url origin https://x-access-token:${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git push origin "${GITHUB_REF##*/}"
+          fi
