@@ -4,446 +4,465 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-27 13:07+0000\n"
-"PO-Revision-Date: 2026-03-27 15:12+0200\n"
+"POT-Creation-Date: 2026-05-14 11:55+0000\n"
+"PO-Revision-Date: 2026-05-14 11:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.9\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_needaction
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_employee__announcement_count
+msgid "# Announcements"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_needaction
 msgid "Action Needed"
-msgstr "Action requise"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_ids
 msgid "Activities"
-msgstr "Activités"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_exception_decoration
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_state
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_state
 msgid "Activity State"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_type_icon
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_type_icon
 msgid "Activity Type Icon"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_advance
-msgid "Advance"
+#. module: ent_hr_reward_warning
+#: model:res.groups,name:ent_hr_reward_warning.res_groups_administrator
+msgid "Administrator"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:hr.salary.rule,name:ent_ohrms_salary_advance.hr_payslip_rule_advance
-msgid "Advance Salary"
+#. module: ent_hr_reward_warning
+#: model:ir.module.category,name:ent_hr_reward_warning.ir_module_category_announcement
+msgid "Announcement"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__advance
-msgid "Advance amount"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__announcement
+msgid "Announcement Content"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
+msgid "Announcement Reason"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__announcement_reason
+msgid "Announcement Subject"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__announcement_type
+msgid "Announcement Type"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#. odoo-python
+#: code:addons/ent_hr_reward_warning/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:ent_hr_reward_warning.hr_announcement_action
+#: model:ir.ui.menu,name:ent_hr_reward_warning.hr_announcement_menu
+#: model:ir.ui.menu,name:ent_hr_reward_warning.hr_announcement_root_menu
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.view_employee_form
+msgid "Announcements"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_form
 msgid "Approve"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__approve
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__state__approved
 msgid "Approved"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Approved Requests"
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
+msgid "Approved Letters"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_attachment_count
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__attachment_ids
+msgid "Attachment"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Cancel"
-msgstr "Annuler"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__announcement_type__department
+msgid "By Department"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__cancel
-msgid "Cancelled"
-msgstr "Annulé"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__announcement_type__employee
+msgid "By Employee"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__department_id
-msgid "Choose Department."
-msgstr "Choisissez un département."
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__announcement_type__job_position
+msgid "By Job Position"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__company_id
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__company_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__company_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__company_id
+#. module: ent_hr_reward_warning
+#: model:ir.module.category,description:ent_hr_reward_warning.ir_module_category_announcement
+msgid "Category for Announcement"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model_terms:ir.actions.act_window,help:ent_hr_reward_warning.hr_announcement_action
+msgid "Click to Create a New Record."
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__name
+msgid "Code No:"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__company_id
 msgid "Company"
-msgstr "Société"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__employee_contract_id
-msgid "Contract"
-msgstr "Contrat"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_employee__announcement_count
+msgid "Count of Announcement's"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.actions.act_window,help:ent_ohrms_salary_advance.salary_advance_action_for_approved_request
-#: model_terms:ir.actions.act_window,help:ent_ohrms_salary_advance.salary_advance_action_for_my_requests
-#: model_terms:ir.actions.act_window,help:ent_ohrms_salary_advance.salary_advance_action_for_to_approve_requests
-msgid "Create Requests."
-msgstr "Créer des demandes."
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__requested_date
+msgid "Create Date of Record"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__create_uid
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__create_date
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__create_date
 msgid "Created on"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__credit_id
-msgid "Credit Account"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__department_ids
+msgid "Department's which want to see this announcement"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__credit_id
-msgid "Credit account"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__department_ids
+msgid "Departments"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__currency_id
-msgid "Currency"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__date
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Date"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__debit_id
-msgid "Debit Account"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__debit_id
-msgid "Debit account"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__department_id
-msgid "Department"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__display_name
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__display_name
 msgid "Display Name"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__draft
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__state__draft
 msgid "Draft"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__employee_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__employee_id
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
+#. module: ent_hr_reward_warning
+#: model:ir.model,name:ent_hr_reward_warning.model_hr_employee
+#: model:res.groups,name:ent_hr_reward_warning.res_groups_employee
 msgid "Employee"
+msgstr "Employé"
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__employee_ids
+msgid "Employee's which want to see this announcement"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__employee_contract_id
-msgid "Employee's contract"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__employee_ids
+msgid "Employees"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__exceed_condition
-msgid "Exceed than Maximum"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__date_end
+msgid "End Date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_follower_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__date_end
+msgid "End date of announcement want too see"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__state__expired
+msgid "Expired"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_follower_ids
 msgid "Followers"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_partner_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_type_icon
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__has_message
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_form
+msgid "General Announcement"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
+msgid "General Announcements"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model,name:ent_hr_reward_warning.model_hr_announcement
+msgid "HR Announcement"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.actions.server,name:ent_hr_reward_warning.hr_announcement_cron_ir_actions_server
+msgid "HR Announcement Expiry Date"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__has_message
 msgid "Has Message"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__id
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__id
 msgid "ID"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_exception_icon
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_exception_icon
 msgid "Icon"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_exception_icon
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_needaction
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__message_needaction
 msgid "If checked, new messages require your attention."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_error
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_sms_error
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__message_has_error
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_is_follower
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_is_follower
 msgid "Is Follower"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__journal_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__journal_id
-msgid "Journal"
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
+msgid "Is a General Announcement"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__write_uid
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__is_announcement
+msgid "Is general Announcement?"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__position_ids
+msgid "Job Position's which want to see this announcement"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__position_ids
+msgid "Job Positions"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__write_uid
 msgid "Last Updated by"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__write_date
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__write_date
 msgid "Last Updated on"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__max_percent
-msgid "Max.Salary Advance Percentage"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__announcement
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_form
+msgid "Letter"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__max_percent
-msgid "Maximum salary advance percentage"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__company_id
+msgid "Login user Company"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_error
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_has_error
 msgid "Message Delivery error"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_ids
 msgid "Messages"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__my_activity_date_deadline
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_my_approved_requests
-msgid "My Approved Salary Advance"
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
+msgid "Name"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "My Requests"
-msgstr "Mes demandes"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__name
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__name
-msgid "Name"
-msgstr "Nom"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "New Requests"
-msgstr "Nouvelles demandes"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_calendar_event_id
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_date_deadline
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Échéance de la prochaine activité"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_summary
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_summary
 msgid "Next Activity Summary"
-msgstr "Résumé de la prochaine activité"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_type_id
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_type_id
 msgid "Next Activity Type"
-msgstr "Type de la prochaine activité"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_needaction_counter
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_needaction_counter
 msgid "Number of Actions"
-msgstr "Nombre d'actions"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_error_counter
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_has_error_counter
 msgid "Number of errors"
-msgstr "Nombre d'erreurs"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_needaction_counter
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__message_needaction_counter
 msgid "Number of messages requiring action"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_error_counter
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model,name:ent_ohrms_salary_advance.model_hr_payslip
-msgid "Pay Slip"
-msgstr "Fiche de paie"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__payment_method_id
-msgid "Payment Method"
-msgstr "Mode de paiement"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__payment_method_id
-msgid "Payment method"
-msgstr "Mode de paiement"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__rating_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__rating_ids
 msgid "Ratings"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__reason
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__reason
-msgid "Reason"
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_form
+msgid "Refuse"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Reject"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__state__rejected
+msgid "Refused"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__reject
-msgid "Rejected"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__requested_date
+msgid "Requested Date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_current_user
-msgid "Request Salary Advance"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_user_id
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__activity_user_id
 msgid "Responsible User"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_sms_error
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_approved_request
-#: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_my_requests
-#: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_to_approve_requests
-#: model:ir.model,name:ent_ohrms_salary_advance.model_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_tree
-msgid "Salary Advance"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__announcement_type
+msgid "Select the type of employee"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_to_approve_request
-msgid "Salary Advance To Approve"
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_form
+msgid "Send For Approval"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__advance_date
-msgid "Salary Advance-After days"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__name
+msgid "Sequence Number of the Announcement"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model,name:ent_ohrms_salary_advance.model_hr_payroll_structure
-msgid "Salary Structure"
-msgstr "Structure salariale"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__advance_date
-msgid "Salary advance after days"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__date_start
+msgid "Start Date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Search"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__date_start
+msgid "Start date of announcement want to see"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__currency_id
-msgid "Select Currency"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
+#. module: ent_hr_reward_warning
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
 msgid "State"
-msgstr "État"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__state
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__state
+msgid "State of the Announcement"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__state
+#: model_terms:ir.ui.view,arch_db:ent_hr_reward_warning.hr_announcement_view_search
 msgid "Status"
-msgstr "Statut"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_state
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__activity_state
 msgid ""
 "Status based on activities\n"
 "Overdue: Due date is already passed\n"
@@ -451,57 +470,37 @@ msgid ""
 "Planned: Future activities."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Submit"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__announcement_reason
+msgid "Title"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__date
-msgid "Submit date"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__is_announcement
+msgid "To set Announcement as general announcement"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__submit
-msgid "Submitted"
-msgstr "Soumis"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Submitted Requests"
-msgstr "Requêtes soumises"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__exceed_condition
-msgid "The Advance is greater than the maximum percentage in salary structure"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "To Approve"
-msgstr "A approuver"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "To Submit"
-msgstr "A soumettre"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_exception_decoration
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__waiting_approval
-msgid "Waiting Approval"
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields.selection,name:ent_hr_reward_warning.selection__hr_announcement__state__to_approve
+msgid "Waiting For Approval"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__website_message_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,field_description:ent_hr_reward_warning.field_hr_announcement__website_message_ids
 msgid "Website Messages"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__website_message_ids
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__website_message_ids
 msgid "Website communication history"
+msgstr ""
+
+#. module: ent_hr_reward_warning
+#: model:ir.model.fields,help:ent_hr_reward_warning.field_hr_announcement__attachment_ids
+msgid "You can attach the copy of your Letter"
 msgstr ""

@@ -4,31 +4,40 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-12 06:52+0000\n"
-"PO-Revision-Date: 2020-02-12 06:52+0000\n"
+"POT-Creation-Date: 2026-05-14 11:53+0000\n"
+"PO-Revision-Date: 2026-05-14 11:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__changed_field
 #: model:ir.model.fields,field_description:ent_history_employee.field_department_history__changed_field
 msgid "Changed Field"
-msgstr "Changed Field"
+msgstr ""
 
 #. module: ent_history_employee
-#: code:addons/ent_history_employee/models/history.py:0
-#: code:addons/ent_history_employee/models/history.py:0
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.hr_employee_history_form_view
-#, python-format
+#: model:ir.model,name:ent_history_employee.model_hr_contract
+msgid "Contract"
+msgstr "Contrat de l'employé"
+
+#. module: ent_history_employee
+#. odoo-python
+#: code:addons/ent_history_employee/models/hr_employee.py:0
+#: model:ir.model,name:ent_history_employee.model_contract_history
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.view_employee_form
 msgid "Contract History"
-msgstr "Contract History"
+msgstr "contract.history"
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_contract_history__updated_date
+msgid "Contract Updated Date"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__create_uid
@@ -36,7 +45,7 @@ msgstr "Contract History"
 #: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__create_uid
 #: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__create_date
@@ -44,22 +53,37 @@ msgstr "Created by"
 #: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__create_date
 #: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__current_value
-#: model:ir.model.fields,field_description:ent_history_employee.field_department_history__current_value
-#: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__current_value
-#: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__current_value
-msgid "Current Value"
+msgid "Current Contract"
 msgstr "Current Value"
 
 #. module: ent_history_employee
-#: code:addons/ent_history_employee/models/history.py:0
-#: code:addons/ent_history_employee/models/history.py:0
-#, python-format
+#: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__current_value
+msgid "Current Cost"
+msgstr "Current Value"
+
+#. module: ent_history_employee
+#: model:ir.model.fields,field_description:ent_history_employee.field_department_history__current_value
+msgid "Current Department/Job Position"
+msgstr "Current Value"
+
+#. module: ent_history_employee
+#: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__current_value
+msgid "Current Salary"
+msgstr "Current Value"
+
+#. module: ent_history_employee
+#: model:ir.model.fields,field_description:ent_history_employee.field_department_history__updated_date
+msgid "Date"
+msgstr "Updated On"
+
+#. module: ent_history_employee
+#: model:ir.model,name:ent_history_employee.model_department_history
 msgid "Department History"
-msgstr "Department History"
+msgstr "department.history"
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__display_name
@@ -67,22 +91,22 @@ msgstr "Department History"
 #: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__display_name
 #: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__display_name
 msgid "Display Name"
-msgstr "Display Name"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_department_history__updated_date
+msgid "Display the date on which department or job position changed"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model,name:ent_history_employee.model_hr_employee
 msgid "Employee"
-msgstr "Employee"
+msgstr "Employé"
 
 #. module: ent_history_employee
-#: model:ir.model,name:ent_history_employee.model_hr_contract
-msgid "Employee Contract"
-msgstr "Employee Contract"
-
-#. module: ent_history_employee
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.hr_employee_history_form_view
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.view_employee_form
 msgid "Employee History"
-msgstr "Employee History"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__employee_id
@@ -90,15 +114,34 @@ msgstr "Employee History"
 #: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__employee_id
 #: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__employee_id
 msgid "Employee Id"
-msgstr "Employee Id"
+msgstr ""
 
 #. module: ent_history_employee
-#: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__employee_name
 #: model:ir.model.fields,field_description:ent_history_employee.field_department_history__employee_name
 #: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__employee_name
 #: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__employee_name
 msgid "Employee Name"
-msgstr "Employee Name"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_contract_history__employee_id
+msgid "Employee of Contract History"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_department_history__employee_id
+msgid "Employee of Department History"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_salary_history__employee_id
+msgid "Employee of Salary History"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_timesheet_cost__employee_id
+msgid "Employee of the Timesheet Cost"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__id
@@ -106,20 +149,14 @@ msgstr "Employee Name"
 #: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__id
 #: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: ent_history_employee
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.hr_employee_history_form_view
-msgid "Job History"
-msgstr "Job History"
-
-#. module: ent_history_employee
-#: model:ir.model.fields,field_description:ent_history_employee.field_contract_history____last_update
-#: model:ir.model.fields,field_description:ent_history_employee.field_department_history____last_update
-#: model:ir.model.fields,field_description:ent_history_employee.field_salary_history____last_update
-#: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
+#. odoo-python
+#: code:addons/ent_history_employee/models/hr_employee.py:0
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.view_employee_form
+msgid "Job/Department History"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__write_uid
@@ -138,64 +175,96 @@ msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
 
 #. module: ent_history_employee
-#: code:addons/ent_history_employee/models/history.py:0
-#: code:addons/ent_history_employee/models/history.py:0
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.hr_employee_history_form_view
-#, python-format
-msgid "Salary History"
-msgstr "Salary History"
+#: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__employee_name
+msgid "Name"
+msgstr "Employee Name"
 
 #. module: ent_history_employee
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.hr_employee_history_form_view
-msgid "Timesheet Cost"
-msgstr "Timesheet Cost"
+#: model:ir.model.fields,help:ent_history_employee.field_timesheet_cost__employee_name
+msgid "Name of Employee"
+msgstr ""
 
 #. module: ent_history_employee
-#: code:addons/ent_history_employee/models/history.py:0
-#: code:addons/ent_history_employee/models/history.py:0
-#, python-format
-msgid "Timesheet Cost Details"
-msgstr "Détails des coûts de la feuille de temps"
+#: model:ir.model.fields,help:ent_history_employee.field_contract_history__employee_name
+#: model:ir.model.fields,help:ent_history_employee.field_department_history__employee_name
+msgid "Name of the Employee"
+msgstr ""
 
 #. module: ent_history_employee
-#: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__updated_date
-#: model:ir.model.fields,field_description:ent_history_employee.field_department_history__updated_date
-#: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__updated_date
-#: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__updated_date
-msgid "Updated On"
-msgstr "Updated On"
+#: model:ir.model.fields,help:ent_history_employee.field_salary_history__employee_name
+msgid "Name of the employee"
+msgstr ""
 
 #. module: ent_history_employee
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.employee_contract_history
-msgid "contract"
-msgstr "contract"
-
-#. module: ent_history_employee
-#: model:ir.model,name:ent_history_employee.model_contract_history
-msgid "contract.history"
-msgstr "contract.history"
-
-#. module: ent_history_employee
-#: model:ir.model,name:ent_history_employee.model_department_history
-msgid "department.history"
-msgstr "department.history"
-
-#. module: ent_history_employee
+#. odoo-python
+#: code:addons/ent_history_employee/models/hr_employee.py:0
 #: model:ir.model,name:ent_history_employee.model_salary_history
-msgid "salary.history"
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.view_employee_form
+msgid "Salary History"
 msgstr "salary.history"
 
 #. module: ent_history_employee
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.employee_salary_history
-msgid "salary_history"
-msgstr "salary_history"
+#: model:ir.model.fields,help:ent_history_employee.field_salary_history__updated_date
+msgid "Salary Updated Date"
+msgstr ""
 
 #. module: ent_history_employee
 #: model:ir.model,name:ent_history_employee.model_timesheet_cost
-msgid "timesheet.cost"
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.view_employee_form
+msgid "Timesheet Cost"
 msgstr "timesheet.cost"
 
 #. module: ent_history_employee
-#: model_terms:ir.ui.view,arch_db:ent_history_employee.employee_timesheet_history
+#. odoo-python
+#: code:addons/ent_history_employee/models/hr_employee.py:0
+msgid "Timesheet Cost Details"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_timesheet_cost__updated_date
+msgid "Updated Date of Time Sheet"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_contract_history__changed_field
+#: model:ir.model.fields,help:ent_history_employee.field_department_history__changed_field
+msgid "Updated Field's"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,field_description:ent_history_employee.field_contract_history__updated_date
+#: model:ir.model.fields,field_description:ent_history_employee.field_salary_history__updated_date
+#: model:ir.model.fields,field_description:ent_history_employee.field_timesheet_cost__updated_date
+msgid "Updated On"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_salary_history__current_value
+msgid "Updated Salary"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_contract_history__current_value
+#: model:ir.model.fields,help:ent_history_employee.field_department_history__current_value
+msgid "Updated Value of Contract"
+msgstr ""
+
+#. module: ent_history_employee
+#: model:ir.model.fields,help:ent_history_employee.field_timesheet_cost__current_value
+msgid "Updated Value of Time Sheet"
+msgstr ""
+
+#. module: ent_history_employee
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.contract_history_view_list
+msgid "contract"
+msgstr ""
+
+#. module: ent_history_employee
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.salary_history_view_list
+msgid "salary_history"
+msgstr ""
+
+#. module: ent_history_employee
+#: model_terms:ir.ui.view,arch_db:ent_history_employee.timesheet_cost_view_list
 msgid "timesheet_cost"
-msgstr "timesheet_cost"
+msgstr ""

@@ -4,504 +4,320 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-27 13:07+0000\n"
-"PO-Revision-Date: 2026-03-27 15:12+0200\n"
+"POT-Creation-Date: 2026-05-14 11:53+0000\n"
+"PO-Revision-Date: 2026-05-14 11:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.9\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_needaction
-msgid "Action Needed"
-msgstr "Action requise"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_ids
-msgid "Activities"
-msgstr "Activités"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_exception_decoration
-msgid "Activity Exception Decoration"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee__document_count
+msgid "# Documents"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_state
-msgid "Activity State"
+#. module: ent_employee_documents_expiry
+#. odoo-python
+#: code:addons/ent_employee_documents_expiry/models/hr_employee.py:0
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                           Click to Create for New Documents\n"
+"                        </p>"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_type_icon
-msgid "Activity Type Icon"
+#. module: ent_employee_documents_expiry
+#: model:ir.model,name:ent_employee_documents_expiry.model_ir_attachment
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__attach_ids
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__doc_attachment_ids
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_ir_attachment__attach_rel_ids
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_ir_attachment__doc_attach_rel_ids
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_ir_attachment__doc_attach_rel_ids
+msgid "Attachment."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_advance
-msgid "Advance"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_ir_attachment__attach_rel_ids
+msgid "Attachments."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:hr.salary.rule,name:ent_ohrms_salary_advance.hr_payslip_rule_advance
-msgid "Advance Salary"
+#. module: ent_employee_documents_expiry
+#: model_terms:ir.actions.act_window,help:ent_employee_documents_expiry.hr_document_action
+msgid "Create First Document Template"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__advance
-msgid "Advance amount"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Approve"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__approve
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Approved"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Approved Requests"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_attachment_count
-msgid "Attachment Count"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Cancel"
-msgstr "Annuler"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__cancel
-msgid "Cancelled"
-msgstr "Annulé"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__department_id
-msgid "Choose Department."
-msgstr "Choisissez un département."
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__company_id
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__company_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__company_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__company_id
-msgid "Company"
-msgstr "Société"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__employee_contract_id
-msgid "Contract"
-msgstr "Contrat"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.actions.act_window,help:ent_ohrms_salary_advance.salary_advance_action_for_approved_request
-#: model_terms:ir.actions.act_window,help:ent_ohrms_salary_advance.salary_advance_action_for_my_requests
-#: model_terms:ir.actions.act_window,help:ent_ohrms_salary_advance.salary_advance_action_for_to_approve_requests
-msgid "Create Requests."
-msgstr "Créer des demandes."
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__create_uid
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__create_uid
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__create_uid
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__create_date
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__create_date
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__create_date
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__create_date
 msgid "Created on"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__credit_id
-msgid "Credit Account"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__expiry_date
+msgid "Date of expiry of documents"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__credit_id
-msgid "Credit account"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__issue_date
+msgid "Date of issue of employee documents"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__currency_id
-msgid "Currency"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__before_days
+msgid "Days"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__date
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Date"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__description
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_employee_document_view_form
+msgid "Description"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__debit_id
-msgid "Debit Account"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__description
+msgid "Description about the document"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__debit_id
-msgid "Debit account"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__department_id
-msgid "Department"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__display_name
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__display_name
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__display_name
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__display_name
 msgid "Display Name"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__draft
-msgid "Draft"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__name
+msgid "Document Name"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__employee_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__employee_id
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__name
+msgid "Document Number"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.actions.act_window,name:ent_employee_documents_expiry.hr_document_action
+#: model:ir.ui.menu,name:ent_employee_documents_expiry.hr_document_menu
+msgid "Document Templates"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model,name:ent_employee_documents_expiry.model_document_type
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__document_type_id
+msgid "Document Type"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__document_type_id
+msgid "Document type of employee"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#. odoo-python
+#: code:addons/ent_employee_documents_expiry/models/hr_employee_document.py:0
+msgid "Document-%s Expired On %s"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#. odoo-python
+#: code:addons/ent_employee_documents_expiry/models/hr_employee_document.py:0
+msgid "Document-%s Expiry on %s"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#. odoo-python
+#: code:addons/ent_employee_documents_expiry/models/hr_employee.py:0
+#: model:ir.ui.menu,name:ent_employee_documents_expiry.hr_employee_document_menu
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.view_employee_form
+msgid "Documents"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model,name:ent_employee_documents_expiry.model_hr_document
+msgid "Documents Template "
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model,name:ent_employee_documents_expiry.model_hr_employee
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_employee_document_view_form
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_employee_document_view_list
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_employee_document_view_search
 msgid "Employee"
+msgstr "Employé"
+
+#. module: ent_employee_documents_expiry
+#: model:ir.actions.server,name:ent_employee_documents_expiry.employee_data_reminder_ir_actions_server
+msgid "Employee Document Expiration"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__employee_contract_id
-msgid "Employee's contract"
+#. module: ent_employee_documents_expiry
+#: model:ir.actions.act_window,name:ent_employee_documents_expiry.document_type_action
+#: model:ir.ui.menu,name:ent_employee_documents_expiry.document_type_menu
+msgid "Employee Document Types"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__exceed_condition
-msgid "Exceed than Maximum"
+#. module: ent_employee_documents_expiry
+#: model:ir.actions.act_window,name:ent_employee_documents_expiry.hr_employee_document_action
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_employee_document_view_search
+msgid "Employee Documents"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_follower_ids
-msgid "Followers"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__employee_ref_id
+msgid "Employee Ref"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_partner_ids
-msgid "Followers (Partners)"
+#. module: ent_employee_documents_expiry
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.document_type_view_form
+msgid "Employee Tags"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_type_icon
-msgid "Font awesome icon e.g. fa-tasks"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields.selection,name:ent_employee_documents_expiry.selection__hr_employee_document__notification_type__everyday
+msgid "Everyday till expiry date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__has_message
-msgid "Has Message"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__expiry_date
+msgid "Expiry Date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__id
+#. module: ent_employee_documents_expiry
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_employee_document_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model,name:ent_employee_documents_expiry.model_hr_employee_document
+msgid "HR Employee Documents"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__before_days
+msgid "How many number of days before to get the notification email"
+msgstr ""
+
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__id
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__id
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__id
 msgid "ID"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_exception_icon
-msgid "Icon"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__issue_date
+msgid "Issue Date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_exception_icon
-msgid "Icon to indicate an exception activity."
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_needaction
-msgid "If checked, new messages require your attention."
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_error
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_sms_error
-msgid "If checked, some messages have a delivery error."
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_is_follower
-msgid "Is Follower"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__journal_id
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__journal_id
-msgid "Journal"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__write_uid
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__write_uid
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__write_uid
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__write_uid
 msgid "Last Updated by"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__write_date
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__write_date
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__write_date
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__write_date
 msgid "Last Updated on"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__max_percent
-msgid "Max.Salary Advance Percentage"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__max_percent
-msgid "Maximum salary advance percentage"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_error
-msgid "Message Delivery error"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_ids
-msgid "Messages"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__my_activity_date_deadline
-msgid "My Activity Deadline"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_my_approved_requests
-msgid "My Approved Salary Advance"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "My Requests"
-msgstr "Mes demandes"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__name
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__name
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_document_type__name
 msgid "Name"
-msgstr "Nom"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "New Requests"
-msgstr "Nouvelles demandes"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_date_deadline
-msgid "Next Activity Deadline"
-msgstr "Échéance de la prochaine activité"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_summary
-msgid "Next Activity Summary"
-msgstr "Résumé de la prochaine activité"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_type_id
-msgid "Next Activity Type"
-msgstr "Type de la prochaine activité"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_needaction_counter
-msgid "Number of Actions"
-msgstr "Nombre d'actions"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_error_counter
-msgid "Number of errors"
-msgstr "Nombre d'erreurs"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_needaction_counter
-msgid "Number of messages requiring action"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_document_type__name
+msgid "Name of the document type"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__message_has_error_counter
-msgid "Number of messages with delivery error"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_document__note
+#: model_terms:ir.ui.view,arch_db:ent_employee_documents_expiry.hr_document_view_list
+msgid "Note"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model,name:ent_ohrms_salary_advance.model_hr_payslip
-msgid "Pay Slip"
-msgstr "Fiche de paie"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__payment_method_id
-msgid "Payment Method"
-msgstr "Mode de paiement"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__payment_method_id
-msgid "Payment method"
-msgstr "Mode de paiement"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__rating_ids
-msgid "Ratings"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_document__note
+msgid "Note for document template"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__reason
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__reason
-msgid "Reason"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,field_description:ent_employee_documents_expiry.field_hr_employee_document__notification_type
+msgid "Notification Type"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Reject"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields.selection,name:ent_employee_documents_expiry.selection__hr_employee_document__notification_type__multi
+msgid "Notification before few days"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__reject
-msgid "Rejected"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields.selection,name:ent_employee_documents_expiry.selection__hr_employee_document__notification_type__everyday_after
+msgid "Notification on and after expiry"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_current_user
-msgid "Request Salary Advance"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields.selection,name:ent_employee_documents_expiry.selection__hr_employee_document__notification_type__single
+msgid "Notification on expiry date"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__activity_user_id
-msgid "Responsible User"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_approved_request
-#: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_my_requests
-#: model:ir.actions.act_window,name:ent_ohrms_salary_advance.salary_advance_action_for_to_approve_requests
-#: model:ir.model,name:ent_ohrms_salary_advance.model_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_tree
-msgid "Salary Advance"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.ui.menu,name:ent_ohrms_salary_advance.salary_advance_menu_for_to_approve_request
-msgid "Salary Advance To Approve"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_hr_payroll_structure__advance_date
-msgid "Salary Advance-After days"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model,name:ent_ohrms_salary_advance.model_hr_payroll_structure
-msgid "Salary Structure"
-msgstr "Structure salariale"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_hr_payroll_structure__advance_date
-msgid "Salary advance after days"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Search"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__currency_id
-msgid "Select Currency"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "State"
-msgstr "État"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__state
-msgid "Status"
-msgstr "Statut"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_state
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__notification_type
 msgid ""
-"Status based on activities\n"
-"Overdue: Due date is already passed\n"
-"Today: Activity date is today\n"
-"Planned: Future activities."
+"Notification on expiry date: You will get notification only on expiry date. "
+"Notification before few days: You will get notification in 2 days.On expiry "
+"date and number of days before date. Everyday till expiry date: You will get"
+" notification from number of days till the expiry date of the document. "
+"Notification on and after expiry: You will get notification on the expiry "
+"date and continues up to Days. If you didn't select any then you will get "
+"notification before 7 days of document expiry."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_form
-msgid "Submit"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee__document_count
+msgid "Number of documents of employee"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__date
-msgid "Submit date"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_document__attach_ids
+msgid "You can attach the copy of your document"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__submit
-msgid "Submitted"
-msgstr "Soumis"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "Submitted Requests"
-msgstr "Requêtes soumises"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__exceed_condition
-msgid "The Advance is greater than the maximum percentage in salary structure"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__doc_attachment_ids
+msgid "You can attach the copy of yourdocument"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "To Approve"
-msgstr "A approuver"
-
-#. module: ent_ohrms_salary_advance
-#: model_terms:ir.ui.view,arch_db:ent_ohrms_salary_advance.salary_advance_view_search
-msgid "To Submit"
-msgstr "A soumettre"
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__activity_exception_decoration
-msgid "Type of the exception activity on record."
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_document__name
+msgid "You can give your Document name here"
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields.selection,name:ent_ohrms_salary_advance.selection__salary_advance__state__waiting_approval
-msgid "Waiting Approval"
+#. module: ent_employee_documents_expiry
+#: model:ir.model.fields,help:ent_employee_documents_expiry.field_hr_employee_document__name
+msgid "You can give your Document number."
 msgstr ""
 
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,field_description:ent_ohrms_salary_advance.field_salary_advance__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: ent_ohrms_salary_advance
-#: model:ir.model.fields,help:ent_ohrms_salary_advance.field_salary_advance__website_message_ids
-msgid "Website communication history"
+#. module: ent_employee_documents_expiry
+#. odoo-python
+#: code:addons/ent_employee_documents_expiry/models/hr_employee_document.py:0
+msgid "Your Document Is Expired."
 msgstr ""
