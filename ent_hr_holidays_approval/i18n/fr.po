@@ -1,0 +1,208 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ent_hr_holidays_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-17 12:51+0000\n"
+"PO-Revision-Date: 2026-05-17 12:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.ui.menu,name:ent_hr_holidays_approval.hr_leave_menu_open_leave_approvals
+msgid "Approval Requests"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave_type__leave_validators_ids
+msgid "Approval users"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#. odoo-python
+#: code:addons/ent_hr_holidays_approval/models/hr_leave.py:0
+#: model:ir.actions.server,name:ent_hr_holidays_approval.hr_leave_action
+msgid "Approvals"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__is_validation_status
+msgid "Approve Status"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#. odoo-python
+#: code:addons/ent_hr_holidays_approval/models/hr_leave.py:0
+msgid ""
+"Changing leave validators is not permitted. You can only change it from "
+"Leave Types Configuration"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__leave_comments
+msgid "Comments"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__leave_comments
+msgid "Comments for the validation"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__create_uid
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__create_date
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__display_name
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__holiday_id
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__holiday_id
+msgid "Holiday"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__hr_holiday_status_id
+msgid "Holiday Status"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_holidays_validators__hr_holiday_status_id
+msgid "Holiday status"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__id
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__id
+msgid "ID"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave__is_multi_level_validation
+msgid "If checked then multi-level approval is necessary"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__write_uid
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__write_date
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__holiday_validators_id
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave__leave_approvals_ids
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave_type__leave_validators_ids
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__validating_users_id
+msgid "Leave Validators"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave__leave_approvals_ids
+msgid "Leave approvals"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#. odoo-python
+#: code:addons/ent_hr_holidays_approval/models/hr_leave.py:0
+msgid "Leave request must be confirmed (\"To Approve\") in order to approve it."
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#. odoo-python
+#: code:addons/ent_hr_holidays_approval/models/hr_leave.py:0
+msgid "Leave request must be confirmed or validated in order to refuse it."
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.edit_holiday_status_form
+msgid "Leave validation"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_holidays_validators__holiday_validators_id
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__validating_users_id
+msgid "Leave validators"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields.selection,name:ent_hr_holidays_approval.selection__hr_leave_type__leave_validation_type__multi
+msgid "Multi Level Approval"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave__is_button_visibility
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave__is_multi_level_validation
+msgid "Multiple Level Approval"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__is_validation_status
+msgid "Status of approval process"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_hr_leave
+msgid "Time Off"
+msgstr "Congés"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "Type de congés"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave_type__leave_validation_type
+msgid "Time Off Validation"
+msgstr "Validation du congé"
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.edit_holiday_status_form
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_leave_view_form
+msgid "Users"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_leave_view_form
+msgid "Validation Status"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#. odoo-python
+#: code:addons/ent_hr_holidays_approval/models/hr_leave_type.py:0
+msgid ""
+"You cannot make leave validators empty when selecting Multi Level Approval"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_hr_holidays_validators
+msgid "hr.holidays.validators"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_leave_validation_status
+msgid "leave.validation.status"
+msgstr ""
