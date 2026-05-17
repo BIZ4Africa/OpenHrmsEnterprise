@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Multi-company access control for company policy model-->
     <record id="res_company_policy_rule_user" model="ir.rule">
