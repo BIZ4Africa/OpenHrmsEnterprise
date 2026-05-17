@@ -20,29 +20,23 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class ResUsers(models.Model):
     """ Inherit res users for adding fields """
     _inherit = 'res.users'
 
-    employee_id = fields.Many2one(comodel_name='hr.employee',
-                                  string='Related Employee',
-                                  ondelete='restrict', auto_join=True,
-                                  help='Employee-related data of the user')
-
     @api.model_create_multi
     def create(self, vals_list):
         """ This code is to create an employee while creating a user. """
         result = super(ResUsers, self).create(vals_list)
-        non_shared = self.search([('share', '=', False)])
         for record in result:
-            if record.id in non_shared.ids:
-                record['employee_id'] = self.env['hr.employee'].sudo().create(
-                    {
-                        'name': record['name'],
-                        'user_id': record['id'],
-                        'private_street': record['partner_id'].name
-                    })
+            if record.share or record.employee_ids:
+                continue
+            self.env['hr.employee'].sudo().create({
+                'name': record.name,
+                'company_id': record.company_id.id or self.env.company.id,
+                **self.env['hr.employee']._sync_user(record),
+            })
         return result
