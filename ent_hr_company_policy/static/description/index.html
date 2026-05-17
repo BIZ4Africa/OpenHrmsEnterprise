@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Enterprise HR Company Policy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        :root { --primary-color: #7f54b3; }
+        body { font-family: "Montserrat", sans-serif; }
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: #121212; font-size: 16px !important; font-weight: 500 !important;
+            border-radius: 30px; background-color: #F5F5F5; border: none; padding: 12px 24px;
+        }
+        .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover { border-color: transparent; }
+        .nav-tabs .nav-link:focus-visible { border-color: transparent; box-shadow: none; }
+        .nav-tabs { border-bottom: none; }
+        .nav-tabs .nav-link { color: #121212; font-weight: 500; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="my-5">
+
+        <!-- Logo + Badge -->
+        <div class="my-3 d-flex align-items-center justify-content-between flex-wrap" style="border-bottom:1px solid rgba(0,0,0,0.12);padding-bottom:12px;">
+            <div>
+                <img src="assets/misc/logo-horizontal (1).png" style="width:auto;height:40px;">
+            </div>
+            <div>
+                <div style="background-color:#017E84;font-size:0.8rem;color:#fff;font-weight:500;padding:4px;border-radius:50px;min-width:120px;text-align:center;">Enterprise</div>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div style="border-radius:16px;background:#f8f8f8;padding:20px 0;">
+            <div class="row" style="padding:2rem 0 0;">
+                <div class="col-lg-8 mx-auto gap-4 d-flex flex-column align-items-center">
+                    <p class="my-1 text-center" style="letter-spacing:4px;color:#7f54b3;font-weight:600;font-size:14px;text-transform:uppercase;">
+                        Manage &amp; Display Company Policies from the HR Dashboard.
+                    </p>
+                    <h1 class="text-center text-uppercase my-0" style="color:#121212;font-size:46px;font-weight:700;line-height:normal;">
+                        Enterprise HR Company Policy
+                    </h1>
+                </div>
+                <div class="col-lg-12 d-flex justify-content-center align-items-center" style="margin:3rem 0;">
+                    <img src="assets/misc/logo-horizontal (1).png" width="80%" height="auto" class="img-responsive"/>
+                </div>
+                <div class="col-md-12 text-center mb-4">
+                    <a href="mailto:odoo@cybrosys.com" target="_blank" class="mx-1 mb-2"
+                       style="background-color:transparent;border-radius:35px;display:inline-block;padding:7px 33px;border:1px solid #7f54b3;color:#7f54b3;text-decoration:none;">
+                        <i class="fa fa-envelope"></i>
+                        <span style="font-size:16px;vertical-align:middle;margin-left:6px;">Email Us</span>
+                    </a>
+                    <a href="https://wa.me/919945676786" target="_blank" class="mx-1 mb-2"
+                       style="background-color:#7f54b3;display:inline-block;padding:7px 33px;border:1px solid #7f54b3;border-radius:35px;text-decoration:none;">
+                        <img style="width:20px;vertical-align:middle;" src="assets/misc/whatsapp 1.svg"/>
+                        <span style="color:#fff;font-size:16px;vertical-align:middle;margin-left:6px;">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Highlights -->
+        <div style="border-radius:16px;padding:60px 40px;border:1px solid #EBEEF2;background:#F5F5F7;box-shadow:0px 5px 20px -11px rgba(0,0,0,0.25);margin-top:2rem;">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                <h2 style="color:#121212;text-align:center;font-size:40px;font-weight:700;text-transform:uppercase;padding-bottom:50px;">Key Highlights</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="mb-4 d-flex flex-column justify-content-center gap-3" style="border-radius:12px;border:1px solid #B6BCCD;background:#FFF;padding:32px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#7f54b3;border-radius:8px;height:42px;width:42px;">
+                            <i class="fa fa-star" style="color:#fff;font-size:16px;"></i>
+                        </div>
+                        <h5 class="m-0" style="color:#000;font-weight:bold;">Company can configure their company policy.</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-4 d-flex flex-column justify-content-center gap-3" style="border-radius:12px;border:1px solid #B6BCCD;background:#FFF;padding:32px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#7f54b3;border-radius:8px;height:42px;width:42px;">
+                            <i class="fa fa-star" style="color:#fff;font-size:16px;"></i>
+                        </div>
+                        <h5 class="m-0" style="color:#000;font-weight:bold;">Logged-in users can view the company policy.</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-4 d-flex flex-column justify-content-center gap-3" style="border-radius:12px;border:1px solid #B6BCCD;background:#FFF;padding:32px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#7f54b3;border-radius:8px;height:42px;width:42px;">
+                            <i class="fa fa-star" style="color:#fff;font-size:16px;"></i>
+                        </div>
+                        <h5 class="m-0" style="color:#000;font-weight:bold;">A button on the dashboard to view company policy.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Dark Banner -->
+        <div class="my-5">
+            <div style="padding:5rem 4rem;background-color:#0A1425;border-radius:12px;">
+                <div class="d-flex flex-column gap-4">
+                    <span style="font-size:40px;font-weight:700;color:#fff;line-height:60px;max-width:500px;">Enterprise HR Company Policy</span>
+                    <h3 style="font-size:20px;font-weight:400;color:#fff;line-height:32px;">Ready to manage your company policies efficiently?<br>Get started today!</h3>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="mailto:odoo@cybrosys.com" style="cursor:pointer;border-radius:16px;display:flex;justify-content:center;align-items:center;gap:7px;border:1px solid #ffffff33;background-color:#ffffff14;color:#fff;padding:12px 16px;text-decoration:none;">
+                            <span style="border-radius:12px;background-color:#ffffff1a;padding:12px;"><i class="fa fa-envelope" style="color:#fff;"></i></span>
+                            <span style="font-weight:500;">odoo@cybrosys.com</span>
+                        </a>
+                        <a href="https://wa.me/919945676786" style="cursor:pointer;border-radius:16px;display:flex;justify-content:center;align-items:center;gap:7px;border:1px solid #ffffff33;background-color:#ffffff14;color:#fff;padding:12px 22px;text-decoration:none;">
+                            <span style="border-radius:12px;background-color:#ffffff1a;padding:12px;"><i class="fa-brands fa-whatsapp" style="color:#fff;"></i></span>
+                            <span style="font-weight:500;">+91 99456 76786</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="mb-4 bg-white" style="border:1px solid #EBEEF2;border-radius:6px;box-shadow:0px 8px 20px -4px rgba(0,0,0,0.10);">
+            <ul class="nav nav-tabs justify-content-center bg-white py-2" id="myTab" role="tablist" style="border-radius:6px 6px 0 0;">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#screenshots" role="tab">Screenshots</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#features" role="tab">Features</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#faqs" role="tab">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#releases" role="tab">Releases</a></li>
+            </ul>
+            <div class="tab-content p-md-5 p-2 py-3">
+
+                <!-- SCREENSHOTS -->
+                <div class="tab-pane fade show active" id="screenshots" role="tabpanel">
+                    <div class="position-relative mb-4" style="border-radius:10px;background-color:#f4f4f4;">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12"><h2 style="text-align:center;font-size:36px;font-weight:700;"><span style="color:#121212;">Install </span><span style="color:#7f54b3;">Module</span></h2></div>
+                                <div class="col-md-12 mb-4"><p style="font-weight:400;font-size:16px;line-height:150%;text-align:center;color:#64728f;">After installation, open the company form view in Settings. A new "Company Policy" page tab will be visible.</p></div>
+                                <div class="col-md-12 text-center"><div class="d-inline-block p-3 shadow-sm" style="background-color:#fff;border-radius:10px;"><img class="img-fluid" src="assets/screenshots/1.png"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px;background-color:#f4f4f4;">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12"><h2 style="text-align:center;font-size:36px;font-weight:700;"><span style="color:#121212;">Add or Edit </span><span style="color:#7f54b3;">Company Policy</span></h2></div>
+                                <div class="col-md-12 mb-4"><p style="font-weight:400;font-size:16px;line-height:150%;text-align:center;color:#64728f;">In the Company Policy page, a rich text box is available where the administrator can write and format the company policy.</p></div>
+                                <div class="col-md-12 text-center"><div class="d-inline-block p-3 shadow-sm" style="background-color:#fff;border-radius:10px;"><img class="img-fluid" src="assets/screenshots/2.png"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px;background-color:#f4f4f4;">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12"><h2 style="text-align:center;font-size:36px;font-weight:700;"><span style="color:#121212;">Company Policy </span><span style="color:#7f54b3;">on Dashboard</span></h2></div>
+                                <div class="col-md-12 mb-4"><p style="font-weight:400;font-size:16px;line-height:150%;text-align:center;color:#64728f;">After setting the company policy, it can be viewed from the HR Dashboard by clicking the Company Policy button.</p></div>
+                                <div class="col-md-12 text-center"><div class="d-inline-block p-3 shadow-sm" style="background-color:#fff;border-radius:10px;"><img class="img-fluid" src="assets/screenshots/3.png"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4" style="border-radius:10px;background-color:#f4f4f4;">
+                        <div class="p-md-5 p-3">
+                            <div class="row">
+                                <div class="col-md-12"><h2 style="text-align:center;font-size:36px;font-weight:700;"><span style="color:#121212;">Policy </span><span style="color:#7f54b3;">Popup</span></h2></div>
+                                <div class="col-md-12 mb-4"><p style="font-weight:400;font-size:16px;line-height:150%;text-align:center;color:#64728f;">Clicking the button opens a wizard popup where the full company policy is displayed for the logged-in user.</p></div>
+                                <div class="col-md-12 text-center"><div class="d-inline-block p-3 shadow-sm" style="background-color:#fff;border-radius:10px;"><img class="img-fluid" src="assets/screenshots/4.png"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FEATURES -->
+                <div class="tab-pane fade" id="features" role="tabpanel">
+                    <div class="row py-4">
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex align-items-center gap-3 h-100" style="padding:30px;border-radius:12px;background-color:#faf8ff;">
+                                <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px;height:36px;border-radius:50%;background-color:#7f54b3;">
+                                    <i class="fa fa-star" style="color:#fff;font-size:14px;"></i>
+                                </div>
+                                <p style="color:#1A202C;font-weight:600;font-size:1.1rem;margin:0;">Company can configure their company policy.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex align-items-center gap-3 h-100" style="padding:30px;border-radius:12px;background-color:#faf8ff;">
+                                <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px;height:36px;border-radius:50%;background-color:#7f54b3;">
+                                    <i class="fa fa-star" style="color:#fff;font-size:14px;"></i>
+                                </div>
+                                <p style="color:#1A202C;font-weight:600;font-size:1.1rem;margin:0;">Logged-in users can view the company policy.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex align-items-center gap-3 h-100" style="padding:30px;border-radius:12px;background-color:#faf8ff;">
+                                <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px;height:36px;border-radius:50%;background-color:#7f54b3;">
+                                    <i class="fa fa-star" style="color:#fff;font-size:14px;"></i>
+                                </div>
+                                <p style="color:#1A202C;font-weight:600;font-size:1.1rem;margin:0;">A button on the dashboard to view company policy.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex align-items-center gap-3 h-100" style="padding:30px;border-radius:12px;background-color:#faf8ff;">
+                                <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px;height:36px;border-radius:50%;background-color:#7f54b3;">
+                                    <i class="fa fa-star" style="color:#fff;font-size:14px;"></i>
+                                </div>
+                                <p style="color:#1A202C;font-weight:600;font-size:1.1rem;margin:0;">Multi-company support with per-company policy rules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RELEASES -->
+                <!-- FAQs -->
+                <div class="tab-pane fade" id="faqs" role="tabpanel">
+                    <div class="row" style="background-color:#fff;">
+                        <div class="col-md-12">
+                            <div class="accordion" id="accordion_faq">
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ1" aria-controls="collapseFAQ1"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            How do I set the company policy?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ1" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            Go to <strong>Settings → Companies</strong>, open your company form, and navigate to the <strong>Company Policy</strong> tab. Use the rich text editor to write and format your policy, then save.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ2" aria-controls="collapseFAQ2"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            Who can view the company policy?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ2" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            Any logged-in user with access to the HR Dashboard can view the company policy by clicking the <strong>Company Policy</strong> button. No special permissions are required beyond basic user access.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ3" aria-controls="collapseFAQ3"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            Who can edit or update the company policy?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ3" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            Only users with <strong>Administrator</strong> access or those with rights to edit the company form in Settings can add or modify the company policy content.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ4" aria-controls="collapseFAQ4"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            Does this module support multiple companies?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ4" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            Yes. Each company can have its own separate policy. When a user logs in, the policy displayed is always linked to their currently active company, thanks to the built-in multi-company rule.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ5" aria-controls="collapseFAQ5"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            Can I format the policy text with images or bullet points?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ5" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            Yes. The policy field uses Odoo's built-in <strong>HTML widget</strong>, which provides a full rich text editor. You can add headings, bullet points, bold/italic text, links, and images.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ6" aria-controls="collapseFAQ6"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            Where does the Company Policy button appear on the dashboard?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ6" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            The button appears in the <strong>left employee profile panel</strong> of the HR Dashboard. Clicking it opens a popup dialog displaying the full company policy for the currently logged-in user's company.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ7" aria-controls="collapseFAQ7"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            What happens if no policy has been set yet?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ7" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            The popup will open with an empty policy field. No error is shown. The administrator can then navigate to Settings and add the policy content at any time.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="margin:1rem 0;">
+                                    <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFAQ8" aria-controls="collapseFAQ8"
+                                         style="cursor:pointer;background-color:#f8f8f8;border:none;border-top-right-radius:10px;border-top-left-radius:10px;padding:12px 24px;">
+                                        <a class="card-title text-decoration-none" style="font-size:18px;line-height:30px;font-weight:500;color:#040f3a;display:flex;justify-content:space-between;align-items:center;">
+                                            Is this module compatible with Odoo 18?
+                                            <i class="fa fa-chevron-down" style="font-size:16px;color:#7f54b3;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-collapse collapse" id="collapseFAQ8" data-bs-parent="#accordion_faq"
+                                         style="box-shadow:rgba(0,0,0,0.05) 0px 6px 24px 0px;border:1px solid #f8f8f8;border-bottom-right-radius:10px;border-bottom-left-radius:10px;">
+                                        <p style="padding:0.75rem 1.25rem;font-size:16px;line-height:27px;color:#888;font-weight:normal;">
+                                            Yes. This module has been fully migrated and tested for <strong>Odoo 18</strong>. It uses the OWL framework for frontend components and follows Odoo 18 standards for models, views, and assets.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="releases" role="tabpanel">
+                    <div class="row pt-5 m-0">
+                        <div class="col-md-3">
+                            <h4 style="font-size:16px;font-weight:600;color:#514F4F;margin:0;line-height:26px;">Latest Release 18.0.1.0.0</h4>
+                            <span style="font-size:14px;color:#7A7979;display:block;margin-bottom:20px;">10th March 2026</span>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 style="font-size:16px;font-weight:600;color:#514F4F;margin:0 0 4px;">Version 18.0.1.0.0</h4>
+                            <span style="font-size:14px;color:#7A7979;display:block;margin-bottom:16px;">10th March 2026</span>
+                            <div style="margin:0 0 10px;"><div style="display:inline-block;padding:0 8px;color:#514F4F;background-color:#FFD8D8;border-radius:20px;">Add</div></div>
+                            <ul style="color:#7A7979;"><li>Initial Commit for Enterprise HR Company Policy.</li></ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Services -->
+        <section class="mt-5" style="border-radius:16px;border:1px solid #EBEEF2;background:#FFF;padding:60px 40px;box-shadow:0px 5px 20px -11px rgba(0,0,0,0.25);">
+            <div class="text-center"><h3 style="color:#000;font-size:40px;font-weight:700;text-transform:uppercase;padding-bottom:50px;">Our Services</h3></div>
+            <div class="row mt-3">
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#FFE2E5;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#FA5A7D;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/cogs.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Customization</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#FFF4DE;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#FF947A;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/wrench.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Implementation</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#DCFCE7;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#3CD856;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/lifebuoy.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Support</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#F3E8FF;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#BF83FF;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/update.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Migration</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#F1F9FF;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#01649C;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/puzzle.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Integration</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#EDF8ED;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#69CC70;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/consultation.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Consultancy</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#F1F6FF;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#2E4556;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/license.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Odoo Licensing</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="p-4 d-flex flex-column justify-content-center align-items-center" style="background-color:#FAF6EA;gap:16px;border-radius:8px;">
+                        <div class="d-flex justify-content-center align-items-center" style="background-color:#FCD12C;border-radius:50%;height:56px;width:56px;">
+                            <img src="assets/icons/user.png" alt="" width="28px">
+                        </div>
+                        <span style="font-size:18px;color:#121212;font-weight:600;">Hire Odoo Developer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries -->
+        <section class="mt-5" style="border-radius:16px;border:1px solid #EBEEF2;background:#FFF;padding:60px 40px;box-shadow:0px 5px 20px -11px rgba(0,0,0,0.25);">
+            <div class="text-center"><h3 style="color:#000;font-size:40px;font-weight:700;text-transform:uppercase;padding-bottom:50px;">Our Industries</h3></div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-right:1px solid rgb(209,209,209);border-bottom:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/trading-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">Trading</p>
+                        <p>Easily procure and sell your products</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-right:1px solid rgb(209,209,209);border-bottom:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/pos-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">POS</p>
+                        <p>Easy configuration and convivial experience</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-right:1px solid rgb(209,209,209);border-bottom:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/education-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">Education</p>
+                        <p>A platform for educational management</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-bottom:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/manufacturing-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">Manufacturing</p>
+                        <p>Plan, track and schedule your operations</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-right:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/ecom-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">E-commerce &amp; Website</p>
+                        <p>Mobile friendly, awe-inspiring product pages</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-right:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/service-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">Service Management</p>
+                        <p>Keep track of services and invoice</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="border-right:1px solid rgb(209,209,209);padding:30px;">
+                        <img src="assets/icons/restaurant-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">Restaurant</p>
+                        <p>Run your bar or restaurant methodically</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 p-0">
+                    <div class="d-flex flex-column h-100" style="padding:30px;">
+                        <img src="assets/icons/hotel-black.png" width="42px" height="auto" alt="">
+                        <p style="color:#7f54b3;font-weight:600;margin-top:10px;font-size:1.2rem;margin-bottom:2px;">Hotel Management</p>
+                        <p>An all-inclusive hotel management application</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ REMOVED - now inside tabs -->
+        <div style="display:none"><div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            How do I set the company policy?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            Go to <strong>Settings → Companies</strong>, open your company form, and navigate to the <strong>Company Policy</strong> tab. Use the rich text editor to write and format your policy, then save.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            Who can view the company policy?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            Any logged-in user with access to the HR Dashboard can view the company policy by clicking the <strong>Company Policy</strong> button. No special permissions are required beyond basic user access.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            Who can edit or update the company policy?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            Only users with <strong>Administrator</strong> access or those who have rights to edit the company form in Settings can add or modify the company policy content.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            Does this module support multiple companies?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            Yes. Each company can have its own separate policy. When a user logs in, the policy displayed is always linked to their currently active company, thanks to the built-in multi-company rule.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            Can I format the policy text with images or bullet points?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            Yes. The policy field uses Odoo's built-in <strong>HTML widget</strong>, which provides a full rich text editor. You can add headings, bullet points, bold/italic text, links, and images.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            Where does the Company Policy button appear on the dashboard?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            The button appears in the <strong>left employee profile panel</strong> of the HR Dashboard. Clicking it opens a popup dialog displaying the full company policy for the currently logged-in user's company.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            What happens if no policy has been set yet?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            The popup will open with an empty policy field. No error is shown. The administrator can then navigate to Settings and add the policy content at any time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3" style="border:1px solid #EBEEF2;border-radius:10px;overflow:hidden;">
+                    <h2 class="accordion-header" id="faq8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" style="font-weight:600;color:#121212;background-color:#f8f8f8;">
+                            Is this module compatible with Odoo 18?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#64728f;">
+                            Yes. This module has been fully migrated and tested for <strong>Odoo 18</strong>. It uses the OWL framework for frontend components and follows Odoo 18 standards for models, views, and assets.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div class="my-5">
+            <div class="row" style="background-color:#FFFAFE;border:1px solid #EBEEF2;border-radius:12px;">
+                <div class="col-md-6 py-4 d-flex align-items-center justify-content-center" style="border-right:1px solid #D9D9D9;">
+                    <div class="d-flex align-items-center" style="padding:20px;">
+                        <img src="assets/misc/support (1) 1.svg" alt="" width="60px" style="margin-right:12px;">
+                        <div>
+                            <span style="color:#7f54b3;font-size:24px;font-weight:600;">Need Help?</span>
+                            <p class="m-0" style="color:#718096;">Got questions or need help? Get in touch.</p>
+                            <div><img src="assets/misc/support-email.svg" alt="" width="18px" style="filter:invert(1);margin-right:0.8rem;">odoo@cybrosys.com</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 py-4 d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center" style="padding:20px;">
+                        <img src="assets/misc/whatsapp 1.svg" alt="" width="60px" style="margin-right:12px;">
+                        <div>
+                            <span style="color:#7f54b3;font-size:24px;font-weight:600;">WhatsApp</span>
+                            <p class="m-0" style="color:#718096;">Say hi to us on WhatsApp!</p>
+                            <div><img src="assets/misc/phone.svg" alt="" width="14px" style="filter:invert(1);margin-right:0.8rem;">+91 99456 76786</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

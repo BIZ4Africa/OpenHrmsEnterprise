@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Multi-company access control for company policy model-->
+    <record id="res_company_policy_rule_user" model="ir.rule">
+        <field name="name">Company Policy Multi Company Rule</field>
+        <field name="model_id" ref="model_res_company_policy"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">
+            ['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]
+        </field>
+    </record>
+</odoo>

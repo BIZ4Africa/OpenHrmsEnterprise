@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Data in the model mail.activity.plan-->
+        <record id="hr.onboarding_plan" model='mail.activity.plan'>
+            <field name="name">Onboarding</field>
+            <field name="template_ids" eval="[(6, 0, [
+                ref('hr.onboarding_setup_it_materials'),
+                ref('hr.onboarding_plan_training'),
+                ref('hr.onboarding_training'),
+                ref('ent_employee_check_list.checklist_activity_type')
+                ])]"/>
+        </record>
+        <record id="hr.offboarding_plan" model='mail.activity.plan'>
+            <field name="name">Offboarding</field>
+            <field name="template_ids" eval="[(6, 0, [
+                ref('hr.onboarding_setup_it_materials'),
+                ref('hr.offboarding_take_back_hr_materials'),
+                ref('ent_employee_check_list.checklist_activity_type1')
+                ])]"/>
+        </record>
+    </data>
+</odoo>
