@@ -22,16 +22,18 @@
 from odoo import api, fields, models
 
 
-class HrContract(models.Model):
-    """ Class for inheriting hr contract"""
-    _inherit = 'hr.contract'
+class HrVersion(models.Model):
+    """ Class for inheriting employee contract versions"""
+    _inherit = 'hr.version'
 
     @api.onchange('wage')
     def _onchange_wage(self):
         """ Function for create salary history when wage changes"""
+        if not self.employee_id:
+            return
         vals = {
             'employee_id': self.employee_id.id,
-            'employee_name': self.employee_id,
+            'employee_name': self.employee_id.name,
             'updated_date': fields.Datetime.today(),
             'current_value': self.wage,
         }
@@ -40,37 +42,43 @@ class HrContract(models.Model):
     @api.onchange('name')
     def _onchange_name(self):
         """ Function for crete contract history when contract name changes"""
+        if not self.employee_id:
+            return
         vals = {
             'employee_id': self.employee_id.id,
-            'employee_name': self.employee_id,
+            'employee_name': self.employee_id.name,
             'updated_date': fields.Datetime.today(),
             'changed_field': 'Contract Reference',
             'current_value': self.name,
         }
         self.env['contract.history'].create(vals)
 
-    @api.onchange('date_start')
-    def _onchange_date_start(self):
+    @api.onchange('contract_date_start')
+    def _onchange_contract_date_start(self):
         """Function for create contract history when contract start date
         changes"""
+        if not self.employee_id:
+            return
         vals = {
             'employee_id': self.employee_id.id,
-            'employee_name': self.employee_id,
+            'employee_name': self.employee_id.name,
             'updated_date': fields.Datetime.today(),
             'changed_field': 'Start Date',
-            'current_value': self.date_start,
+            'current_value': self.contract_date_start,
         }
         self.env['contract.history'].create(vals)
 
-    @api.onchange('date_end')
-    def _onchange_date_end(self):
+    @api.onchange('contract_date_end')
+    def _onchange_contract_date_end(self):
         """ Function for create contract history when contract end date
         changes"""
+        if not self.employee_id:
+            return
         vals = {
             'employee_id': self.employee_id.id,
-            'employee_name': self.employee_id,
+            'employee_name': self.employee_id.name,
             'updated_date': fields.Datetime.today(),
             'changed_field': 'End Date',
-            'current_value': self.date_end,
+            'current_value': self.contract_date_end,
         }
         self.env['contract.history'].create(vals)

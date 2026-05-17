@@ -21,7 +21,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Employee History",
-    "version": "",
+    "version": "1.0.0",
     "category": "Generic Modules/Human Resources",
     "summary": """History Of Employees In Your Company""",
     "description": """This module helps to manage or track the employee history
@@ -32,7 +32,6 @@
     "website": "https://www.openhrms.com",
     "depends": [
         "hr",
-        "hr_contract",
         "ent_oh_employee_creation_from_user",
         "hr_timesheet",
     ],

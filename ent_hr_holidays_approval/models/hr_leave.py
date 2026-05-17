@@ -38,7 +38,7 @@ class HrLeave(models.Model):
         help="If checked then multi-level approval is necessary")
     is_button_visibility = fields.Boolean(default=True,
                                           compute="_compute_is_button_visibility",
-                                          string='Multiple Level Approval')
+                                          string='Approval Button Visibility')
 
     @api.depends('holiday_status_id')
     def _compute_is_multi_level_validation(self):
@@ -213,6 +213,7 @@ class HrLeave(models.Model):
 class LeaveValidationStatus(models.Model):
     """ Model for leave validators and their status for each leave request """
     _name = 'leave.validation.status'
+    _description = 'Leave Validation Status'
 
     holiday_id = fields.Many2one('hr.leave', string="Holiday", help="Holiday")
 
@@ -223,7 +224,6 @@ class LeaveValidationStatus(models.Model):
     is_validation_status = fields.Boolean(string='Approve Status',
                                           readonly=True,
                                           default=False,
-                                          track_visibility='always',
                                           help="Status of approval process")
     leave_comments = fields.Text(string='Comments',
                                  help="Comments for the validation")
