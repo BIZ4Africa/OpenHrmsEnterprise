@@ -21,26 +21,26 @@
 #
 ################################################################################
 {
-    'name': 'Enterprise OpenHRMS Leave Request Aliasing',
-    'version': '18.0.1.0.0',
-    'category': 'Human Resources',
-    'summary': 'Allows You To Create Leave Request Automatically From '
-               'Incoming Mails.',
-    'description': 'This module allows you to create leave request directly '
-                   'from incoming mails.',
-    'live_test_url': 'https://youtu.be/jQFAP20k_Wc',
-    'author': 'Cybrosys Techno solutions, Open HRMS',
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.openhrms.com",
-    'depends': ['hr_holidays'],
-    'data': [
-        'data/mail_alias_data.xml',
-        'views/res_config_settings_views.xml',
+    "name": "Enterprise OpenHRMS Leave Request Aliasing",
+    "version": "
+    "category": "Human Resources",
+    "summary": "Allows You To Create Leave Request Automatically From "
+    "Incoming Mails.",
+    "description": "This module allows you to create leave request directly "
+    "from incoming mails.",
+    "live_test_url": "https://youtu.be/jQFAP20k_Wc",
+    "author": "Cybrosys Techno solutions, Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["hr_holidays"],
+    "data": [
+        "data/mail_alias_data.xml",
+        "views/res_config_settings_views.xml",
     ],
-    'images': ['static/description/banner.jpg'],
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

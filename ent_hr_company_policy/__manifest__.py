@@ -20,34 +20,34 @@
 #
 ########################################################################################
 {
-    'name': 'Enterprise HR Company Policy',
-    'version': '18.0.1.0.0',
-    'category': 'Generic Modules/Human Resources',
-    'summary': 'Manage and organize company policies within HR system',
-    'description': """Manage company policies within the HR system.
+    "name": "Enterprise HR Company Policy",
+    "version": "1.0.0",
+    "category": "Generic Modules/Human Resources",
+    "summary": "Manage and organize company policies within HR system",
+    "description": """Manage company policies within the HR system.
     This module allows administrators to define company policies and display them on the 
     dashboard for easy employee access.""",
-    'author': "Cybrosys Techno Solutions,Open HRMS",
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.openhrms.com",
-    'depends': ['base', 'ent_hrms_dashboard'],
-    'data': [
-        'security/res_company_policy_security.xml',
-        'security/ir.model.access.csv',
-        'views/res_company_policy_views.xml',
-        'views/res_company_views.xml',
+    "author": "Cybrosys Techno Solutions,Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["base", "ent_hrms_dashboard"],
+    "data": [
+        "security/res_company_policy_security.xml",
+        "security/ir.model.access.csv",
+        "views/res_company_policy_views.xml",
+        "views/res_company_views.xml",
     ],
-    'assets': {
-        'web.assets_backend': [
-            'ent_hr_company_policy/static/src/js/company_policy.js',
-            'ent_hr_company_policy/static/src/css/company_policy.css',
-            'ent_hr_company_policy/static/src/xml/dashboard_view.xml',
+    "assets": {
+        "web.assets_backend": [
+            "ent_hr_company_policy/static/src/js/company_policy.js",
+            "ent_hr_company_policy/static/src/css/company_policy.css",
+            "ent_hr_company_policy/static/src/xml/dashboard_view.xml",
         ],
     },
-    'images': ['static/description/banner.jpg'],
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

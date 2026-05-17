@@ -22,28 +22,28 @@
 #
 ################################################################################
 {
-    'name': 'Enterprise Open HRMS Company Transfer',
-    'version': '18.0.1.0.0',
-    'category': 'Human Resources',
-    'summary': 'This module is used to transfer employee between companies',
-    'description': 'Transferring employees between company is a basic thing in an '
-                   'organization. Odoo lacks a provision for employee transfer. '
-                   'This module gives a basic structure for employee transfer.'
-                   'Make sure that your multi company is enabled.',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': 'https://www.openhrms.com',
-    'depends': ['hr_contract', 'ent_hr_employee_updation'],
-    'data': [
-        'security/ent_hr_employee_transfer_security.xml',
-        'security/ir.model.access.csv',
-        'views/employee_transfer_views.xml',
+    "name": "Enterprise Open HRMS Company Transfer",
+    "version": "1.0.0",
+    "category": "Human Resources",
+    "summary": "This module is used to transfer employee between companies",
+    "description": "Transferring employees between company is a basic thing in an "
+    "organization. Odoo lacks a provision for employee transfer. "
+    "This module gives a basic structure for employee transfer."
+    "Make sure that your multi company is enabled.",
+    "author": "Cybrosys Techno solutions,Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["hr_contract", "ent_hr_employee_updation"],
+    "data": [
+        "security/ent_hr_employee_transfer_security.xml",
+        "security/ir.model.access.csv",
+        "views/employee_transfer_views.xml",
     ],
-    'images': ['static/description/banner.jpg'],
-    'live_test_url': 'https://youtu.be/Qva8kW6xn4c',
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': True,
+    "images": ["static/description/banner.jpg"],
+    "live_test_url": "https://youtu.be/Qva8kW6xn4c",
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": True,
 }

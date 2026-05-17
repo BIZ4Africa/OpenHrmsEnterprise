@@ -21,38 +21,38 @@
 #
 ################################################################################
 {
-    'name': 'Enterprise Open HRMS Employee Documents',
-    'version': '18.0.1.0.0',
-    'category': 'Generic Modules/Human Resources',
-    'summary': """Manages Employee Documents With Expiry Notifications.""",
-    'description': """This module Manages Employee Related Documents with 
+    "name": "Enterprise Open HRMS Employee Documents",
+    "version": "1.0.0",
+    "category": "Generic Modules/Human Resources",
+    "summary": """Manages Employee Documents With Expiry Notifications.""",
+    "description": """This module Manages Employee Related Documents with 
      Expiry Notifications.Employee documents with such necessary information 
      must be saved and used accordingly.This module helps to  store and manage
      the employee related documents like certificates, appraisal reports, 
      passport,license etc""",
-    'live_test_url': 'https://www.youtube.com/watch?v=Wc__1NkMHko&feature=youtu.be',
-    'author': "Cybrosys Techno Solutions,Open HRMS",
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.openhrms.com",
-    'depends': ['hr'],
-    'data': [
-        'data/ir_cron_data.xml',
-        'security/ir.model.access.csv',
-        'views/hr_document_views.xml',
-        'views/document_type_views.xml',
-        'views/hr_employee_document_views.xml',
-        'views/hr_employee_views.xml',
+    "live_test_url": "https://www.youtube.com/watch?v=Wc__1NkMHko&feature=youtu.be",
+    "author": "Cybrosys Techno Solutions,Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["hr"],
+    "data": [
+        "data/ir_cron_data.xml",
+        "security/ir.model.access.csv",
+        "views/hr_document_views.xml",
+        "views/document_type_views.xml",
+        "views/hr_employee_document_views.xml",
+        "views/hr_employee_views.xml",
     ],
-    'demo': [
-        'demo/document_type_demo.xml',
-        'demo/hr_work_location_demo.xml',
-        'demo/hr_employee_demo.xml',
-        'demo/hr_employee_document_demo.xml',
+    "demo": [
+        "demo/document_type_demo.xml",
+        "demo/hr_work_location_demo.xml",
+        "demo/hr_employee_demo.xml",
+        "demo/hr_employee_document_demo.xml",
     ],
-    'images': ['static/description/banner.jpg'],
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

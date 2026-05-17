@@ -20,29 +20,29 @@
 #
 ########################################################################################
 {
-    'name': 'Enterprise Open HRMS Disciplinary Tracking',
-    'version': '18.0.1.0.0',
-    'category': 'Human Resources',
-    'summary': """Employee Disciplinary Tracking Management 
+    "name": "Enterprise Open HRMS Disciplinary Tracking",
+    "version": "1.0.0",
+    "category": "Human Resources",
+    "summary": """Employee Disciplinary Tracking Management 
     Reason/Action/Explanation""",
-    'description': 'Allows to manage employee disciplinary records, can choose '
-                   'disciplinary reason,action,employee explanation and shows '
-                   'count of disciplinary records',
-    'author': 'Cybrosys Techno Solutions, Open HRMS',
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.openhrms.com",
-    'depends': ['mail', 'hr'],
-    'data': [
-             'security/security.xml',
-             'security/ir.model.access.csv',
-             'views/disciplinary_action_views.xml',
-             'views/discipline_category_views.xml',
-             ],
-    'demo': ['demo/ent_hr_disciplinary_tracking_demo.xml'],
-    'images': ['static/description/banner.jpg'],
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "description": "Allows to manage employee disciplinary records, can choose "
+    "disciplinary reason,action,employee explanation and shows "
+    "count of disciplinary records",
+    "author": "Cybrosys Techno Solutions, Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["mail", "hr"],
+    "data": [
+        "security/security.xml",
+        "security/ir.model.access.csv",
+        "views/disciplinary_action_views.xml",
+        "views/discipline_category_views.xml",
+    ],
+    "demo": ["demo/ent_hr_disciplinary_tracking_demo.xml"],
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

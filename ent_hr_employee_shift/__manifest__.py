@@ -20,31 +20,31 @@
 #
 ########################################################################################
 {
-    'name': "Enterprise Open HRMS Employee Shift",
-    'version': '18.0.1.0.0',
-    'category': 'Human Resource',
-    'summary': """Easily create, manage, and track employee shift schedules.""",
-    'description': """This module is used to track employee shift schedules.We 
+    "name": "Enterprise Open HRMS Employee Shift",
+    "version": "1.0.0",
+    "category": "Human Resource",
+    "summary": """Easily create, manage, and track employee shift schedules.""",
+    "description": """This module is used to track employee shift schedules.We 
     can easily create employee shifts and adjust them accordingly.""",
-    'live_test_url': 'https://youtu.be/o580wqD9Nig',
-    'author': "Cybrosys Techno Solutions,Open HRMS",
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.openhrms.com",
-    'depends': ['hr_payroll', 'resource', 'hr_contract'],
-    'data': [
-        'security/ir.model.access.csv',
-        'security/hr_shift_schedule_rule.xml',
-        'views/hr_employee_views.xml',
-        'views/resource_calendar_views.xml',
-        'views/hr_contract_views.xml',
-        'views/hr_generate_shift_views.xml',
+    "live_test_url": "https://youtu.be/o580wqD9Nig",
+    "author": "Cybrosys Techno Solutions,Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["hr_payroll", "resource", "hr_contract"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/hr_shift_schedule_rule.xml",
+        "views/hr_employee_views.xml",
+        "views/resource_calendar_views.xml",
+        "views/hr_contract_views.xml",
+        "views/hr_generate_shift_views.xml",
     ],
-    'demo': [
-        'demo/ent_hr_employee_shift_demo.xml',
+    "demo": [
+        "demo/ent_hr_employee_shift_demo.xml",
     ],
-    'images': ["static/description/banner.jpg"],
-    'license': 'OPL-1',
-    'installable': True,
-    'application': True,
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "application": True,
 }
