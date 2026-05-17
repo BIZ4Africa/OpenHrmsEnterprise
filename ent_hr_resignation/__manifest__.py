@@ -21,29 +21,29 @@
 #
 ################################################################################
 {
-    'name': 'Enterprise OpenHRMS Resignation',
-    'version': '18.0.1.0.0',
-    'category': 'Generic Modules/Human Resources',
-    'summary': 'Handle the resignation process of the employee',
-    'description': """To handle the resignation of the employee.It Easily 
+    "name": "Enterprise OpenHRMS Resignation",
+    "version": "1.0.0",
+    "category": "Generic Modules/Human Resources",
+    "summary": "Handle the resignation process of the employee",
+    "description": """To handle the resignation of the employee.It Easily 
     create, manage, and track employee resignations""",
-    'live_test_url': 'https://youtu.be/BorJthxY_VI',
-    'author': "Cybrosys Techno Solutions, OpenHRMS",
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': 'https://www.openhrms.com',
-    'depends': ['hr', 'ent_hr_employee_updation', 'mail'],
-    'data': [
-        'security/hr_resignation_security.xml',
-        'security/ir.model.access.csv',
-        'data/ir_cron_data.xml',
-        'data/ir_sequence_data.xml',
-        'views/hr_employee_views.xml',
-        'views/hr_resignation_views.xml'
+    "live_test_url": "https://youtu.be/BorJthxY_VI",
+    "author": "Cybrosys Techno Solutions, OpenHRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["hr", "ent_hr_employee_updation", "mail"],
+    "data": [
+        "security/hr_resignation_security.xml",
+        "security/ir.model.access.csv",
+        "data/ir_cron_data.xml",
+        "data/ir_sequence_data.xml",
+        "views/hr_employee_views.xml",
+        "views/hr_resignation_views.xml",
     ],
-    'images': ['static/description/banner.jpg'],
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

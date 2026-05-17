@@ -21,24 +21,22 @@
 #
 ################################################################################
 {
-    'name': 'Enterprise OpenHRMS Employees From User',
-    'version': '18.0.1.0.0',
-    'category': 'Generic Modules/Human Resources',
-    'summary': 'Automatically Creates Employee While Creating User',
-    'description': """This module helps you to create employees automatically 
+    "name": "Enterprise OpenHRMS Employees From User",
+    "version": "1.0.0",
+    "category": "Generic Modules/Human Resources",
+    "summary": "Automatically Creates Employee While Creating User",
+    "description": """This module helps you to create employees automatically 
      while creating users""",
-    'live_test_url': 'https://youtu.be/gz3Vi3Wn0E8',
-    'author': "Cybrosys Techno Solutions,Open HRMS",
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.openhrms.com",
-    'depends': ['base', 'hr'],
-    'data': [
-        'views/res_users_views.xml'
-    ],
-    'images': ['static/description/banner.jpg'],
-    'license': 'OPL-1',
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "live_test_url": "https://youtu.be/gz3Vi3Wn0E8",
+    "author": "Cybrosys Techno Solutions,Open HRMS",
+    "company": "Cybrosys Techno Solutions",
+    "maintainer": "Cybrosys Techno Solutions",
+    "website": "https://www.openhrms.com",
+    "depends": ["base", "hr"],
+    "data": ["views/res_users_views.xml"],
+    "images": ["static/description/banner.jpg"],
+    "license": "OPL-1",
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }
