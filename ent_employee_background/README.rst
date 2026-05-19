@@ -1,5 +1,5 @@
 .. image:: https://img.shields.io/badge/license-OPL--1-red.svg
-    :target: https://www.odoo.com/documentation/18.0/legal/licenses.html
+    :target: https://www.odoo.com/documentation/19.0/legal/licenses.html
     :alt: License: OPL-1
 
 Enterprise OHRMS Employee Background Verification
@@ -16,7 +16,7 @@ Features
 
 Installation
 ------------
-- www.odoo.com/documentation/18.0/setup/install.html
+- www.odoo.com/documentation/19.0/setup/install.html
 - Install our custom addon
 
 Configuration
@@ -30,7 +30,7 @@ Company
 License
 -------
 Odoo Proprietary License v1.0.
-(https://www.odoo.com/documentation/18.0/legal/licenses.html#odoo-apps)
+(https://www.odoo.com/documentation/19.0/legal/licenses.html#odoo-apps)
 
 Credits
 -------
