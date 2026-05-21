@@ -35,7 +35,6 @@
     "depends": [
         "hr",
         "hr_payroll",
-        "hr_contract",
         "account_accountant",
         "ent_ohrms_loan",
     ],

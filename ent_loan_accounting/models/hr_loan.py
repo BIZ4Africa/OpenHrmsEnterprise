@@ -54,7 +54,7 @@ class HrLoan(models.Model):
         """
         loan_approve = self.env['ir.config_parameter'].sudo().get_param(
             'ent_loan_accounting.loan_approve')
-        contract_obj = self.env['hr.contract'].search(
+        contract_obj = self.env['hr.version'].search(
             [('employee_id', '=', self.employee_id.id)])
         if not contract_obj:
             raise UserError('You must Define a contract for employee')

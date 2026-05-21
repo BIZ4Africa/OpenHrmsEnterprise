@@ -73,7 +73,7 @@ class SalaryAdvance(models.Model):
                                 string='Credit Account', help="Credit account")
     journal_id = fields.Many2one(comodel_name='account.journal',
                                  string='Journal', help="Journal")
-    employee_contract_id = fields.Many2one(comodel_name='hr.contract',
+    employee_contract_id = fields.Many2one(comodel_name='hr.version',
                                            string='Contract', help="Employee's "
                                                                    "contract")
 
@@ -145,7 +145,7 @@ class SalaryAdvance(models.Model):
             raise UserError('Advance amount is greater than allotted')
         payslip_obj = self.env['hr.payslip'].search(
             [('employee_id', '=', self.employee_id.id),
-             ('state', '=', 'done'), ('date_from', '<=', self.date),
+             ('state', 'in', ['validated', 'paid']), ('date_from', '<=', self.date),
              ('date_to', '>=', self.date)])
         if payslip_obj:
             raise UserError("This month salary already calculated")

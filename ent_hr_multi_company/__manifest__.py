@@ -36,7 +36,6 @@
     "depends": [
         "base",
         "hr",
-        "hr_contract",
         "hr_payroll",
         "hr_expense",
         "hr_attendance",
