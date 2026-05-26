@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--    Tree view of custody property-->
-    <record id="custody_property_view_tree" model="ir.ui.view">
-        <field name="name">custody.property.view.tree</field>
+    <record id="custody_property_view_list" model="ir.ui.view">
+        <field name="name">custody.property.view.list</field>
         <field name="model">custody.property</field>
         <field name="arch" type="xml">
             <list>

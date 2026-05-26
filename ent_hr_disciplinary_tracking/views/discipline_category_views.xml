@@ -18,8 +18,8 @@
         </field>
     </record>
     <!--Discipline Category Tree View-->
-    <record id="discipline_category_view_tree" model="ir.ui.view">
-        <field name="name">discipline.category.view.tree</field>
+    <record id="discipline_category_view_list" model="ir.ui.view">
+        <field name="name">discipline.category.view.list</field>
         <field name="model">discipline.category</field>
         <field name="arch" type="xml">
             <list string="Discipline Categories">

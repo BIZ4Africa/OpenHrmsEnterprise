@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Creating employee resignation list view -->
-    <record id="hr_resignation_view_tree" model="ir.ui.view">
-        <field name="name">hr.resignation.view.tree</field>
+    <record id="hr_resignation_view_list" model="ir.ui.view">
+        <field name="name">hr.resignation.view.list</field>
         <field name="model">hr.resignation</field>
         <field name="priority" eval="8"/>
         <field name="arch" type="xml">

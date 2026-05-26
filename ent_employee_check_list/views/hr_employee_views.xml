@@ -31,13 +31,13 @@
             </page>
         </field>
     </record>
-    <!--Inherited tree view of the model hr.employee-->
-    <record id="view_employee_tree" model="ir.ui.view">
+    <!--Inherited list view of the model hr.employee-->
+    <record id="view_employee_list" model="ir.ui.view">
         <field name="name">
-            hr.employee.view.tree.inherit.ent.employee.check.list
+            hr.employee.view.list.inherit.ent.employee.check.list
         </field>
         <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="inherit_id" ref="hr.view_employee_list"/>
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
                 <field name="entry_progress" widget="progressbar"/>

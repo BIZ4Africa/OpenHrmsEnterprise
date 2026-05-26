@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--        Service execution tree view-->
+    <!--        Service execution list view-->
     <record id="service_execution_view_list" model="ir.ui.view">
         <field name="name">service.execution.view.list</field>
         <field name="model">service.execution</field>

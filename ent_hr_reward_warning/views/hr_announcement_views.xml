@@ -83,8 +83,8 @@
         </field>
     </record>
     <!--        Creating hr announcement list view-->
-    <record id="hr_announcement_view_tree" model="ir.ui.view">
-        <field name="name">hr.announcement.view.tree</field>
+    <record id="hr_announcement_view_list" model="ir.ui.view">
+        <field name="name">hr.announcement.view.list</field>
         <field name="model">hr.announcement</field>
         <field name="arch" type="xml">
             <list>

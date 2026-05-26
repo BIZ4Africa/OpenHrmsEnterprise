@@ -81,9 +81,9 @@
             </form>
         </field>
     </record>
-    <!-- Record for Advance Salary tree view -->
-    <record id="salary_advance_view_tree" model="ir.ui.view">
-        <field name="name">salary.advance.view.tree</field>
+    <!-- Record for Advance Salary list view -->
+    <record id="salary_advance_view_list" model="ir.ui.view">
+        <field name="name">salary.advance.view.list</field>
         <field name="model">salary.advance</field>
         <field name="arch" type="xml">
             <list string="Salary Advance">

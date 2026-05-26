@@ -105,8 +105,8 @@
         </field>
     </record>
     <!--    Tree views for hr custody-->
-    <record id="hr_custody_view_tree" model="ir.ui.view">
-        <field name="name">hr.custody.view.tree</field>
+    <record id="hr_custody_view_list" model="ir.ui.view">
+        <field name="name">hr.custody.view.list</field>
         <field name="model">hr.custody</field>
         <field name="arch" type="xml">
             <list decoration-info="state == 'draft'">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--Gosi payslip tree view-->
+    <!--Gosi payslip list view-->
     <record id="gosi_payslip_view_list" model="ir.ui.view">
         <field name="name">gosi.payslip.view.list</field>
         <field name="model">gosi.payslip</field>

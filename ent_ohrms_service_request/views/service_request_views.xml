@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--        Service request tree view-->
+    <!--        Service request list view-->
     <record id="service_request_view_list" model="ir.ui.view">
         <field name="name">service.request.view.list</field>
         <field name="model">service.request</field>
