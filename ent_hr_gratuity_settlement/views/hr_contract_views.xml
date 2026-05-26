@@ -3,10 +3,10 @@
     <!--        hr_contract views-->
     <record id="hr_contract_view_form" model="ir.ui.view">
         <field name="name">
-            hr.contract.view.form.inherit.ent.hr.gratuity.settlement
+            hr.version.view.form.inherit.ent.hr.gratuity.settlement
         </field>
-        <field name="model">hr.contract</field>
-        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="model">hr.version</field>
+        <field name="inherit_id" ref="hr.hr_contract_template_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="/form/header" position="inside">
                 <button name="action_approve" string="Approve"
@@ -63,7 +63,7 @@
     <!--HR Contract windows action-->
     <record id="hr_contract_approvals_action" model="ir.actions.act_window">
         <field name="name">Contracts For Approvals</field>
-        <field name="res_model">hr.contract</field>
+        <field name="res_model">hr.version</field>
         <field name="view_mode">list,form</field>
         <field name="domain">[('state', '=', 'probation'),('trial_date_end', '&lt;=',
             context_today().strftime('%Y-%m-%d'))]

@@ -23,9 +23,9 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
 
-class HrContract(models.Model):
-    """This is used to inherit hr contract to add additional fields"""
-    _inherit = 'hr.contract'
+class HrVersion(models.Model):
+    """This is used to inherit hr version to add additional fields"""
+    _inherit = 'hr.version'
 
     shift_schedule_ids = fields.One2many('hr.shift.schedule',
                                          'rel_hr_schedule_id',
@@ -52,7 +52,7 @@ class HrShiftSchedule(models.Model):
     end_date = fields.Date(string="Date To",
                            required=True,
                            help="Ending date for the shift")
-    rel_hr_schedule_id = fields.Many2one('hr.contract', help="Contract",
+    rel_hr_schedule_id = fields.Many2one('hr.version', help="Version",
                                          string="Relational Field")
     hr_shift_id = fields.Many2one('resource.calendar',
                                   string="Shift",

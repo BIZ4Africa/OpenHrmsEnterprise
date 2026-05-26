@@ -23,9 +23,9 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
 
-class HRContract(models.Model):
-    """Inherits the model hr.contract"""
-    _inherit = 'hr.contract'
+class HrVersion(models.Model):
+    """Inherits the model hr.version"""
+    _inherit = 'hr.version'
 
     training_info = fields.Text(string='Probationary Info',
                                 help="Explain the training information")
@@ -100,7 +100,7 @@ class HRContract(models.Model):
                     'end_date': vals['trial_date_end'],
                 })
                 vals['probation_id'] = dtl.id
-        return super(HRContract, self).create(vals_list)
+        return super(HrVersion, self).create(vals_list)
 
     def write(self, vals):
         """ Function for checking stage changing and creating probation
@@ -116,7 +116,7 @@ class HRContract(models.Model):
         training_dtl = self.env['hr.training'].search([('employee_id', '=',
                                                         self.employee_id.id)])
         if training_dtl:
-            return super(HRContract, self).write(vals)
+            return super(HrVersion, self).write(vals)
         if not training_dtl:
             if self.trial_date_end and self.state == 'probation':
                 self.env['hr.training'].create({
@@ -124,4 +124,4 @@ class HRContract(models.Model):
                     'start_date': self.date_start,
                     'end_date': self.trial_date_end,
                 })
-        return super(HRContract, self).write(vals)
+        return super(HrVersion, self).write(vals)

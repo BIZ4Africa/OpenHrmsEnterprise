@@ -24,9 +24,9 @@
 from odoo import api, fields, models
 
 
-class HrContract(models.Model):
-    """Inherits the Contract model for adding new Fields"""
-    _inherit = 'hr.contract'
+class HrVersion(models.Model):
+    """Inherits the Version model for adding new Fields"""
+    _inherit = 'hr.version'
 
     emp_transfer_id = fields.Many2one(
         'employee.transfer', string='Transferred Employee',

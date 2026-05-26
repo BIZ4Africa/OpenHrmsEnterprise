@@ -23,9 +23,9 @@
 from odoo import fields, models
 
 
-class HrContract(models.Model):
-    """ Model adding notice period days in hr_contract. """
-    _inherit = 'hr.contract'
+class HrVersion(models.Model):
+    """ Model adding notice period days in hr_version. """
+    _inherit = 'hr.version'
 
     def _get_default_notice_days(self):
         """ Method for return notice days. """

@@ -114,7 +114,7 @@ class EmployeeTransfer(models.Model):
         new_emp = self.env['hr.employee'].sudo().create(emp)
         if self.employee_id.address_id:
             self.employee_id.address_id.active = False
-        for contract in self.env['hr.contract'].search(
+        for contract in self.env['hr.version'].search(
                 [('employee_id', '=', self.employee_id.id)]):
             if contract.date_end:
                 continue
@@ -132,7 +132,7 @@ class EmployeeTransfer(models.Model):
         return {
             'name': _('Contract'),
             'view_mode': 'form',
-            'res_model': 'hr.contract',
+            'res_model': 'hr.version',
             'type': 'ir.actions.act_window',
             'target': 'current',
             'context': {'default_employee_id': self.employee_id.id,

@@ -124,7 +124,7 @@ class HRGratuity(models.Model):
             current_date = date.today()
             probation_ids = self.env['hr.training'].search([
                 ('employee_id', '=', self.employee_id.id)])
-            contract_ids = self.env['hr.contract'].search([
+            contract_ids = self.env['hr.version'].search([
                 ('employee_id', '=', self.employee_id.id)])
             contract_sorted = contract_ids.sorted(lambda line: line.date_start)
             if not contract_sorted:
@@ -141,7 +141,7 @@ class HRGratuity(models.Model):
                 end_date = probation.end_date
                 employee_probation_days += (end_date - start_date).days
             # get running contract
-            hr_contract_id = self.env['hr.contract'].search(
+            hr_contract_id = self.env['hr.version'].search(
                 [('employee_id', '=', self.employee_id.id),
                  ('state', '=', 'open')])
             if len(hr_contract_id) > 1 or not hr_contract_id:

@@ -34,7 +34,7 @@
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
-    "depends": ["hr_contract", "ent_hr_employee_updation"],
+    "depends": ["hr", "ent_hr_employee_updation"],
     "data": [
         "security/ent_hr_employee_transfer_security.xml",
         "security/ir.model.access.csv",

@@ -12,7 +12,7 @@
     <!--Contract multi company rule-->
     <record id="employee_contract_rule" model="ir.rule">
         <field name="name">Contract Multi Company Rule</field>
-        <field name="model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="model_id" ref="hr.model_hr_version"/>
         <field name="global" eval="True"/>
         <field name="domain_force">['|', ('company_id', '=',
             False),('company_id', 'in', company_ids)]

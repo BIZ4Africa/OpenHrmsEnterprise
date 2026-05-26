@@ -31,7 +31,7 @@ class HRPayslip(models.Model):
         """Returns the amount of deduction per month"""
         res = super(HRPayslip, self).get_inputs(contract_ids,
                                                 date_from, date_to)
-        contract_obj = self.env['hr.contract']
+        contract_obj = self.env['hr.version']
         for contract in contract_ids:
             if contract_ids[0]:
                 emp_id = contract_obj.browse(contract[0].id).employee_id

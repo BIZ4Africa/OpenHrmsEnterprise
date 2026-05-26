@@ -31,7 +31,7 @@
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
-    "depends": ["mail", "hr_gamification", "hr_contract"],
+    "depends": ["mail", "hr_gamification", "hr"],
     "data": [
         "security/ir.model.access.csv",
         "data/hr_employee_relation_data.xml",

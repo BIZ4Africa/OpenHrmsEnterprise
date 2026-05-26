@@ -3,9 +3,9 @@
     <data>
         <delete model="resource.calendar"
                 search="[('id', '=', ref('resource.resource_calendar_std_35h'))]"/>
-        <delete model="hr.contract"
+        <delete model="hr.version"
                 search="[('id', '=', ref('hr_payroll_community.hr_contract_firstcontract1'))]"/>
-        <delete model="hr.contract"
+        <delete model="hr.version"
                 search="[('id', '=', ref('hr_payroll_community.hr_contract_gilles_gravie'))]"/>
         <!--Create the record in resource calendar for 35 hours per week-->
         <record id="resource_calendar_std_35h" model="resource.calendar">

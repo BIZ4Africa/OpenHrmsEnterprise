@@ -32,7 +32,7 @@ class HRLeave(models.Model):
         """ function for calculating leaves and updating probation period upon
         the leave days """
         res = super(HRLeave, self).action_validate()
-        contract = self.env['hr.contract'].search(
+        contract = self.env['hr.version'].search(
             [('employee_id', '=', self.employee_id.id),
              ('state', '=', 'probation')], limit=1)
         # check valid contract and probation details.

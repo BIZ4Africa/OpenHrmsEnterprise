@@ -120,7 +120,7 @@ class HrResignation(models.Model):
                     raise ValidationError(
                         _('There is a resignation request in confirmed or'
                           ' approved state for this employee'))
-                no_of_contract = self.env['hr.contract'].search(
+                no_of_contract = self.env['hr.version'].search(
                     [('employee_id', '=', self.employee_id.id)])
                 for contracts in no_of_contract:
                     if contracts.state == 'open':
@@ -160,7 +160,7 @@ class HrResignation(models.Model):
         """For approving the resignation request"""
         for rec in self:
             if rec.expected_revealing_date and rec.resign_confirm_date:
-                no_of_contract = self.env['hr.contract'].search(
+                no_of_contract = self.env['hr.version'].search(
                     [('employee_id', '=', self.employee_id.id)])
                 for contracts in no_of_contract:
                     if contracts.state == 'open':

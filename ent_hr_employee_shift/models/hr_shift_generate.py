@@ -44,7 +44,7 @@ class HrShiftGenerate(models.TransientModel):
         """Create mass schedule for all departments based on the shift
         scheduled in corresponding employee's contract """
         if self.hr_department_id:
-            for contract in self.env['hr.contract'].search(
+            for contract in self.env['hr.version'].search(
                     [('department_id', '=', self.hr_department_id.id)]):
                 if contract.shift_schedule_ids:
                     for shift_val in contract.shift_schedule_ids:
@@ -131,7 +131,7 @@ class HrShiftGenerate(models.TransientModel):
                             })]
                             contract.shift_schedule_ids = shift_ids
         else:
-            for contract in self.env['hr.contract'].search([]):
+            for contract in self.env['hr.version'].search([]):
                 if contract.shift_schedule_ids and contract.department_id:
                     for shift_val in contract.shift_schedule_ids:
                         shift = shift_val.hr_shift_id

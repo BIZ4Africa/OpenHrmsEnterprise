@@ -53,7 +53,7 @@ class HREmployee(models.Model):
             state_domain = expression.AND(
                 [state_domain, [('kanban_state', 'in', kanban_state)]])
 
-        return self.env['hr.contract'].search(
+        return self.env['hr.version'].search(
             expression.AND([[('employee_id', 'in', self.ids)],
                             state_domain,
                             [('date_start', '<=', date_to),
