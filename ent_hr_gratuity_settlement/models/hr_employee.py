@@ -20,7 +20,7 @@
 #
 ########################################################################################
 from odoo import fields, models
-from odoo.osv import expression
+from odoo.fields import Domain
 
 
 class HREmployee(models.Model):
@@ -50,11 +50,11 @@ class HREmployee(models.Model):
         date_to """
         state_domain = [('state', 'in', states)]
         if kanban_state:
-            state_domain = expression.AND(
+            state_domain = Domain.AND(
                 [state_domain, [('kanban_state', 'in', kanban_state)]])
 
         return self.env['hr.version'].search(
-            expression.AND([[('employee_id', 'in', self.ids)],
+            Domain.AND([[('employee_id', 'in', self.ids)],
                             state_domain,
                             [('date_start', '<=', date_to),
                              '|',
