@@ -61,5 +61,4 @@ class HrGratuityAccountingConfiguration(models.Model):
             if not self.gratuity_start_date < self.gratuity_end_date:
                 raise UserError(_("Invalid date configuration!"))
 
-    _sql_constraints = [('name_uniq', 'unique(name)',
-                         'Gratuity configuration name should be unique!')]
+    _name_uniq = models.Constraint('unique(name)', 'Gratuity configuration name should be unique!')
