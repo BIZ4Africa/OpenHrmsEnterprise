@@ -4,7 +4,7 @@
     <record id="view_attendance_list" model="ir.ui.view">
         <field name="name">hr.attendance.view.list.inherit.ent.hr.zk.attendance</field>
         <field name="model">hr.attendance</field>
-        <field name="inherit_id" ref="hr_attendance.view_attendance_list"/>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
         <field name="arch" type="xml">
             <list string="Employee attendances">
                 <field name="worked_hours" type="measure"/>

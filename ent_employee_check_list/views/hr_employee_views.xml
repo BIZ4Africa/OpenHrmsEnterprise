@@ -37,7 +37,7 @@
             hr.employee.view.list.inherit.ent.employee.check.list
         </field>
         <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.view_employee_list"/>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
                 <field name="entry_progress" widget="progressbar"/>
