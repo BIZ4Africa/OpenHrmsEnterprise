@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='country_id']" position="after">
                 <field name="company_id" options="{'no_create': True}"
-                       groups="base.group_multi_company" invisible="1"/>
+                       groups="base.group_multi_company" invisible="1"><!-- Technical company value used by multi-company payroll-structure filtering. --></field>
             </xpath>
         </field>
     </record>

@@ -54,12 +54,14 @@ class HrLoan(models.Model):
                                     index=True)
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
                                  help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self:
+                                 self.env.user.company_id if self else None)
     currency_id = fields.Many2one(comodel_name='res.currency',
                                   string='Currency', required=True,
                                   help="Currency",
                                   default=lambda self:
-                                  self.env.user.company_id.currency_id)
+                                  self.env.user.company_id.currency_id if self
+                                  else None)
     job_position_id = fields.Many2one(comodel_name='hr.job',
                                       related="employee_id.job_id",
                                       readonly=True, string="Job Position",
@@ -85,6 +87,14 @@ class HrLoan(models.Model):
     def default_get(self, field_list):
         """ Retrieve default values for specified fields. """
         result = super(HrLoan, self).default_get(field_list)
+        requested_fields = set(field_list)
+        result = {
+            field_name: value
+            for field_name, value in result.items()
+            if field_name in requested_fields
+        }
+        if 'employee_id' not in requested_fields:
+            return result
         if result.get('user_id'):
             ts_user_id = result['user_id']
         else:
