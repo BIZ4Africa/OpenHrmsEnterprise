@@ -38,19 +38,20 @@ class HrPayslip(models.Model):
     def compute_sheet(self):
         """ Method for inherit and adding advance salary input line in
         payslip lines"""
-        salary_line = self.struct_id.rule_ids.filtered(
-                        lambda x: x.code == 'SAR')
-        if salary_line:
-            get_amount = self.env['salary.advance'].search([
-                ('employee_id', '=', self.employee_id.id),
-                ('state', '=', 'approve')
-            ])
-            if get_amount:
-                if self.date_from <= get_amount.date <= self.date_to:
-                    amount = get_amount.advance
-                    name = salary_line.id
-                    code = salary_line.code
-                    if (code not in self.input_line_ids.mapped('input_type_id').
-                            mapped('code')):
-                        self.input_data_salary_line(name, amount)
+        for slip in self:
+            salary_line = slip.struct_id.rule_ids.filtered(
+                            lambda x: x.code == 'SAR')
+            if salary_line:
+                get_amount = self.env['salary.advance'].search([
+                    ('employee_id', '=', slip.employee_id.id),
+                    ('state', '=', 'approve')
+                ])
+                if get_amount:
+                    if slip.date_from <= get_amount.date <= slip.date_to:
+                        amount = get_amount.advance
+                        name = salary_line.id
+                        code = salary_line.code
+                        if (code not in slip.input_line_ids.mapped('input_type_id').
+                                mapped('code')):
+                            slip.input_data_salary_line(name, amount)
         return super(HrPayslip, self).compute_sheet()
