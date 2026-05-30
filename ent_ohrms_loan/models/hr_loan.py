@@ -85,23 +85,20 @@ class HrLoan(models.Model):
 
     @api.model
     def default_get(self, field_list):
-        """ Retrieve default values for specified fields. """
-        result = super(HrLoan, self).default_get(field_list)
-        requested_fields = set(field_list)
-        result = {
-            field_name: value
-            for field_name, value in result.items()
-            if field_name in requested_fields
-        }
-        if 'employee_id' not in requested_fields:
-            return result
-        if result.get('user_id'):
-            ts_user_id = result['user_id']
-        else:
-            ts_user_id = self.env.context.get('user_id', self.env.user.id)
-        result['employee_id'] = self.env['hr.employee'].search(
-            [('user_id', '=', ts_user_id)], limit=1).id
-        return result
+        result = super().default_get(field_list)
+        if "employee_id" not in field_list:
+            return {k: v for k, v in result.items() if k in field_list}
+        employee_id = result.get("employee_id")
+        if not employee_id:
+            ts_user_id = result.get("user_id") or self.env.context.get(
+                "user_id", self.env.user.id
+            )
+            result["employee_id"] = (
+                self.env["hr.employee"]
+                .search([("user_id", "=", ts_user_id)], limit=1)
+                .id
+            )
+        return {k: v for k, v in result.items() if k in field_list}
 
     def _compute_loan_amount(self):
         """ calculate the total amount paid towards the loan. """
