@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!--    Inheriting res config settings form view-->
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">
             res.config.settings.view.form.inherit.ent.hr.employee.updation
@@ -9,26 +8,20 @@
         <field name="priority" eval="90"/>
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//block[@name='employee_rights_setting_container']"
-                   position="after">
-                <div class="row mt16 o_settings_container">
-                    <div class="col-xs-12 col-lg-6 o_setting_box">
-                        <div class="o_setting_left_pane">
+            <xpath expr="//form" position="inside">
+                <app data-string="Employees" string="Employees" name="hr"
+                     groups="hr.group_hr_manager">
+                    <block title="Contract" id="notice_period_block">
+                        <setting string="Notice Period" id="notice_period_setting"
+                                 help="Enable notice period for employee contracts">
                             <field name="notice_period"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="notice_period"/>
-                            <div class="content-group"
+                        </setting>
+                        <setting string="Notice Period Days" id="notice_period_days_setting"
                                  invisible="notice_period == False">
-                                <div class="mt16">
-                                    <field name="no_of_days"
-                                           style="width:50px;"/>
-                                    <span>days</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <field name="no_of_days" class="w-25"/><span>days</span>
+                        </setting>
+                    </block>
+                </app>
             </xpath>
         </field>
     </record>
