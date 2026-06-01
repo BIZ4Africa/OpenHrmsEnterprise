@@ -6,7 +6,7 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='hr_settings']/group/group[@name='active_group']"
+            <xpath expr="//page[@name='hr_settings']//group[@name='identification_group']"
                    position="inside">
                 <field name="device_id_no"/>
             </xpath>

@@ -53,7 +53,7 @@ class ZkReportDailyAttendance(models.Model):
 
     def init(self):
         """Retrieve the data's for attendance report"""
-        tools.drop_view_if_exists(self._cr, 'zk_report_daily_attendance')
+        tools.drop_view_if_exists(self.env.cr, 'zk_report_daily_attendance')
         query = """
             create or replace view zk_report_daily_attendance as (
                 select
@@ -75,4 +75,4 @@ class ZkReportDailyAttendance(models.Model):
                     z.punching_time
             )
         """
-        self._cr.execute(query)
+        self.env.cr.execute(query)

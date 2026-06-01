@@ -89,8 +89,8 @@ class ReportCustody(models.Model):
 
     def init(self):
         """To create report custody"""
-        tools.sql.drop_view_if_exists(self._cr, 'report_custody')
-        self._cr.execute("""
+        tools.sql.drop_view_if_exists(self.env.cr, 'report_custody')
+        self.env.cr.execute("""
             CREATE view report_custody as
               %s
               FROM hr_custody t

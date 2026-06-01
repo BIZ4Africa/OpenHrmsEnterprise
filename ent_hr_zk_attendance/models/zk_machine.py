@@ -99,7 +99,7 @@ class ZkMachine(models.Model):
                     clear_data = zk.get_attendance()
                     if clear_data:
                         connection.clear_attendance()
-                        self._cr.execute(
+                        self.env.cr.execute(
                             """delete from zk_machine_attendance""")
                         connection.disconnect()
                     else:

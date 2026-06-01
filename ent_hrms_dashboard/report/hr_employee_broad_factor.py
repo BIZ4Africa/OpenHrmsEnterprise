@@ -53,8 +53,8 @@ class HrEmployeeBroadFactor(models.Model):
             This method should be called during the initialization of the
             module to ensure the 'hr_employee_broad_factor' view is up-to-date.
         """
-        tools.drop_view_if_exists(self._cr, 'hr_employee_broad_factor')
-        self._cr.execute("""
+        tools.drop_view_if_exists(self.env.cr, 'hr_employee_broad_factor')
+        self.env.cr.execute("""
             create or replace view hr_employee_broad_factor as (
                 select
                     e.id, e.name, count(h.*) as no_of_occurrence,

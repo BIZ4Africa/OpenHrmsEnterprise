@@ -25,6 +25,7 @@ from odoo import api, fields, models
 class ZkMachineAttendance(models.Model):
     """Model to hold data from the biometric device"""
     _name = 'zk.machine.attendance'
+    _description = 'Biometric Machine Attendance'
     _inherit = 'hr.attendance'
 
     @api.constrains('check_in', 'check_out', 'employee_id')
