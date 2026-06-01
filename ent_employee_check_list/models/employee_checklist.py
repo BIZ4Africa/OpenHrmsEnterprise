@@ -30,14 +30,14 @@ class EmployeeChecklist(models.Model):
     _description = "Employee Documents"
     _order = 'sequence'
 
-    name = fields.Char(string='Name', copy=False, required=1,
+    name = fields.Char(string='Name', copy=False, required=True,
                        help="Checklist Name")
     document_type = fields.Selection([('entry', 'Entry Process'),
                                       ('exit', 'Exit Process'),
                                       ('other', 'Other')],
                                      string='Checklist Type',
                                      help='Type of Checklist',
-                                     required=1)
+                                     required=True)
     sequence = fields.Integer(string='Sequence', help="Sequence of Checklist")
     entry_obj_ids = fields.Many2many('hr.employee', 'entry_checklist_ids',
                                      'hr_check_rel', 'check_hr_rel',

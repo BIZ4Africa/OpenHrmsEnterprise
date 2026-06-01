@@ -42,9 +42,9 @@ class HrCustody(models.Model):
     quantity = fields.Integer(string="Quantity", default="1",
                               help="Quantity of the product")
     rejected_reason = fields.Text(string='Rejected Reason', copy=False,
-                                  readonly=1, help="Reason for the rejection")
+                                  readonly=True, help="Reason for the rejection")
     renew_rejected_reason = fields.Text(string='Renew Rejected Reason',
-                                        copy=False, readonly=1,
+                                        copy=False, readonly=True,
                                         help="Renew rejected reason")
     date_request = fields.Date(string='Requested Date', required=True,
                                tracking=True,

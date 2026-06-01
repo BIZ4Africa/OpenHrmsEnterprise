@@ -32,7 +32,7 @@ class ContractRenewal(models.TransientModel):
     _description = 'Contract Renewal'
 
     returned_date = fields.Date(string='Renewal Date',
-                                help="Date of the renewal", required=1)
+                                help="Date of the renewal", required=True)
 
     @api.constrains('returned_date')
     def validate_return_date(self):

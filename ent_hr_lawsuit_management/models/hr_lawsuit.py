@@ -82,13 +82,13 @@ class HrLawsuit(models.Model):
                                 help='Choose the contact of Layer from the '
                                      'contact list')
     first_party_id = fields.Many2one('res.company', string='First Party',
-                                     required=1,
+                                     required=True,
                                      default=lambda self: self.env.company,
                                      help='Choose the company as first Party', )
     party2 = fields.Selection([('employee', 'Employee'),
                                ('partner', 'Partner'),
                                ('other', 'Others')], default='employee',
-                              string='Second Party', required=1,
+                              string='Second Party', required=True,
                               help='Choose the second party in the legal '
                                    'issue.It can be Employee, Contacts or '
                                    'others.', )

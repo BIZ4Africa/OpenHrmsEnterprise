@@ -41,7 +41,7 @@ class EmployeeVerification(models.Model):
                                  string='Address', readonly=False,
                                  help='Address of the contact')
     assigned_by_id = fields.Many2one('res.users',
-                                     string='Assigned By', readonly=1,
+                                     string='Assigned By', readonly=True,
                                      default=lambda self: self.env.uid,
                                      help="Assigned Login User")
     agency_id = fields.Many2one('res.partner', string='Agency',
