@@ -47,11 +47,11 @@ class HrCustody(models.Model):
                                         copy=False, readonly=1,
                                         help="Renew rejected reason")
     date_request = fields.Date(string='Requested Date', required=True,
-                               tracking=True, readonly=True,
+                               tracking=True,
                                help="Requested date",
                                default=datetime.now().strftime('%Y-%m-%d'))
     employee = fields.Many2one('hr.employee', string='Employee', required=True,
-                               readonly=True, help="Employee",
+                               help="Employee",
                                default=lambda self: self.env.user.
                                employee_id.id)
     purpose = fields.Char(string='Reason', tracking=True,

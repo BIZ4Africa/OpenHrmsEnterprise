@@ -61,7 +61,7 @@
                         <group>
                             <field name="read_only" invisible="1"/>
                             <field name="employee"
-                                   readonly="read_only == False"
+                                   attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('read_only', '=', False)]}"
                             />
                             <field name="custody_name"
                                    options="{'no_open':True,'no_create':True}"
@@ -77,7 +77,7 @@
                             <field name="purpose"/>
                         </group>
                         <group>
-                            <field name="date_request"/>
+                            <field name="date_request" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                             <field name="return_date"
                                    invisible="renew_return_date == True and renew_date not in [None,False] and renew_reject == False"
                             />
