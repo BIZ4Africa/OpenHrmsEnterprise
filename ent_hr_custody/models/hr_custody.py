@@ -49,13 +49,11 @@ class HrCustody(models.Model):
     date_request = fields.Date(string='Requested Date', required=True,
                                tracking=True, readonly=True,
                                help="Requested date",
-                               states={'draft': [('readonly', False)]},
                                default=datetime.now().strftime('%Y-%m-%d'))
     employee = fields.Many2one('hr.employee', string='Employee', required=True,
                                readonly=True, help="Employee",
                                default=lambda self: self.env.user.
-                               employee_id.id,
-                               states={'draft': [('readonly', False)]})
+                               employee_id.id)
     purpose = fields.Char(string='Reason', tracking=True,
                           required=True, help="Reason")
     custody_name = fields.Many2one('custody.property', string='Property',

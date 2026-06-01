@@ -74,16 +74,13 @@ class HrLawsuit(models.Model):
     hearing_date = fields.Date(string='Hearing Date',
                                help='Upcoming hearing date')
     court_name = fields.Char(string='Court Name', tracking=True,
-                             states={'won': [('readonly', True)]},
                              help='Name of the Court')
     judge = fields.Char(string='Judge', tracking=True,
-                        states={'won': [('readonly', True)]},
                         help='Name of the Judge')
     lawyer_id = fields.Many2one('res.partner', string='Lawyer',
                                 tracking=True,
                                 help='Choose the contact of Layer from the '
-                                     'contact list',
-                                states={'won': [('readonly', True)]})
+                                     'contact list')
     first_party_id = fields.Many2one('res.company', string='First Party',
                                      required=1,
                                      default=lambda self: self.env.company,

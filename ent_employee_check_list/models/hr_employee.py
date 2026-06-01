@@ -68,6 +68,6 @@ class HREmployee(models.Model):
                                  help="Percentage of Exit Checklist's")
     maximum_rate = fields.Integer(default=100, string='Maximum Rate',
                                   help='Maximum rate of Entry Checklist')
-    check_list_enable = fields.Boolean(invisible=True, copy=False,
+    check_list_enable = fields.Boolean(copy=False,
                                        string='Enable Checklist',
                                        help="Checklist is enabled")
