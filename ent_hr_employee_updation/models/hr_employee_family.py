@@ -35,10 +35,12 @@ class HrEmployeeFamily(models.Model):
 
     employee_id = fields.Many2one(comodel_name='hr.employee', string="Employee",
                                   help='Select corresponding Employee',
+                                  required=True,
                                   )
     relation_id = fields.Many2one(comodel_name='hr.employee.relation',
                                   string="Relation",
-                                  help="Relationship with the employee")
+                                  help="Relationship with the employee",
+                                  required=True)
     member_name = fields.Char(string='Name', help="Member name in Family")
     member_contact = fields.Char(string='Contact No',
                                  help="Contact Number of the Member")

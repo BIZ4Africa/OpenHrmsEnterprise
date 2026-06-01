@@ -29,4 +29,5 @@ class HrRelationRelation(models.Model):
     _description = "Hr Employee Relation"
 
     name = fields.Char(string="Relationship",
-                       help="Relationship with the employee")
+                       help="Relationship with the employee",
+                       required=True)
