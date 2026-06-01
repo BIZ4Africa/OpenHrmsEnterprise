@@ -42,7 +42,7 @@
         <field name="name">Settings</field>
         <field name="res_model">res.config.settings</field>
         <field name="view_mode">form</field>
-        <field name="target">inline</field>
+        <field name="target">new</field>
         <field name="context">{'module' : 'hr_leave', 'bin_size': False}</field>
     </record>
     <!--    res_config_settings menu in hr_holidays-->
