@@ -66,9 +66,7 @@
                 </searchpanel>
                 <separator/>
                 <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
-                <group expand="0" string="Group By">
-                    <filter name="address_id" string="Working Address" domain="[]" context="{'group_by': 'address_id'}"/>
-                </group>
+                <filter name="address_id" string="Working Address" domain="[]" context="{'group_by': 'address_id'}"/>
             </search>
         </field>
     </record>

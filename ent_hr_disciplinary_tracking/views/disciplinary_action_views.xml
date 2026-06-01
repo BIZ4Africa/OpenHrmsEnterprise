@@ -21,14 +21,12 @@
                 <filter string="Cancel" name="cancel"
                         domain="[('state','=','cancel')]"/>
                 <separator/>
-                <group expand="1" string="Group By">
-                    <filter string="State" name="state"
-                            context="{'group_by': 'state'}"/>
-                    <filter string="Department" name="department_name"
-                            context="{'group_by':'department_name'}"/>
-                    <filter string="Joined Date" name="joined_date"
-                            context="{'group_by': 'joined_date'}"/>
-                </group>
+                <filter string="State" name="state"
+                        context="{'group_by': 'state'}"/>
+                <filter string="Department" name="department_name"
+                        context="{'group_by':'department_name'}"/>
+                <filter string="Joined Date" name="joined_date"
+                        context="{'group_by': 'joined_date'}"/>
             </search>
         </field>
     </record>

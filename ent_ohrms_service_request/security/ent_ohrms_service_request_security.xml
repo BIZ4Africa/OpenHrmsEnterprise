@@ -21,9 +21,13 @@
         <field name="sequence">5</field>
     </record>
     <!--    New User Group for service_execution-->
-    <record id="service_group_executer" model="res.groups">
+    <record id="service_group_executer_privilege" model="res.groups.privilege">
         <field name="name">Service Executer</field>
         <field name="category_id" ref="module_service_execution"/>
+    </record>
+    <record id="service_group_executer" model="res.groups">
+        <field name="name">Service Executer</field>
+        <field name="privilege_id" ref="service_group_executer_privilege"/>
         <field name="users"
                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>

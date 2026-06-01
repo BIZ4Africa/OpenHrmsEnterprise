@@ -14,14 +14,12 @@
                         domain="[('state', '=', 'transfer')]"/>
                 <filter name="done" string="Done"
                         domain="[('state', '=', 'done')]"/>
-                <group expand="0" string="Group By">
-                    <filter name="employee" string="Employee"
-                            context="{'group_by':'employee_id'}"/>
-                    <filter name="status" string="Status"
-                            context="{'group_by':'state'}"/>
-                    <filter name="responsible_id" string="Responsible Person"
-                            context="{'group_by':'responsible_id'}"/>
-                </group>
+                <filter name="employee" string="Employee"
+                        context="{'group_by':'employee_id'}"/>
+                <filter name="status" string="Status"
+                        context="{'group_by':'state'}"/>
+                <filter name="responsible_id" string="Responsible Person"
+                        context="{'group_by':'responsible_id'}"/>
             </search>
         </field>
     </record>

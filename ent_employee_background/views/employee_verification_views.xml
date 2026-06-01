@@ -89,10 +89,8 @@
                 <filter domain="[('state','=','submit')]"
                         string="Completed" name="Completed"/>
                 <separator/>
-                <group expand="0" string="Group By">
-                    <filter name="status" string="Status" domain="[]"
-                            context="{'group_by':'state'}"/>
-                </group>
+                <filter name="status" string="Status" domain="[]"
+                        context="{'group_by':'state'}"/>
             </search>
         </field>
     </record>

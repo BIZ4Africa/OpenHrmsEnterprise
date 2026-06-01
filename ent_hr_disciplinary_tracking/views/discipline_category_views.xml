@@ -10,10 +10,8 @@
                 <field name="code"/>
                 <field name="category_type"/>
                 <field name="description"/>
-                <group expand="1" string="Group By">
-                    <filter string="Category" name="department_name"
-                            context="{'group_by':'category_type'}"/>
-                </group>
+                <filter string="Category" name="department_name"
+                        context="{'group_by':'category_type'}"/>
             </search>
         </field>
     </record>

@@ -101,12 +101,10 @@
                 <field name="lawyer_id"/>
                 <field name="requested_date"/>
                 <field name="state"/>
-                <group expand="0" string="Group By">
-                    <filter string="Status" name="Status"
-                            context="{'group_by':'state'}"/>
-                    <filter string="Employee" name="Employee"
-                            context="{'group_by':'employee_id'}"/>
-                </group>
+                <filter string="Status" name="Status"
+                        context="{'group_by':'state'}"/>
+                <filter string="Employee" name="Employee"
+                        context="{'group_by':'employee_id'}"/>
             </search>
         </field>
     </record>
