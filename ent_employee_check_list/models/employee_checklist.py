@@ -41,16 +41,15 @@ class EmployeeChecklist(models.Model):
     sequence = fields.Integer(string='Sequence', help="Sequence of Checklist")
     entry_obj_ids = fields.Many2many('hr.employee', 'entry_checklist_ids',
                                      'hr_check_rel', 'check_hr_rel',
-                                     invisible=1, string="Entry Object")
+                                     string="Entry Object")
     exit_obj_ids = fields.Many2many('hr.employee', 'exit_checklist_ids',
                                     'hr_exit_rel',
-                                    'exit_hr_rel', string="Exit Object",
-                                    invisible=1)
+                                    'exit_hr_rel', string="Exit Object")
     entry_obj_plan_ids = fields.Many2many('hr.employee',
                                           'entry_checklist_plan_ds',
                                           'hr_check_rel', 'check_hr_rel',
-                                          invisible=1, string="Plan Object")
+                                          string="Plan Object")
     exit_obj_plan_ids = fields.Many2many('hr.employee',
                                          'exit_checklist_plan_ids',
                                          'hr_exit_rel', 'exit_hr_rel',
-                                         invisible=1, string='Exit Plan Object')
+                                         string='Exit Plan Object')
