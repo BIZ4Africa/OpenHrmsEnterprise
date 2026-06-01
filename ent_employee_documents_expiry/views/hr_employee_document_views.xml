@@ -52,10 +52,8 @@
         <field name="model">hr.employee.document</field>
         <field name="arch" type="xml">
             <search string="Employee Documents">
-                <group expand="0" string="Group By">
-                    <filter name="Employee" string="Employee" domain="[]"
-                            context="{'group_by':'employee_ref_id'}"/>
-                </group>
+                <filter name="Employee" string="Employee" domain="[]"
+                        context="{'group_by':'employee_ref_id'}"/>
             </search>
         </field>
     </record>

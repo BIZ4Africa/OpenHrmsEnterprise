@@ -144,7 +144,7 @@ class HrEmployeeDocuments(models.Model):
                                           help='You can attach the copy of your'
                                                'document', copy=False)
     issue_date = fields.Date(string='Issue Date',
-                             default=fields.datetime.now(),
+                             default=fields.Datetime.now(),
                              help="Date of issue of employee documents",
                              copy=False)
     document_type_id = fields.Many2one(comodel_name='document.type',
