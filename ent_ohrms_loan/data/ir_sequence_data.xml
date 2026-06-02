@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
-<odoo>
+<odoo noupdate="1">
     <!--	Sequence for loan request-->
-    <data noupdate='1'>
         <record id="hr_loan_sequence" model="ir.sequence">
             <field name="name">Loan Request</field>
             <field name="code">hr.loan.seq</field>
@@ -11,5 +10,4 @@
             <field name="number_next_actual">1</field>
             <field name="implementation">standard</field>
         </record>
-    </data>
 </odoo>

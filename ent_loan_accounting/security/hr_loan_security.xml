@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
         <!-- Allow access for loan form modification -->
         <record id="ir_rule_loan_form_modification" model="ir.rule">
             <field name="name">Loan Forms Modification Accounts</field>
@@ -12,5 +11,4 @@
             <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="1"/>
         </record>
-    </data>
 </odoo>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--    To notify about the hr custody return-->
         <record model="ir.cron" id="hr_custody_data_reminders">
             <field name="name">HR Custody Return Notification</field>
@@ -10,5 +9,4 @@
             <field name="state">code</field>
             <field name="code">model.mail_reminder()</field>
         </record>
-    </data>
 </odoo>

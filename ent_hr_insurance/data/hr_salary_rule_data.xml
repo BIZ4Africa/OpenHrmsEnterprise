@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
         <!--New Salary Rule for loan deduction-->
         <record id="hr_payslip_rule_insurance" model="hr.salary.rule">
             <field name="code">INSUR</field>
@@ -12,6 +11,5 @@
             <field name="sequence" eval="190"/>
             <field name="struct_id" ref="hr_payroll.structure_002"/>
         </record>
-    </data>
 </odoo>
 

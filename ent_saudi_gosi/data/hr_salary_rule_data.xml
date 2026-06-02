@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
         <!--Record in the model hr.salary.rule-->
         <record id="hr_rule_gosi" model="hr.salary.rule">
             <field name="name">GOSI Contribution For Saudi Employee</field>
@@ -29,5 +28,4 @@
             </field>
             <field name="struct_id" ref="structure_003"/>
         </record>
-    </data>
 </odoo>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--        To create demo data for laptop in custody property-->
         <record id="property_one" model="custody.property">
             <field name="name">Laptop</field>
@@ -37,5 +36,4 @@
             <field name="return_date">2021-03-02</field>
             <field name="state">draft</field>
         </record>
-    </data>
 </odoo>

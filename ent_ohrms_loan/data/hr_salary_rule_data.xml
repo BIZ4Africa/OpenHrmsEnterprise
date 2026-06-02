@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--Adding a salary rule for loan-->
-    <data>
         <!--  Adding the Loan rule for Regular pay structure.   -->
         <record id="hr_salary_rule_loan" model="hr.salary.rule">
             <field name="code">LO</field>
@@ -16,5 +15,4 @@
             <field name="sequence" eval="190"/>
             <field name="struct_id" ref="ent_ohrms_loan.hr_payroll_structure_regular_pay"/>
         </record>
-    </data>
 </odoo>

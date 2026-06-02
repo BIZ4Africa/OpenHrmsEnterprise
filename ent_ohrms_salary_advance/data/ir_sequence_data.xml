@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
         <!--Sequence Data-->
         <record id="ir_seq_hr_advance" model="ir.sequence">
             <field name="name">Salary Advance Request</field>
@@ -12,5 +11,4 @@
             <field name="implementation">standard</field>
             <field name="company_id" eval="False"/>
         </record>
-    </data>
 </odoo>

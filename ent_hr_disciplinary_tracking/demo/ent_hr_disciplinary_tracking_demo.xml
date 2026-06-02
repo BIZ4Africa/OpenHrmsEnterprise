@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--Demo data for hr_department-->
         <record id="department_one" model="hr.department">
             <field name="name">Marketing</field>
@@ -86,5 +85,4 @@
             <field name="joined_date">2020-03-02</field>
             <field name="discipline_reason" ref="discipline_categories_one"/>
         </record>
-    </data>
 </odoo>

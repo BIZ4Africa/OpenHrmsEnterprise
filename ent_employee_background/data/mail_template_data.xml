@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--Employee verification email template-->
         <record id="assign_agency_email_template" model="mail.template">
             <field name="name">Assign verification e-mail template</field>
@@ -25,5 +24,4 @@
                 <p>Thank you,</p>
             </field>
         </record>
-    </data>
 </odoo>

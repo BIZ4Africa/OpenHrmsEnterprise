@@ -57,7 +57,7 @@
                                     <field name="date"/>
                                     <field name="amount"/>
                                     <field name="paid" readonly="1" column_invisible="1"><!-- Technical flag used to keep paid installments out of editable loan schedules. --></field>
-                                </tree>
+                                </list>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" >
                                 <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>

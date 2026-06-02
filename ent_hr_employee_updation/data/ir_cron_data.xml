@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!--    Employee data reminder-->
-    <data>
         <record id="ir_cron_hr_employee_data_expiration" model="ir.cron">
             <field name="name">HR Employee Data Expiration</field>
             <field name="interval_number">1</field>
@@ -10,5 +9,4 @@
             <field name="state">code</field>
             <field name="code">model.mail_reminder()</field>
         </record>
-    </data>
 </odoo>

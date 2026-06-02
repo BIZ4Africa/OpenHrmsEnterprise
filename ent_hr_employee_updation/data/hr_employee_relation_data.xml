@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--    Employee relational datas-->
         <record id="hr_employee_relation_spouse" model="hr.employee.relation">
             <field name="name">Spouse</field>
@@ -11,5 +10,4 @@
         <record id="hr_employee_relation_mother" model="hr.employee.relation">
             <field name="name">Mother</field>
         </record>
-    </data>
 </odoo>

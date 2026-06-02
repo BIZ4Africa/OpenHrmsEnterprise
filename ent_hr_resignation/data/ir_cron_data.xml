@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
 <!--        For updating employee status-->
         <record id="ir_cron_data_employee_resignation" model="ir.cron">
             <field name="name">HR Resignation: update employee</field>
@@ -11,5 +10,4 @@
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
         </record>
-    </data>
 </odoo>

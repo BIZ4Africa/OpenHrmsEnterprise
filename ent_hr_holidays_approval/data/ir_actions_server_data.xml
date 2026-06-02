@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--Server action to get the approval requests-->
         <record id="hr_leave_action" model="ir.actions.server">
             <field name="name">Approvals</field>
@@ -9,5 +8,4 @@
             <field name="state">code</field>
             <field name="code">action = model._get_approval_requests()</field>
         </record>
-    </data>
 </odoo>

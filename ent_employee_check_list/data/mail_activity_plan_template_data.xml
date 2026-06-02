@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!--Data in model mail.activity.plan.template-->
         <record id="checklist_activity_type"
                 model="mail.activity.plan.template">
@@ -14,5 +13,4 @@
             <field name="responsible_type">manager</field>
             <field name="plan_id" ref="hr.offboarding_plan"/>
         </record>
-    </data>
 </odoo>

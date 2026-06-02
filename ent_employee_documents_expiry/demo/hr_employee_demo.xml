@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
 <!--    Demo data for hr employee-->
-    <data noupdate="1">
             <record id="hr_employee_record" model="hr.employee">
             <field name="name">Joe</field>
             <field name="job_title">Chief Medical Officer</field>
@@ -10,5 +9,4 @@
             <field name="work_email">joe@example.com</field>
             <field name="image_1920" type="base64" file="ent_employee_documents_expiry/static/image/employee_image.jpeg"/>
         </record>
-    </data>
 </odoo>

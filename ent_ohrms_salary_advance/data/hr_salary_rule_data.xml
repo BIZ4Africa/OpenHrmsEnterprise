@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <!-- advance salary rule -->
         <record id="hr_payslip_rule_advance" model="hr.salary.rule">
             <field name="code">SAR</field>
@@ -14,5 +13,4 @@
             <field name="sequence" eval="190"/>
             <field name="struct_id" ref="hr_payroll.structure_002"/>
         </record>
-    </data>
 </odoo>
