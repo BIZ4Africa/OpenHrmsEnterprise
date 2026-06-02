@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Service Request",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Human Resource",
     "summary": """Allow Employees To Raise A Service Request""",
     "description": """Module provides employee service requests, approvers, 

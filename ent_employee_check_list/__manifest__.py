@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Checklist",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Human Resources",
     "summary": """Manages Employee's Entry & Exit Process""",
     "description": """This module is used to remembering the employee's entry and exit progress.""",

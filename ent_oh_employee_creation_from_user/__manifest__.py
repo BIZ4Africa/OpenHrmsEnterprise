@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Employees From User",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Generic Modules/Human Resources",
     "summary": "Automatically Creates Employee While Creating User",
     "description": """This module helps you to create employees automatically 

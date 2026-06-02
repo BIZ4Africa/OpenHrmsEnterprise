@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Resignation",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Generic Modules/Human Resources",
     "summary": "Handle the resignation process of the employee",
     "description": """To handle the resignation of the employee.It Easily 

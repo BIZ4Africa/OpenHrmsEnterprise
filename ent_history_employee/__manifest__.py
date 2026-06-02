@@ -21,7 +21,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Employee History",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Generic Modules/Human Resources",
     "summary": """History Of Employees In Your Company""",
     "description": """This module helps to manage or track the employee history

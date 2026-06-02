@@ -24,7 +24,7 @@
 ###############################################################################
 {
     "name": "Enterprise Open HRMS Custody",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Human Resources",
     "summary": """Manage the company properties when it is in the 
     custody of an employee""",

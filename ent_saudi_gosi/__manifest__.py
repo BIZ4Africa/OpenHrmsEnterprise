@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS GOSI",
-    "version": "1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Human Resource",
     "summary": """GOSI Contribution for Saudi Government""",
     "description": """Module Helps to Manage Payslips Including GOSI 
