@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0\n"
+"Project-Id-Version: Odoo Server 19.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-14 11:53+0000\n"
-"PO-Revision-Date: 2026-05-14 11:53+0000\n"
+"POT-Creation-Date: 2026-06-02 08:19+0000\n"
+"PO-Revision-Date: 2026-06-02 08:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,11 +31,6 @@ msgid ""
 "                <p>Thank you,</p>\n"
 "            "
 msgstr ""
-"<p>Cher ${object.agency_id.name},<p>\n"
-"              <p>Une nouvelle demande est créée pour modifier notre employé <b> ${object.employee.name} </b> .\n"
-"               Pour terminer le processus de vérification des employés, collectez les informations requises et soumettez-les dès que possible.<p>\n"
-"              <p>Vous pouvez répondre à cet e-mail si vous avez des questions.</p>\n"
-"              <p>Merci,</p>"
 
 #. module: ent_employee_background
 #: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_my_home_menu_employee
@@ -179,8 +174,10 @@ msgstr ""
 
 #. module: ent_employee_background
 #: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__display_name
+#: model:ir.model.fields,field_description:ent_employee_background.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:ent_employee_background.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom d'affichage"
 
 #. module: ent_employee_background
 #: model_terms:ir.ui.view,arch_db:ent_employee_background.portal_record_page
@@ -241,13 +238,10 @@ msgid "Expected date of completion of background verification"
 msgstr "Date prévue d'achèvement de la vérification des antécédents"
 
 #. module: ent_employee_background
-#: model_terms:ir.ui.view,arch_db:ent_employee_background.employee_verification_view_search
-msgid "Group By"
-msgstr ""
-
-#. module: ent_employee_background
 #: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__id
 #: model:ir.model.fields,field_description:ent_employee_background.field_employee_verification__verification
+#: model:ir.model.fields,field_description:ent_employee_background.field_ir_attachment__id
+#: model:ir.model.fields,field_description:ent_employee_background.field_res_partner__id
 msgid "ID"
 msgstr ""
 
@@ -395,7 +389,7 @@ msgid ""
 "Verification of {{ object.employee_id.name\n"
 "                }}\n"
 "            "
-msgstr "Verification of ${object.employee.name}"
+msgstr ""
 
 #. module: ent_employee_background
 #: model:ir.model.fields,help:ent_employee_background.field_employee_verification__state

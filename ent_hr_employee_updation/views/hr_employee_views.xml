@@ -29,14 +29,7 @@
                            invisible="passport_id in ('None','False')"/>
                 </group>
                 <group name="fam_ids" colspan="4" string="Dependence Details">
-                    <field name="fam_ids" mode="tree,form">
-                        <tree editable="bottom">
-                            <field name="member_name" required="True"/>
-                            <field name="relation_id" required="True"/>
-                            <field name="member_contact"/>
-                            <field name="birth_date"/>
-                        </tree>
-                    </field>
+                    <field name="fam_ids" colspan="4"/>
                 </group>
             </xpath>
         </field>
