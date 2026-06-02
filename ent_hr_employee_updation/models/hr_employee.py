@@ -96,12 +96,12 @@ class HrEmployee(models.Model):
         comodel_name='hr.employee.family', inverse_name='employee_id',
         string='Family', help='Family Information', groups="hr.group_hr_user")
 
-    @api.depends('contract_id')
+    @api.depends('version_id')
     def _compute_joining_date(self):
         """Compute function of the field joining_date"""
         for rec in self:
-            rec.joining_date = min(rec.contract_id.mapped('date_start')) \
-                if rec.contract_id else False
+            rec.joining_date = min(rec.version_id.mapped('date_start')) \
+                if rec.version_id else False
 
     @api.onchange('spouse_complete_name', 'spouse_birthdate')
     def _onchange_spouse(self):
