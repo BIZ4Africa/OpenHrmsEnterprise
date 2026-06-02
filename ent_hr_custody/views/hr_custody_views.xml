@@ -107,7 +107,7 @@
         <field name="name">hr.custody.view.list</field>
         <field name="model">hr.custody</field>
         <field name="arch" type="xml">
-            <list decoration-info="state == 'draft'">
+            <tree decoration-info="state == 'draft'">
                 <field name="name"/>
                 <field name="employee"/>
                 <field name="custody_name"/>
@@ -115,7 +115,7 @@
                 <field name="date_request"/>
                 <field name="return_date"/>
                 <field name="state"/>
-            </list>
+            </tree>
         </field>
     </record>
     <record id="hr_custody_view_search" model="ir.ui.view">
