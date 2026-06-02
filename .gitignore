@@ -53,7 +53,7 @@ coverage.xml
 
 # Translations
 *.mo
-*.pot
+#*.pot  # disabled to allow Weblate translation templates
 
 # Django stuff:
 *.log
