@@ -143,7 +143,7 @@
     </record>
     <!--Menuitems of the model hr.gratuity-->
     <menuitem id="main_menu_hr_resignation" name="End of Service" sequence="71"
-              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
+              parent="hr_work_entry_enterprise.menu_hr_payroll_root"
               groups="hr.group_hr_user"/>
     <menuitem id="menu_hr_gratuity" name="Gratuity Settlement"
               parent="main_menu_hr_resignation"

@@ -108,7 +108,7 @@
     <!--Menuitem for the model hr.gratuity.accounting.configuration-->
     <menuitem action="hr_gratuity_accounting_configuration_action"
               id="menu_action_hr_gratuity_account_config"
-              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              parent="hr_work_entry_enterprise.menu_hr_payroll_configuration"
               sequence="30"
               groups="hr.group_hr_manager"/>
 </odoo>

@@ -57,6 +57,6 @@
 
     <!-- gosi_payslip menuitems-->
     <menuitem id="gosi_payslip_menu" name="GOSI Register"
-              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
+              parent="hr_work_entry_enterprise.menu_hr_payroll_root"
               action="gosi_payslip_action" sequence="2"/>
 </odoo>
