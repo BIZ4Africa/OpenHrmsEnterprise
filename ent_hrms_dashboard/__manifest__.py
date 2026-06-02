@@ -53,6 +53,7 @@
         "ent_hr_resignation",
         "event",
         "ent_hr_reward_warning",
+        "ent_hr_employee_updation",
         "base",
     ],
     "data": [

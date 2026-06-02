@@ -31,7 +31,7 @@
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.cybrosys.com",
-    "depends": ["base_setup", "hr_attendance"],
+    "depends": ["base_setup", "hr_attendance", "ent_hr_employee_updation"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_cron_data.xml",
