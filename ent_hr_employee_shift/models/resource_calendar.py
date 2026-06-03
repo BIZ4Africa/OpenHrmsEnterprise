@@ -54,7 +54,6 @@ class ResourceCalendar(models.Model):
     color = fields.Integer(string='Color Index',
                            help="Color Index of Resource Calendar")
     hr_department_id = fields.Many2one('hr.department', string="Department",
-                                       required=True,
                                        help="Department of Resource Calendar")
     sequence = fields.Integer(string="Sequence", required=True, default=1,
                               help="Sequence of Resource Calendar")
