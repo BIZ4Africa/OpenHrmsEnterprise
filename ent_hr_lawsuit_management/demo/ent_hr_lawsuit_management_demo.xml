@@ -2,15 +2,22 @@
 <odoo noupdate="1">
         <!--New demo company-->
         <record id="company_one" model="res.company">
-            <field name="name">MyCompany</field>
+            <field name="name">Jina Kubwa Enterprises</field>
+        </record>
+        <!--Demo partner for Xavier Mukalamushi-->
+        <record id="work_contact_xm" model="res.partner">
+            <field name="name">Xavier Mukalamushi</field>
+            <field name="company_id" ref="company_one"/>
         </record>
         <!--New demo employee-->
         <record id="employee_lawsuite_id" model="hr.employee">
-            <field name="name">Roshan Andrews</field>
+            <field name="name">Xavier Mukalamushi</field>
             <field name="job_title">Chief Medical Officer</field>
             <field name="work_location_id" ref="hr.work_location_1"/>
             <field name="work_phone">(376)-3852-7863</field>
-            <field name="work_email">joe@example.com</field>
+            <field name="work_email">xavier@example.com</field>
+            <field name="company_id" ref="company_one"/>
+            <field name="address_home_id" ref="work_contact_xm"/>
             <field name="image_1920" type="base64"
                    file="ent_hr_lawsuit_management/static/image/employee_image.jpeg"/>
         </record>

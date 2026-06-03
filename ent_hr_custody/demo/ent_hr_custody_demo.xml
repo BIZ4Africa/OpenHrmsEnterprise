@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+        <!--New demo company-->
+        <record id="company_one" model="res.company">
+            <field name="name">Jina Kubwa Enterprises</field>
+        </record>
         <!--        To create demo data for laptop in custody property-->
         <record id="property_one" model="custody.property">
             <field name="name">Laptop</field>
@@ -17,13 +21,20 @@
             <field name="name">Building 3, Third Floor</field>
             <field name="address_id" ref="base.main_partner"/>
         </record>
-        <!-- To create demo data for juliet in employee-->
+        <!--Demo partner for Xavier Mukalamushi-->
+        <record id="work_contact_xm" model="res.partner">
+            <field name="name">Xavier Mukalamushi</field>
+            <field name="company_id" ref="company_one"/>
+        </record>
+        <!-- To create demo data for Xavier Mukalamushi in employee-->
         <record id="employee_custody" model="hr.employee">
-            <field name="name">Juliet</field>
+            <field name="name">Xavier Mukalamushi</field>
             <field name="job_title">Odoo Developer</field>
             <field name="work_location_id" ref="work_data"/>
             <field name="work_phone">(956)-3852-7863</field>
-            <field name="work_email">juliet123@example.com</field>
+            <field name="work_email">xavier@example.com</field>
+            <field name="company_id" ref="company_one"/>
+            <field name="address_home_id" ref="work_contact_xm"/>
             <field name="image_1920" type="base64"
                    file="ent_hr_custody/static/images/hr_custody_employee.jpg"/>
         </record>

@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
+<!--    New demo company-->
+        <record id="company_one" model="res.company">
+            <field name="name">Jina Kubwa Enterprises</field>
+        </record>
+<!--    Demo partner for Amani Mrembo-->
+        <record id="work_contact_am" model="res.partner">
+            <field name="name">Amani Mrembo</field>
+            <field name="company_id" ref="company_one"/>
+        </record>
 <!--    Demo data for hr employee-->
             <record id="hr_employee_record" model="hr.employee">
-            <field name="name">Joe</field>
+            <field name="name">Amani Mrembo</field>
             <field name="job_title">Chief Medical Officer</field>
             <field name="work_location_id" ref="hr_work_location_record"/>
             <field name="work_phone">(376)-3852-7863</field>
-            <field name="work_email">joe@example.com</field>
+            <field name="work_email">amani@example.com</field>
+            <field name="company_id" ref="company_one"/>
+            <field name="address_home_id" ref="work_contact_am"/>
             <field name="image_1920" type="base64" file="ent_employee_documents_expiry/static/image/employee_image.jpeg"/>
         </record>
 </odoo>
