@@ -27,7 +27,7 @@ from odoo import models, fields
 class HrEmployeeBase(models.AbstractModel):
     """Inherits the model hr.employee.base to override the
      method _compute_newly_hired"""
-    _inherit = 'hr.employee.base'
+    _inherit = 'hr.employee'
 
     def _compute_newly_hired(self):
         """

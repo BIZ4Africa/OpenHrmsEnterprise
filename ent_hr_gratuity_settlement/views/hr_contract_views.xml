@@ -8,7 +8,9 @@
         <field name="model">hr.version</field>
         <field name="inherit_id" ref="hr.hr_contract_template_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="/form/header" position="inside">
+            <xpath expr="//field[@name='hr_responsible_id']" position="after">
+                <field name="trial_date_end" invisible="1"/>
+                <field name="state" invisible="1"/>
                 <button name="action_approve" string="Approve"
                         class="oe_highlight" type="object"
                         invisible="state != 'probation'"
@@ -21,11 +23,7 @@
             <xpath expr="//page[@name='information']" position="attributes">
                 <attribute name="invisible">wage_type == 'hourly'</attribute>
             </xpath>
-
-            <xpath expr="//field[@name='hr_responsible_id']" position="after">
-                <field name="trial_date_end" invisible="1"/>
-            </xpath>
-            <xpath expr="/form/sheet/notebook/page[@name='information']/group/group[@name='salary']"
+            <xpath expr="//page[@name='information']/group[@name='salary_info']/group[@name='contract']"
                    position="inside">
                 <field name="training_amount"/>
             </xpath>

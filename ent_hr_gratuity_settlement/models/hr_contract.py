@@ -34,8 +34,8 @@ class HrVersion(models.Model):
     is_approve = fields.Boolean(string="Is Approve",
                                 help="Ensure the approval")
     state = fields.Selection(
-        selection_add=[('probation', 'Probation')],
-        ondelete={'probation': 'set default'},
+        selection=[('draft', 'Draft'), ('probation', 'Probation'), ('open', 'Running'), ('close', 'Expired'), ('cancel', 'Cancelled')],
+        default='draft',
         string='Status',
         help="Ensure the record state",
     )
