@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,14 +19,15 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-import pandas as pd
 from collections import defaultdict
-from datetime import timedelta, datetime, date
+from datetime import date, datetime, timedelta
+
+import pandas as pd
 from dateutil.relativedelta import relativedelta
-from pytz import utc
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.http import request
 from odoo.tools import float_utils
+from pytz import utc
 
 ROUNDING_FACTOR = 16
 
@@ -141,8 +141,7 @@ class HrEmployee(models.Model):
                 years = diff.years
                 months = diff.months
                 days = diff.days
-                experience = '{} years {} months {} days'.format(years, months,
-                                                                 days)
+                experience = f'{years} years {months} months {days} days'
             else:
                 experience = False
             if employee:
@@ -201,7 +200,6 @@ class HrEmployee(models.Model):
              ('position_ids', 'in', employee.job_id.id),
              ], fields=['announcement_reason', 'date_start', 'date_end'])
 
-        lang = f"'{self.env.context['lang']}'"
         cr.execute("""select e.id, e.name ->> e.lang as name, e.date_begin,
                 e.date_end,rp.name as location
                from event_event e

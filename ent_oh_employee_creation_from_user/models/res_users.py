@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -30,7 +29,7 @@ class ResUsers(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         """ This code is to create an employee while creating a user. """
-        result = super(ResUsers, self).create(vals_list)
+        result = super().create(vals_list)
         for record in result:
             if record.share or record.employee_ids:
                 continue

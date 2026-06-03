@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -22,6 +21,7 @@
 ################################################################################
 import time
 from datetime import datetime
+
 from dateutil import relativedelta
 from odoo import api, fields, models
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,9 +20,10 @@
 #
 ################################################################################
 from datetime import datetime
+
 from dateutil.relativedelta import relativedelta
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, UserError
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 
 class HrLoan(models.Model):
@@ -124,7 +124,7 @@ class HrLoan(models.Model):
                 raise ValidationError(
                     _("The employee has already a pending installment"))
             values['name'] = self.env['ir.sequence'].get('hr.loan.seq') or ' '
-        return super(HrLoan, self).create(vals_list)
+        return super().create(vals_list)
 
     def action_compute_installment(self):
         """This automatically create the installment the employee need to pay
@@ -170,4 +170,4 @@ class HrLoan(models.Model):
                 raise UserError(
                     'You cannot delete a loan which is not in draft or '
                     'cancelled state')
-        return super(HrLoan, self).unlink()
+        return super().unlink()

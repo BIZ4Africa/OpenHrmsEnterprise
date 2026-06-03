@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -20,7 +19,8 @@
 #
 ########################################################################################
 from datetime import date
-from odoo import api, fields, models, _
+
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -114,7 +114,7 @@ class HRGratuity(models.Model):
         """ assigning the sequence for the record """
         for vals in vals_list:
             vals['name'] = self.env['ir.sequence'].next_by_code('hr.gratuity')
-        return super(HRGratuity, self).create(vals_list)
+        return super().create(vals_list)
 
     @api.onchange('employee_id')
     def _onchange_employee_id(self):

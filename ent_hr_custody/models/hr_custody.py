@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -23,7 +22,8 @@
 #
 ###############################################################################
 from datetime import date, datetime, timedelta
-from odoo import api, fields, models, _
+
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
 

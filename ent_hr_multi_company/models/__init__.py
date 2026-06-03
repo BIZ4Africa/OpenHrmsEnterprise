@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,5 +19,4 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import hr_attendance
-from . import hr_salary_rule_category
+from . import hr_attendance, hr_salary_rule_category

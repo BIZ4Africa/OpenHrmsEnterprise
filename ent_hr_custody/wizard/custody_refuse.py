@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -22,7 +21,7 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ###############################################################################
-from odoo import models, fields
+from odoo import fields, models
 
 
 class CustodyRefuse(models.TransientModel):

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,7 +20,8 @@
 #
 ################################################################################
 from datetime import timedelta
-from odoo import api, fields, models, _
+
+from odoo import _, api, fields, models
 
 
 class HrEmployee(models.Model):

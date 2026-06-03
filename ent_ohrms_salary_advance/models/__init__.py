@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,6 +19,4 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import hr_payslip
-from . import hr_payroll_structure
-from . import salary_advance
+from . import hr_payroll_structure, hr_payslip, salary_advance

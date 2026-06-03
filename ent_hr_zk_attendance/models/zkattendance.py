@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,7 +20,8 @@
 ################################################################################
 import binascii
 from struct import unpack
-from .zkconst import *
+
+from .zkconst import CMD_ATTLOG_RRQ, CMD_CLEAR_ATTLOG, CMD_PREPARE_DATA, decode_time
 
 
 def getSizeAttendance(self):
@@ -39,7 +39,7 @@ def getSizeAttendance(self):
 
 def reverseHex(hexstr):
     tmp = ''
-    for i in reversed(xrange(int(len(hexstr) / 2))):
+    for i in reversed(range(int(len(hexstr) / 2))):
         tmp += hexstr[i * 2:(i * 2) + 2]
     return tmp
 
@@ -67,7 +67,7 @@ def zkgetattendance(self):
         attendance = []
         if len(self.attendancedata) > 0:
             # The first 4 bytes don't seem to be related to the user
-            for x in xrange(len(self.attendancedata)):
+            for x in range(len(self.attendancedata)):
                 if x > 0:
                     self.attendancedata[x] = self.attendancedata[x][8:]
             attendancedata = b''.join(self.attendancedata)
@@ -84,7 +84,7 @@ def zkgetattendance(self):
                                            'utf-8')), 16))))
                 attendancedata = attendancedata[40:]
         return attendance
-    except:
+    except Exception:
         return False
 
 
@@ -102,5 +102,5 @@ def zkclearattendance(self):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False

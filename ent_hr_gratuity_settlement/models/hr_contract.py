@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,7 +18,7 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ########################################################################################
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -100,7 +99,7 @@ class HrVersion(models.Model):
                     'end_date': vals['trial_date_end'],
                 })
                 vals['probation_id'] = dtl.id
-        return super(HrVersion, self).create(vals_list)
+        return super().create(vals_list)
 
     def write(self, vals):
         """ Function for checking stage changing and creating probation
@@ -116,7 +115,7 @@ class HrVersion(models.Model):
         training_dtl = self.env['hr.training'].search([('employee_id', '=',
                                                         self.employee_id.id)])
         if training_dtl:
-            return super(HrVersion, self).write(vals)
+            return super().write(vals)
         if not training_dtl:
             if self.trial_date_end and self.state == 'probation':
                 self.env['hr.training'].create({
@@ -124,4 +123,4 @@ class HrVersion(models.Model):
                     'start_date': self.date_start,
                     'end_date': self.trial_date_end,
                 })
-        return super(HrVersion, self).write(vals)
+        return super().write(vals)

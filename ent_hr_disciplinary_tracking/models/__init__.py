@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,6 +18,4 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ########################################################################################
-from . import disciplinary_action
-from . import discipline_category
-from . import hr_employee
+from . import disciplinary_action, discipline_category, hr_employee

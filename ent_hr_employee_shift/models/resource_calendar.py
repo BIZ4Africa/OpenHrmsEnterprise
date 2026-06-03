@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,14 +18,15 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import api, fields, models, _
-from datetime import datetime, time
 import datetime
 import math
-from pytz import utc
-from odoo.tools.float_utils import float_round
 from collections import namedtuple
+from datetime import datetime, time
+
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from odoo.tools.float_utils import float_round
+from pytz import utc
 
 
 class ResourceCalendar(models.Model):

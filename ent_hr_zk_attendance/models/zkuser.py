@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,8 +19,16 @@
 #
 ################################################################################
 from struct import pack, unpack
+
 from lxml.builder import unicode
-from .zkconst import *
+
+from .zkconst import (
+    CMD_CLEAR_ADMIN,
+    CMD_CLEAR_DATA,
+    CMD_PREPARE_DATA,
+    CMD_SET_USER,
+    CMD_USERTEMP_RRQ,
+)
 
 
 def getSizeUser(self):
@@ -51,7 +58,7 @@ def zksetuser(self, uid, userid, name, password, role):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False
 
 
@@ -78,7 +85,7 @@ def zkgetuser(self):
         users = {}
         if len(self.userdata) > 0:
             # The first 4 bytes don't seem to be related to the user
-            for x in xrange(len(self.userdata)):
+            for x in range(len(self.userdata)):
                 if x > 0:
                     self.userdata[x] = self.userdata[x][8:]
             userdata = ''.join(self.userdata)
@@ -100,7 +107,7 @@ def zkgetuser(self):
                               password)
                 userdata = userdata[72:]
         return users
-    except:
+    except Exception:
         return False
 
 
@@ -118,7 +125,7 @@ def zkclearuser(self):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False
 
 
@@ -136,5 +143,5 @@ def zkclearadmin(self):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False

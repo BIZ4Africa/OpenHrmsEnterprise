@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -22,5 +21,4 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ###############################################################################
-from . import contract_renewal
-from . import custody_refuse
+from . import contract_renewal, custody_refuse

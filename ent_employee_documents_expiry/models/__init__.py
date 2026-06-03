@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,8 +19,10 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import document_type
-from . import hr_document
-from . import hr_employee
-from . import hr_employee_document
-from . import ir_attachment
+from . import (
+    document_type,
+    hr_document,
+    hr_employee,
+    hr_employee_document,
+    ir_attachment,
+)

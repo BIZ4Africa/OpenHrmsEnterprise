@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,8 +20,8 @@
 ################################################################################
 def zkextendoplog(self, index=0):
     try:
-        test = self.extlogtrynumber
-    except:
+        _test = self.extlogtrynumber
+    except Exception:
         self.extlogtrynumber = 1
 
     data_seq = [self.data_recv.encode("hex")[4:6],
@@ -31,21 +30,18 @@ def zkextendoplog(self, index=0):
     if index == 0:
         self.data_seq1 = hex(int(data_seq[0], 16) + int('104', 16)).lstrip("0x")
         self.data_seq2 = hex(int(data_seq[1], 16) + int('19', 16)).lstrip("0x")
-        desc = ": +104, +19"
         header = "0b00"
     elif index == 1:
         self.data_seq1 = hex(abs(int(data_seq[0], 16) - int('2c', 16))).lstrip(
             "0x")
         self.data_seq2 = hex(abs(int(data_seq[1], 16) - int('2', 16))).lstrip(
             "0x")
-        desc = ": -2c, -2"
         header = "d107"
     elif index >= 2:
         self.data_seq1 = hex(abs(int(data_seq[0], 16) - int('2c', 16))).lstrip(
             "0x")
         self.data_seq2 = hex(abs(int(data_seq[1], 16) - int('2', 16))).lstrip(
             "0x")
-        desc = ": -2c, -2"
         header = "ffff"
 
     if len(self.data_seq1) >= 3:
@@ -73,7 +69,7 @@ def zkextendoplog(self, index=0):
     self.zkclient.sendto(data.decode("hex"), self.address)
     try:
         self.data_recv, addr = self.zkclient.recvfrom(1024)
-    except:
+    except Exception:
         if self.extlogtrynumber == 1:
             self.extlogtrynumber = 2
             zkextendoplog(self)

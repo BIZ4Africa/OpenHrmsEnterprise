@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -53,7 +52,7 @@ class HrPayslip(models.Model):
                                     amount = line.amount
                                     name = loan_line[:1].id
                                     data.input_data_line(name, amount, line)
-        return super(HrPayslip, self).compute_sheet()
+        return super().compute_sheet()
 
     def action_payslip_done(self):
         """Mark loan as paid on paying payslip"""
@@ -61,7 +60,7 @@ class HrPayslip(models.Model):
             if line.loan_line_id:
                 line.loan_line_id.paid = True
                 line.loan_line_id.loan_id._compute_loan_amount()
-        return super(HrPayslip, self).action_payslip_done()
+        return super().action_payslip_done()
 
     def input_data_line(self, name, amount, loan):
         """Add loan details to payslip as other input"""

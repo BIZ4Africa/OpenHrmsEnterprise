@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,8 +18,10 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import hr_employee_contract
-from . import hr_employee
-from . import hr_payslip
-from . import hr_shift_generate
-from . import resource_calendar
+from . import (
+    hr_employee,
+    hr_employee_contract,
+    hr_payslip,
+    hr_shift_generate,
+    resource_calendar,
+)

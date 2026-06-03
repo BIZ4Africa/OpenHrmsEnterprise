@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,10 +18,12 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ########################################################################################
-from . import gratuity_accounting_configuration
-from . import gratuity_configuration
-from . import hr_contract
-from . import hr_employee
-from . import hr_gratuity
-from . import hr_leave
-from . import hr_training
+from . import (
+    gratuity_accounting_configuration,
+    gratuity_configuration,
+    hr_contract,
+    hr_employee,
+    hr_gratuity,
+    hr_leave,
+    hr_training,
+)

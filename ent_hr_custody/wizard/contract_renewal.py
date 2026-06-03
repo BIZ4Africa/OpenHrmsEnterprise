@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -22,7 +21,7 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ###############################################################################
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 

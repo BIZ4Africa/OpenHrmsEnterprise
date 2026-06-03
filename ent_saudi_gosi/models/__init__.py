@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,6 +19,4 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import gosi_payslip
-from . import hr_employee
-from . import hr_payslip
+from . import gosi_payslip, hr_employee, hr_payslip

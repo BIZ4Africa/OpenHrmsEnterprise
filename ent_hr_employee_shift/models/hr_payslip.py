@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -20,9 +19,9 @@
 #
 ################################################################################
 import datetime
-from datetime import timedelta
-from odoo import api, fields, models, tools, _
-from datetime import datetime
+from datetime import datetime, timedelta
+
+from odoo import _, api, fields, models, tools
 
 
 class HrPayslip(models.Model):
@@ -69,8 +68,6 @@ class HrPayslip(models.Model):
             for days in contract.shift_schedule_ids:
                 start_date = datetime.datetime.strptime(str(days.start_date),
                                                         tools.DEFAULT_SERVER_DATE_FORMAT)
-                end_date = datetime.datetime.strptime(str(days.end_date),
-                                                      tools.DEFAULT_SERVER_DATE_FORMAT)
                 nb_of_days = (days.end_date - days.start_date).days + 1
                 for day in range(0, nb_of_days):
                     working_intervals_on_day = days. \

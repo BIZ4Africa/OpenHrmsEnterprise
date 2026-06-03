@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,7 +19,7 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 
 
 class GosiPayslip(models.Model):
@@ -57,7 +56,7 @@ class GosiPayslip(models.Model):
         """Supering the create method to add the sequence"""
         for vals in vals_list:
             vals['name'] = self.env['ir.sequence'].next_by_code('gosi.payslip')
-        return super(GosiPayslip, self).create(vals_list)
+        return super().create(vals_list)
 
     @api.onchange('employee_id')
     def _onchange_employee(self):

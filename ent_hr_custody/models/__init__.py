@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -22,6 +21,4 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ###############################################################################
-from . import custody_property
-from . import hr_custody
-from . import hr_employee
+from . import custody_property, hr_custody, hr_employee

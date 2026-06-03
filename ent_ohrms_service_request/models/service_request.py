@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,7 +19,7 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -78,7 +77,7 @@ class ServiceRequest(models.Model):
         """Sequence number"""
         for vals in vals_list:
             vals['name'] = self.env['ir.sequence'].next_by_code('service.request')
-        return super(ServiceRequest, self).create(vals_list)
+        return super().create(vals_list)
 
     @api.depends('read_only')
     def get_user(self):

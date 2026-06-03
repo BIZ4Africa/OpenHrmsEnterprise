@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -19,22 +18,26 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from socket import *
-from .zkconnect import *
-from .zkversion import *
-from .zkos import *
-from .zkextendfmt import *
-from .zkextendoplog import *
-from .zkplatform import *
-from .zkworkcode import *
-from .zkssr import *
-from .zkpin import *
-from .zkface import *
-from .zkserialnumber import *
-from .zkdevice import *
-from .zkuser import *
-from .zkattendance import *
-from .zktime import *
+from struct import pack, unpack
+from socket import AF_INET, SOCK_DGRAM, socket
+
+from .zkconst import CMD_ACK_OK, USHRT_MAX
+
+from .zkattendance import zkclearattendance, zkgetattendance
+from .zkconnect import zkconnect, zkdisconnect
+from .zkdevice import zkdevicename, zkdisabledevice, zkenabledevice
+from .zkextendfmt import zkextendfmt
+from .zkextendoplog import zkextendoplog
+from .zkface import zkfaceon
+from .zkos import zkos
+from .zkpin import zkpinwidth
+from .zkplatform import zkplatform, zkplatformVersion
+from .zkserialnumber import zkserialnumber
+from .zkssr import zkssr
+from .zktime import zkgettime, zksettime
+from .zkuser import zkclearadmin, zkclearuser, zkgetuser, zksetuser
+from .zkversion import zkversion
+from .zkworkcode import zkworkcode
 
 
 class ZKLib:

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,12 +19,13 @@
 #
 ################################################################################
 from struct import pack, unpack
-from .zkconst import *
+
+from .zkconst import CMD_GET_TIME, CMD_SET_TIME, decode_time, encode_time
 
 
 def reverseHex(hexstr):
     tmp = ''
-    for i in reversed(xrange(len(hexstr) / 2)):
+    for i in reversed(range(len(hexstr) / 2)):
         tmp += hexstr[i * 2:(i * 2) + 2]
     return tmp
 
@@ -44,7 +44,7 @@ def zksettime(self, t):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False
 
 
@@ -63,5 +63,5 @@ def zkgettime(self):
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return decode_time(
             int(reverseHex(self.data_recv[8:].encode("hex")), 16))
-    except:
+    except Exception:
         return False

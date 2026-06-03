@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -19,9 +18,11 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import hr_attendance
-from . import hr_employee
-from . import zklib
-from . import zk_machine
-from . import zk_machine_attendance
-from . import zk_report_daily_attendance
+from . import (
+    hr_attendance,
+    hr_employee,
+    zk_machine,
+    zk_machine_attendance,
+    zk_report_daily_attendance,
+    zklib,
+)

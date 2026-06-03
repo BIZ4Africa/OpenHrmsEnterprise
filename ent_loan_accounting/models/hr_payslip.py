@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,8 +19,9 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-import babel
 from datetime import datetime, time
+
+import babel
 from odoo import fields, models, tools
 
 
@@ -44,4 +44,4 @@ class HrPayslip(models.Model):
                                         locale=locale))
             if line.loan_line_id:
                 line.loan_line_id.action_paid_amount(month)
-        return super(HrPayslip, self).action_payslip_done()
+        return super().action_payslip_done()

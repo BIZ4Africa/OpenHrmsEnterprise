@@ -25,7 +25,7 @@ def migrate(cr, version):
                 "ref": move_ref,
             })
 
-            loan_lines = move.line_ids.filtered(lambda l: l.loan_id == loan)
+            loan_lines = move.line_ids.filtered(lambda line: line.loan_id == loan)
             loan_lines.write({"name": line_name})
 
             if was_posted:

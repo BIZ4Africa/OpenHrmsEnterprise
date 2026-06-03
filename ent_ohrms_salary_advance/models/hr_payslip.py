@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -54,4 +53,4 @@ class HrPayslip(models.Model):
                         if (code not in slip.input_line_ids.mapped('input_type_id').
                                 mapped('code')):
                             slip.input_data_salary_line(name, amount)
-        return super(HrPayslip, self).compute_sheet()
+        return super().compute_sheet()

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,10 +18,12 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ########################################################################################
-from . import contract_history
-from . import department_history
-from . import hr_contract
-from . import hr_employee
-from . import salary_history
-from . import timesheet_cost
+from . import (
+    contract_history,
+    department_history,
+    hr_contract,
+    hr_employee,
+    salary_history,
+    timesheet_cost,
+)
 

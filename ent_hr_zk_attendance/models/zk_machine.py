@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,15 +20,17 @@
 ################################################################################
 import datetime
 import logging
-import pytz
 from struct import unpack
-from .zkconst import *
-from odoo import api, fields, models, _
+
+import pytz
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
+
+from .zkconst import CMD_PREPARE_DATA
 
 _logger = logging.getLogger(__name__)
 try:
-    from zk import ZK, const
+    from zk import ZK
 except ImportError:
     _logger.error("Please Install pyzk library.")
 
@@ -58,7 +59,7 @@ class ZkMachine(models.Model):
         try:
             connection = zk.connect()
             return connection
-        except:
+        except Exception:
             return False
 
     def action_test_connection(self):
@@ -139,7 +140,7 @@ class ZkMachine(models.Model):
         try:
             users = zk.get_users()
             return users
-        except:
+        except Exception:
             return False
 
     def action_import_attendance(self):
@@ -161,11 +162,11 @@ class ZkMachine(models.Model):
             if connection:
                 try:
                     user = connection.get_users()
-                except:
+                except Exception:
                     user = False
                 try:
                     attendance = connection.get_attendance()
-                except:
+                except Exception:
                     attendance = False
                 if attendance:
                     for each in attendance:

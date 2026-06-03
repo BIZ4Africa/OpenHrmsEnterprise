@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,7 +20,8 @@
 #
 ################################################################################
 from datetime import date
-from odoo import api, fields, models, _
+
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -119,10 +119,10 @@ class EmployeeVerification(models.Model):
         for vals in vals_list:
             seq = self.env['ir.sequence'].next_by_code('res.users') or '/'
             vals['verification'] = seq
-        return super(EmployeeVerification, self).create(vals_list)
+        return super().create(vals_list)
 
     def unlink(self):
         """Super unlink() function"""
         if self.state not in 'draft':
             raise UserError(_('You cannot delete the verification created.'))
-        super(EmployeeVerification, self).unlink()
+        super().unlink()

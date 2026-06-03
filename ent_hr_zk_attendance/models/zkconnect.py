@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,7 +19,8 @@
 #
 ################################################################################
 from struct import unpack
-from .zkconst import *
+
+from .zkconst import CMD_CONNECT, CMD_EXIT, USHRT_MAX
 
 
 def zkconnect(self):
@@ -37,9 +37,9 @@ def zkconnect(self):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.checkValid(self.data_recv)
-    except:
+    except Exception:
         return False
-    
+
 
 def zkdisconnect(self):
     """Disconnect from the clock"""

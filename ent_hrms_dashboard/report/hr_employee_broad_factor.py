@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,8 +19,7 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import tools
-from odoo import api, fields, models
+from odoo import api, fields, models, tools
 
 
 class HrEmployeeBroadFactor(models.Model):

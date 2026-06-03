@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,7 +19,7 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -164,7 +163,7 @@ class HrLeave(models.Model):
         for user in self.leave_approvals_ids:
             validating_users_id.append(user.validating_users_id.id)
         for user in self.holiday_status_id.leave_validators_ids.filtered(
-                lambda l: l.holiday_validators_id.id not in validating_users_id):
+                lambda rec: rec.holiday_validators_id.id not in validating_users_id):
             list.append((0, 0, {
                 'validating_users_id': user.holiday_validators_id.id,
             }))
@@ -178,7 +177,7 @@ class HrLeave(models.Model):
         approval = []
         for req in hr_holidays:
             for user in req.leave_approvals_ids.filtered(
-                    lambda l: l.validating_users_id.id == current_uid):
+                    lambda rec: rec.validating_users_id.id == current_uid):
                 approval.append(req.id)
         value = {
             'domain': str([('id', 'in', approval)]),
@@ -201,7 +200,7 @@ class HrLeave(models.Model):
         type_leave = self.holiday_status_id.leave_validation_type
         if self.leave_approvals_ids:
             for rec in self.leave_approvals_ids.filtered(
-                    lambda l: l.validating_users_id == self.env.user):
+                    lambda rec: rec.validating_users_id == self.env.user):
                 if rec.is_validation_status and type_leave == 'multi':
                     rec.holiday_id.is_button_visibility = True
                 else:

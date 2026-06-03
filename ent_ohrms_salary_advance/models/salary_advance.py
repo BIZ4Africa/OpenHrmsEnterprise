@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -22,8 +21,8 @@
 ################################################################################
 import time
 from datetime import datetime
-from odoo import fields, models, api, _
-from odoo import exceptions
+
+from odoo import _, api, exceptions, fields, models
 from odoo.exceptions import UserError
 
 
@@ -115,7 +114,7 @@ class SalaryAdvance(models.Model):
         """ inheriting create method for adding sequence for the request. """
         for vals in vals_list:
             vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
-        return super(SalaryAdvance, self).create(vals_list)
+        return super().create(vals_list)
 
     def action_approve_request(self):
         """ This Approves the employee salary advance request. """

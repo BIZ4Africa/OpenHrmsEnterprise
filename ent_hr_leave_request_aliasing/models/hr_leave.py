@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -22,6 +21,7 @@
 ################################################################################
 import re
 from datetime import datetime
+
 from odoo import api, models
 from odoo.tools import email_split
 

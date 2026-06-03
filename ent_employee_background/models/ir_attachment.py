@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,9 +19,10 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from odoo import api, models, _
-from odoo.exceptions import AccessError
 from collections import defaultdict
+
+from odoo import _, api, models
+from odoo.exceptions import AccessError
 
 
 class IrAttachment(models.Model):

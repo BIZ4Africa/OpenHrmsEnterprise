@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -23,11 +22,12 @@
 import base64
 import zipfile
 from io import BytesIO
-from odoo import http, _
+
+from odoo import _, http
+from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.addons.portal.controllers.portal import pager as portal_pager
 from odoo.exceptions import AccessError, UserError
-from odoo.http import request, content_disposition
-from odoo.addons.portal.controllers.portal import (CustomerPortal, pager as
-portal_pager)
+from odoo.http import content_disposition, request
 
 
 class EmployeeVerificationPortal(CustomerPortal):

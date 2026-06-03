@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -36,7 +35,7 @@ class HrLawsuit(models.Model):
         """Create a new sequence"""
         for vals in vals_list:
             vals['name'] = self.env['ir.sequence'].next_by_code('hr.lawsuit')
-        return super(HrLawsuit, self).create(vals_list)
+        return super().create(vals_list)
 
     def action_won(self):
         """Method to change the auction state into won"""

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,7 +19,8 @@
 #
 ################################################################################
 from struct import unpack
-from .zkconst import *
+
+from .zkconst import CMD_DEVICE
 
 
 def zkplatform(self):
@@ -37,7 +37,7 @@ def zkplatform(self):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False
 
 
@@ -55,5 +55,5 @@ def zkplatformVersion(self):
         self.data_recv, addr = self.zkclient.recvfrom(1024)
         self.session_id = unpack('HHHH', self.data_recv[:8])[2]
         return self.data_recv[8:]
-    except:
+    except Exception:
         return False

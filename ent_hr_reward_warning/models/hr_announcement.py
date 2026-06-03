@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,6 +20,7 @@
 #
 ################################################################################
 from datetime import datetime
+
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -119,7 +119,7 @@ class HrAnnouncement(models.Model):
             else:
                 vals['name'] = self.env['ir.sequence'].next_by_code(
                     'hr.announcement')
-        return super(HrAnnouncement, self).create(vals_list)
+        return super().create(vals_list)
 
     def get_expiry_state(self):
         """

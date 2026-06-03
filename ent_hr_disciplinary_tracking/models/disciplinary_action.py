@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -19,7 +18,7 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ########################################################################################
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -75,7 +74,7 @@ class DisciplinaryAction(models.Model):
         for vals in vals_list:
             vals['name'] = self.env['ir.sequence'].next_by_code(
                 'disciplinary.action')
-        return super(DisciplinaryAction, self).create(vals_list)
+        return super().create(vals_list)
 
     @api.depends('read_only')
     def get_user(self):

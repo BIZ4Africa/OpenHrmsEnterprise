@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,9 +19,11 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import account_move
-from . import account_move_line
-from . import hr_loan
-from . import hr_loan_line
-from . import hr_payslip
-from . import res_config_settings
+from . import (
+    account_move,
+    account_move_line,
+    hr_loan,
+    hr_loan_line,
+    hr_payslip,
+    res_config_settings,
+)

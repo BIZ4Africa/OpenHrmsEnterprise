@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -22,7 +21,8 @@
 ################################################################################
 import datetime
 from datetime import datetime, timedelta
-from odoo import api, fields, models, _
+
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 RESIGNATION_TYPE = [('resigned', 'Normal Resignation'),
@@ -96,7 +96,7 @@ class HrResignation(models.Model):
             if vals.get('name', _('New')) == _('New'):
                 vals['name'] = self.env['ir.sequence'].next_by_code(
                     'hr.resignation') or _('New')
-        return super(HrResignation, self).create(vals_list)
+        return super().create(vals_list)
 
     @api.constrains('employee_id')
     def check_employee(self):

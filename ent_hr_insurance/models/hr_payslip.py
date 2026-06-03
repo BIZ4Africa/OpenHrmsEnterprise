@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -29,7 +28,7 @@ class HRPayslip(models.Model):
 
     def get_inputs(self, contract_ids, date_from, date_to):
         """Returns the amount of deduction per month"""
-        res = super(HRPayslip, self).get_inputs(contract_ids,
+        res = super().get_inputs(contract_ids,
                                                 date_from, date_to)
         contract_obj = self.env['hr.version']
         for contract in contract_ids:

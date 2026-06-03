@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,7 +19,4 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import hr_employee
-from . import hr_insurance
-from . import hr_payslip
-from . import insurance_policy
+from . import hr_employee, hr_insurance, hr_payslip, insurance_policy

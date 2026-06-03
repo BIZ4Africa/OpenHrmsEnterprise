@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -22,6 +21,4 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ###############################################################################
-from . import models
-from . import report
-from . import wizard
+from . import models, report, wizard

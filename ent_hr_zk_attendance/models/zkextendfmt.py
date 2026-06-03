@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,8 +20,8 @@
 ################################################################################
 def zkextendfmt(self):
     try:
-        test = self.exttrynumber
-    except:
+        _test = self.exttrynumber
+    except Exception:
         self.exttrynumber = 1
     data_seq = [self.data_recv.encode("hex")[4:6],
                 self.data_recv.encode("hex")[6:8]]
@@ -33,8 +32,6 @@ def zkextendfmt(self):
         plus1 = -1
         plus2 = +1
 
-    desc = ": +" + hex(int('99', 16) + plus1).lstrip('0x') + ", +" + hex(
-        int('b1', 16) + plus2).lstrip("0x")
     self.data_seq1 = hex(int(data_seq[0], 16) + int('99', 16) + plus1).lstrip(
         "0x")
     self.data_seq2 = hex(int(data_seq[1], 16) + int('b1', 16) + plus2).lstrip(
@@ -60,7 +57,7 @@ def zkextendfmt(self):
     self.zkclient.sendto(data.decode("hex"), self.address)
     try:
         self.data_recv, addr = self.zkclient.recvfrom(1024)
-    except:
+    except Exception:
         if self.exttrynumber == 1:
             self.exttrynumber = 2
             tmp = zkextendfmt(self)

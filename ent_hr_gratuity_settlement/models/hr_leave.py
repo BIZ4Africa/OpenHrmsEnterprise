@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ######################################################################################
 #
 #    A part of Open HRMS Project <https://www.openhrms.com>
@@ -21,6 +20,7 @@
 ########################################################################################
 import datetime
 from datetime import date
+
 from odoo import models
 
 
@@ -31,7 +31,7 @@ class HRLeave(models.Model):
     def action_validate(self):
         """ function for calculating leaves and updating probation period upon
         the leave days """
-        res = super(HRLeave, self).action_validate()
+        res = super().action_validate()
         contract = self.env['hr.version'].search(
             [('employee_id', '=', self.employee_id.id),
              ('state', '=', 'probation')], limit=1)

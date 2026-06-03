@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -21,6 +20,7 @@
 #
 ################################################################################
 from datetime import date
+
 from odoo import fields, models
 from odoo.exceptions import UserError
 

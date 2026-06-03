@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ################################################################################
 #
 #    A part of OpenHRMS Project <https://www.openhrms.com>
@@ -20,10 +19,12 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
-from . import employee_checklist
-from . import hr_employee
-from . import hr_employee_document
-from . import mail_activity
-from . import mail_activity_plan
-from . import mail_activity_plan_template
-from . import mail_activity_schedule
+from . import (
+    employee_checklist,
+    hr_employee,
+    hr_employee_document,
+    mail_activity,
+    mail_activity_plan,
+    mail_activity_plan_template,
+    mail_activity_schedule,
+)
