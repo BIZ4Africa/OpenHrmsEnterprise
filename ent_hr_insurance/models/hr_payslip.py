@@ -26,16 +26,7 @@ class HRPayslip(models.Model):
     """Hr Payslip model is used to add custom fields and methods."""
     _inherit = 'hr.payslip'
 
-    def get_inputs(self, contract_ids, date_from, date_to):
-        """Returns the amount of deduction per month"""
-        res = super().get_inputs(contract_ids,
-                                                date_from, date_to)
-        contract_obj = self.env['hr.version']
-        for contract in contract_ids:
-            if contract_ids[0]:
-                emp_id = contract_obj.browse(contract[0].id).employee_id
-                for result in res:
-                    if emp_id.deduced_amount_per_month != 0:
-                        if result.get('code') == 'INSUR':
-                            result['amount'] = emp_id.deduced_amount_per_month
-        return res
+    # NOTE: The Odoo 18 get_inputs() override was removed for Odoo 19 migration.
+    # The INSUR salary rule (amount_python_compute) already reads
+    # employee.deduced_amount_per_month directly, so no input-line
+    # manipulation is needed.
