@@ -21,7 +21,7 @@
 ################################################################################
 {
     'name': 'Enterprise OpenHRMS Loan Accounting',
-    'version': '19.0.1.0.4',
+    'version': '1.0.4',
     'category': 'Generic Modules/Human Resources',
     'summary': 'Open HRMS Loan Accounting',
     'description': """Manage Loan Request of Employees.Double Layer Approval 
