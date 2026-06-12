@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Gratuity Settlement",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Human Resources",
     "summary": """Employee Gratuity Settlement""",
     "description": "To manage gratuity settlement for employees",

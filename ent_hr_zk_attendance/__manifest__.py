@@ -20,7 +20,7 @@
 ################################################################################
 {
     "name": "Enterprise HRMS Biometric Device Integration",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Human Resources",
     "live_test_url": "https://youtu.be/RHSHHU7nzTo",
     "summary": "Integrating Biometric Device With HR Attendance (Face + Thumb)",

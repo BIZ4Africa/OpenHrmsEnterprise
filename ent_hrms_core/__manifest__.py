@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Core",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Open HRMS Suit: It brings all Open HRMS modules""",
     "description": """Openhrms, Main module of Open HRMS, It brings all others 

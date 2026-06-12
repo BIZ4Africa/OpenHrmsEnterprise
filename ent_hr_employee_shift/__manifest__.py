@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Employee Shift",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Human Resource",
     "summary": """Easily create, manage, and track employee shift schedules.""",
     "description": """This module is used to track employee shift schedules.We 

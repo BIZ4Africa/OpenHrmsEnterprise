@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Official Announcements",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Managing Official Announcements""",
     "description": """This module helps you to manage hr official announcements

@@ -23,7 +23,7 @@
 ###############################################################################
 {
     "name": "Enterprise Open HRMS Legal Actions",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Human Resources",
     "summary": """Managing Legal Actions""",
     "description": "This module manages the legal actions of an employee.",

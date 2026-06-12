@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise HRMS Employee Background Verification",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Human Resources",
     "summary": """Verify the background details of an Employee """,
     "description": "Manage the employees background verification Process "

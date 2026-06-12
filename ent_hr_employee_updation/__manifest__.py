@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Employee Info",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Adding Advanced Fields In Employee Master""",
     "description": "This module helps you to add more information in "
