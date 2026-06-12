@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Company Transfer",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Human Resources",
     "summary": "This module is used to transfer employee between companies",
     "description": "Transferring employees between company is a basic thing in an "

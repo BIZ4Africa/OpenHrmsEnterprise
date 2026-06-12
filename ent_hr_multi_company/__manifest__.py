@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Multi-Company",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Enables Multi-Company""",
     "description": """This module enables HR multi company, hence HR manager 

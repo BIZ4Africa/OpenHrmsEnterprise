@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "OpenHRMS Reminders Todo",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Human Resources",
     "summary": "HR Reminder For OHRMS",
     "description": """This module is a powerful and easy-to-use tool that can 

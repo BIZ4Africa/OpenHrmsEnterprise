@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Leave Request Aliasing",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Human Resources",
     "summary": "Allows You To Create Leave Request Automatically From "
     "Incoming Mails.",

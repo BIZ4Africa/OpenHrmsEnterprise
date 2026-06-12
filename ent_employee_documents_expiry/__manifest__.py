@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Documents",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Manages Employee Documents With Expiry Notifications.""",
     "description": """This module Manages Employee Related Documents with 

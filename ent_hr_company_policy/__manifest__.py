@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise HR Company Policy",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": "Manage and organize company policies within HR system",
     "description": """Manage company policies within the HR system.

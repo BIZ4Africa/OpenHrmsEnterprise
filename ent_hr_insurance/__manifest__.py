@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Insurance",
-    "version": "19.0.1.0.1",
+    "version": "1.0.1",
     "category": "Human Resources",
     "summary": """Employee Insurance Management for Open HRMS.""",
     "description": """Manages insurance amounts for employees to be deducted from salary""",
