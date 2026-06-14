@@ -34,7 +34,7 @@ class HrEmployee(models.Model):
         """ Compute the number of loans associated with the employee. """
         for record in self:
             record.loan_count = self.env['hr.loan'].search_count(
-                [('employee_id', '=', self.id)])
+                [('employee_id', '=', record.id)])
 
     def action_loans(self):
         """ Get the list of loans associated with the current employee.
