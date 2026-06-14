@@ -34,7 +34,7 @@
     "depends": [
         "hr",
         "hr_payroll",
-        "account_accountant",
+        "accountant",
         "ent_ohrms_loan",
     ],
     "data": [

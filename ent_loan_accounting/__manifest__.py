@@ -36,7 +36,7 @@
         'hr_payroll',
         'hr',
         'account',
-        'account_accountant',
+        'accountant',
         'ent_ohrms_loan'
     ],
     'data': [

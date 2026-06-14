@@ -28,7 +28,7 @@
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
-    "depends": ["hr", "hr_payroll", "account_accountant", "hr_holidays"],
+    "depends": ["hr", "hr_payroll", "accountant", "hr_holidays"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
