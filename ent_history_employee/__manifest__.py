@@ -28,12 +28,10 @@
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
     "depends": [
-        "hr",
         "ent_oh_employee_creation_from_user",
         "hr_timesheet",
     ],
     "data": [
-        "security/ir.model.access.csv",
         "views/contract_history_views.xml",
         "views/department_history_views.xml",
         "views/hr_employee_views.xml",

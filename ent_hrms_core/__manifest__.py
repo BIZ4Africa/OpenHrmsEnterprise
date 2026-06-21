@@ -30,7 +30,6 @@
     "live_test_url": "https://youtu.be/kBBlUFofCTs",
     "website": "https://www.openhrms.com",
     "depends": [
-        "web",
         "hr",
         "hr_payroll_account",
         "hr_gamification",

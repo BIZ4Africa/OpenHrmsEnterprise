@@ -25,14 +25,12 @@
     "summary": """Employee Disciplinary Tracking Management 
     Reason/Action/Explanation""",
 "disciplinary reason,action,employee explanation and shows "
-    "count of disciplinary records",
     "author": "Cybrosys Techno Solutions, Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
     "depends": ["mail", "hr"],
     "data": [
-        "security/security.xml",
         "security/ir.model.access.csv",
         "views/disciplinary_action_views.xml",
         "views/discipline_category_views.xml",

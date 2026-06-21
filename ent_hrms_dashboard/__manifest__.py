@@ -32,7 +32,6 @@
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
     "depends": [
-        "hr",
         "hr_holidays",
         "hr_timesheet",
         "hr_payroll",
@@ -46,7 +45,6 @@
         "base",
     ],
     "data": [
-        "security/ir.model.access.csv",
         "report/hr_employee_broad_factor_reports.xml",
         "views/hr_leave_views.xml",
         "views/ent_hrms_dashboard_menus.xml",

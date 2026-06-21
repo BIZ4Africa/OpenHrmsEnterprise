@@ -32,7 +32,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "hr"],
     "data": [
-        "security/security.xml",
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "views/hr_employee_views.xml",

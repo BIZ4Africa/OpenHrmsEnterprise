@@ -31,13 +31,11 @@
     "live_test_url": "https://youtu.be/tOG92cMa4Rg",
     "depends": ["hr"],
     "data": [
-        "security/hr_reminder_security.xml",
         "security/ir.model.access.csv",
         "views/hr_reminder_views.xml",
     ],
     "assets": {
         "web.assets_backend": [
-            "ent_hr_reminder/static/src/css/notification.css",
             "ent_hr_reminder/static/src/scss/reminder.scss",
             "ent_hr_reminder/static/src/xml/reminder_topbar.xml",
             "ent_hr_reminder/static/src/js/reminder_topbar.js",

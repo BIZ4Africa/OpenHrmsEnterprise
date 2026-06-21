@@ -30,7 +30,6 @@
     "website": "https://www.cybrosys.com",
     "depends": ["ent_employee_documents_expiry", "mail", "hr"],
     "data": [
-        "security/ir.model.access.csv",
         "data/mail_activity_plan_template_data.xml",
         "data/mail_activity_plan_data.xml",
         "views/employee_check_list_views.xml",

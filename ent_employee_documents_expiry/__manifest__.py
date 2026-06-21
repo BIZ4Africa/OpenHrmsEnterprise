@@ -31,7 +31,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr"],
     "data": [
-        "data/ir_cron_data.xml",
         "security/ir.model.access.csv",
         "views/hr_document_views.xml",
         "views/document_type_views.xml",
@@ -39,7 +38,6 @@
         "views/hr_employee_views.xml",
     ],
     "demo": [
-        "demo/document_type_demo.xml",
         "demo/hr_work_location_demo.xml",
         "demo/hr_employee_demo.xml",
         "demo/hr_employee_document_demo.xml",

@@ -29,14 +29,12 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "ent_hrms_dashboard"],
     "data": [
-        "security/res_company_policy_security.xml",
         "security/ir.model.access.csv",
         "views/res_company_policy_views.xml",
         "views/res_company_views.xml",
     ],
     "assets": {
         "web.assets_backend": [
-            "ent_hr_company_policy/static/src/js/company_policy.js",
             "ent_hr_company_policy/static/src/css/company_policy.css",
             "ent_hr_company_policy/static/src/xml/dashboard_view.xml",
         ],

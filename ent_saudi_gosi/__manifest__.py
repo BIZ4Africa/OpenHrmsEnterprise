@@ -30,7 +30,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr", "ent_ohrms_loan", "hr_payroll"],
     "data": [
-        "security/ir.model.access.csv",
         "data/res_partner_data.xml",
         "data/hr_salary_rule_category_data.xml",
         "data/hr_payroll_structure_data.xml",

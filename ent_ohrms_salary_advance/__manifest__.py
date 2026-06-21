@@ -31,13 +31,11 @@
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
     "depends": [
-        "hr",
         "hr_payroll",
         "accountant",
         "ent_ohrms_loan",
     ],
     "data": [
-        "security/salary_advance_security.xml",
         "security/ir.model.access.csv",
         "data/hr_salary_rule_data.xml",
         "data/hr_payslip_input_type_data.xml",

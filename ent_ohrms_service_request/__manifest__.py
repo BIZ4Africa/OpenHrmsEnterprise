@@ -29,13 +29,11 @@
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
     "depends": [
-        "stock",
         "ent_oh_employee_creation_from_user",
         "project",
         "hr_attendance",
     ],
     "data": [
-        "security/ent_ohrms_service_request_security.xml",
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "views/service_request_views.xml",

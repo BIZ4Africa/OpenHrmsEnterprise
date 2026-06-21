@@ -29,7 +29,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr", "hr_payroll", "accountant", "hr_holidays"],
     "data": [
-        "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "views/hr_gratuity_views.xml",
         "views/hr_gratuity_accounting_configuration_views.xml",

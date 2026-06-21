@@ -31,7 +31,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["base_setup", "hr_holidays"],
     "data": [
-        "security/ent_hr_holiday_approval_security.xml",
         "security/ir.model.access.csv",
         "data/ir_actions_server_data.xml",
         "views/hr_leave_views.xml",

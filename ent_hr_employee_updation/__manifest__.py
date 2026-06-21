@@ -31,7 +31,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["mail", "hr_gamification", "hr"],
     "data": [
-        "security/ir.model.access.csv",
         "data/hr_employee_relation_data.xml",
         "data/ir_cron_data.xml",
         "views/hr_contract_views.xml",

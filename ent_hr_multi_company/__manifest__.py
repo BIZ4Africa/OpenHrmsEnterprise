@@ -29,7 +29,6 @@
     "website": "https://www.openhrms.com",
     "maintainer": "Cybrosys Techno Solutions",
     "depends": [
-        "base",
         "hr",
         "hr_payroll",
         "hr_expense",
@@ -37,7 +36,6 @@
         "hr_holidays",
     ],
     "data": [
-        "security/hr_attendance_security.xml",
         "security/hr_department_security.xml",
         "security/hr_expense_security.xml",
         "security/hr_leave_security.xml",

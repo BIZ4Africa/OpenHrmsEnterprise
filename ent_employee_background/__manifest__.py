@@ -29,7 +29,6 @@
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.cybrosys.com",
     "depends": [
-        "hr_recruitment",
         "mail",
         "ent_hr_employee_updation",
         "contacts",
@@ -37,7 +36,6 @@
         "website",
     ],
     "data": [
-        "security/ir.model.access.csv",
         "data/mail_template_data.xml",
         "views/employee_verification_views.xml",
         "views/res_partner_views.xml",

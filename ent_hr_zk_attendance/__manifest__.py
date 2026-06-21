@@ -31,7 +31,6 @@
     "website": "https://www.cybrosys.com",
     "depends": ["base_setup", "hr_attendance", "ent_hr_employee_updation"],
     "data": [
-        "security/ir.model.access.csv",
         "data/ir_cron_data.xml",
         "views/hr_employee_views.xml",
         "views/zk_machine_views.xml",

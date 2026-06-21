@@ -31,7 +31,6 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr", "ent_hr_employee_updation", "mail"],
     "data": [
-        "security/hr_resignation_security.xml",
         "security/ir.model.access.csv",
         "data/ir_cron_data.xml",
         "data/ir_sequence_data.xml",
