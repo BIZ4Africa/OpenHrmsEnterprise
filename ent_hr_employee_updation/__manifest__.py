@@ -24,7 +24,6 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Adding Advanced Fields In Employee Master""",
-"employee records.",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

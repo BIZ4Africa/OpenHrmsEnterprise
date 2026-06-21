@@ -27,7 +27,6 @@
     "category": "Human Resources",
     "summary": """Manage the company properties when it is in the 
     custody of an employee""",
-"custody of an employee",
     "live_test_url": "https://www.youtube.com/watch?v=keh3ttj9kws&feature=youtu.be",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",

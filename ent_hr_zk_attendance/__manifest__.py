@@ -24,7 +24,6 @@
     "category": "Human Resources",
     "live_test_url": "https://youtu.be/RHSHHU7nzTo",
     "summary": "Integrating Biometric Device With HR Attendance (Face + Thumb)",
-"(Model: ZKteco uFace 202)",
     "author": "Cybrosys Techno Solutions, Mostafa Shokiel,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

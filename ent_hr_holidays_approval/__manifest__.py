@@ -24,7 +24,6 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Multilevel Approval for Leaves""",
-"multiple leave approvers, leave, approval",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
