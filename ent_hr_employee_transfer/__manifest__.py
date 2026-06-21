@@ -25,7 +25,6 @@
     "version": "1.0.1",
     "category": "Human Resources",
     "summary": "This module is used to transfer employee between companies",
-"organization. Odoo lacks a provision for employee transfer. "
     "author": "Cybrosys Techno solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

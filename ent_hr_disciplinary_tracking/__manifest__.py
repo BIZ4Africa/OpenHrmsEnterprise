@@ -24,7 +24,6 @@
     "category": "Human Resources",
     "summary": """Employee Disciplinary Tracking Management 
     Reason/Action/Explanation""",
-"disciplinary reason,action,employee explanation and shows "
     "author": "Cybrosys Techno Solutions, Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
