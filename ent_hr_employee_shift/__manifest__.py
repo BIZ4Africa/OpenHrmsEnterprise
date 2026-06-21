@@ -23,9 +23,7 @@
     "version": "1.0.1",
     "category": "Human Resource",
     "summary": """Easily create, manage, and track employee shift schedules.""",
-    "description": """This module is used to track employee shift schedules.We 
-    can easily create employee shifts and adjust them accordingly.""",
-    "live_test_url": "https://youtu.be/o580wqD9Nig",
+"live_test_url": "https://youtu.be/o580wqD9Nig",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

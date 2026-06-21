@@ -24,17 +24,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Open HRMS Suit: It brings all Open HRMS modules""",
-    "description": """Openhrms, Main module of Open HRMS, It brings all others 
-    into a single module, Payroll, Payroll Accounting,Expense, Dashboard, 
-    Employees, Employee Document, Resignation, Salary Advance, Loan Management,
-    Gratuity, Service Request, Gosi, WPS Report, Reminder, Multi Company, 
-    Shift Management, Employee History, Branch Transfer, Employee Appraisal,
-    Biometric Device, Announcements, Insurance Management, Vacation Management,
-    Employee Appreciations, Asset Custody, Employee Checklist, Entry and Exit 
-    Checklist, Disciplinary Actions, openhrms, OpenHRMS, hrms, Attrition Rate, 
-    Document Expiry, Visa Expiry, Law Suit Management, Employee, 
-    Employee Training""",
-    "author": "Cybrosys Techno Solutions,Open HRMS",
+"author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "live_test_url": "https://youtu.be/kBBlUFofCTs",

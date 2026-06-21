@@ -23,9 +23,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """History Of Employees In Your Company""",
-    "description": """This module helps to manage or track the employee history
-     like, Department, salary, contract...etc """,
-    "author": "Cybrosys Techno Solutions,Open HRMS",
+"author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",

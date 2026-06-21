@@ -25,8 +25,7 @@
     "version": "1.0.1",
     "category": "Human Resources",
     "summary": "This module is used to transfer employee between companies",
-    "description": "Transferring employees between company is a basic thing in an "
-    "organization. Odoo lacks a provision for employee transfer. "
+"organization. Odoo lacks a provision for employee transfer. "
     "This module gives a basic structure for employee transfer."
     "Make sure that your multi company is enabled.",
     "author": "Cybrosys Techno solutions,Open HRMS",

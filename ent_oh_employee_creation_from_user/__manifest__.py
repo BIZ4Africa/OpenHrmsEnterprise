@@ -24,9 +24,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": "Automatically Creates Employee While Creating User",
-    "description": """This module helps you to create employees automatically 
-     while creating users""",
-    "live_test_url": "https://youtu.be/gz3Vi3Wn0E8",
+"live_test_url": "https://youtu.be/gz3Vi3Wn0E8",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

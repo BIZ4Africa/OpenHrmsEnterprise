@@ -26,17 +26,7 @@
     "summary": """Open HRMS HR dashboard,facilitates with various 
      metrics helping easy to view, understand, and share data. Experience the 
      new kind of responsiveness with Open HRMS Dashboard""",
-    "description": """Human Resource Departments have a lot to manage and 
-     volume to track with reports ever growing. Fortunately, technologies 
-     provide elegant solutions to track and monitor every essential Human 
-     Resource activities. Open HRMS HR Dashboard provides a visually engaging
-     palate for seamless management of Human Resource functions. It provides
-     executives and employees the information they need. Open HRMS Dashboard 
-     comes intuitive and interactive connecting every dots of your data like 
-     never before. With Open HRMS HR dashboard,facilitates with various 
-     metrics helping easy to view, understand, and share data.Experience the 
-     new kind of responsiveness with Open HRMS Dashboard""",
-    "live_test_url": "https://youtu.be/XwGGvZbv6sc",
+"live_test_url": "https://youtu.be/XwGGvZbv6sc",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

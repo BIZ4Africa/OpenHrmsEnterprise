@@ -17,7 +17,6 @@
             <field name="work_phone">(376)-3852-7863</field>
             <field name="work_email">xavier@example.com</field>
             <field name="company_id" ref="company_one"/>
-            <field name="address_home_id" ref="work_contact_xm"/>
             <field name="image_1920" type="base64"
                    file="ent_hr_lawsuit_management/static/image/employee_image.jpeg"/>
         </record>

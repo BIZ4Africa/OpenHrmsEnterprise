@@ -24,8 +24,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": "Advance Salary In HR",
-    "description": "Helps you to manage Advance Salary Request of "
-    "your company's staff.",
+"your company's staff.",
     "live_test_url": "https://youtu.be/fJ3RyE7RGz4",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",

@@ -24,8 +24,7 @@
     "version": "1.0.1",
     "category": "Human Resources",
     "summary": """Verify the background details of an Employee """,
-    "description": "Manage the employees background verification Process "
-    "employee verification ",
+"employee verification ",
     "author": "Cybrosys Techno Solutions, Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

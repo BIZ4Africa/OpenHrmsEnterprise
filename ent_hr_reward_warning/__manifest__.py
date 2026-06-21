@@ -24,9 +24,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Managing Official Announcements""",
-    "description": """This module helps you to manage hr official announcements
-     and Add Attachments to the announcement""",
-    "live_test_url": "https://www.youtube.com/watch?v=4gy3Jqn46SQ&feature=youtu.be",
+"live_test_url": "https://www.youtube.com/watch?v=4gy3Jqn46SQ&feature=youtu.be",
     "author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

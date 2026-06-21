@@ -24,11 +24,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": """Enables Multi-Company""",
-    "description": """This module enables HR multi company, hence HR manager 
-     can easily handle multi company process separately. We can activate
-     multi company feature in general settings as usual. This will
-     automatically add company field in every HR related records""",
-    "author": "Cybrosys Techno Solutions,Open HRMS",
+"author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
     "maintainer": "Cybrosys Techno Solutions",

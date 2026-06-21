@@ -23,10 +23,7 @@
     "version": "1.0.1",
     "category": "Generic Modules/Human Resources",
     "summary": "Manage and organize company policies within HR system",
-    "description": """Manage company policies within the HR system.
-    This module allows administrators to define company policies and display them on the 
-    dashboard for easy employee access.""",
-    "author": "Cybrosys Techno Solutions,Open HRMS",
+"author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",

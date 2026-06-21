@@ -24,9 +24,7 @@
     "version": "1.0.1",
     "category": "Human Resource",
     "summary": """GOSI Contribution for Saudi Government""",
-    "description": """Module Helps to Manage Payslips Including GOSI 
-    Contribution for Saudi Government From Employee and Company""",
-    "author": "Cybrosys Techno Solutions,Open HRMS",
+"author": "Cybrosys Techno Solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.openhrms.com",
