@@ -89,7 +89,7 @@ class EmployeeGratuity(models.Model):
     employee_gratuity_amount = fields.Float(string='Gratuity Payment',
                                             readonly=True, store=True,
                                             help="Gratuity amount for the "
-                                                 "employee. \it is calculated"
+                                                 "employee. It is calculated"
                                                  "If the wage type is hourly "
                                                  "then gratuity payment is "
                                                  "calculated as employee basic"
