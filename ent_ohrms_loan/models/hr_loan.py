@@ -116,7 +116,7 @@ class HrLoan(models.Model):
             if loan_count:
                 raise ValidationError(
                     _("The employee has already a pending installment"))
-            values['name'] = self.env['ir.sequence'].get('hr.loan.seq') or ' '
+            values['name'] = self.env['ir.sequence'].next_by_code('hr.loan.seq') or ' '
         return super(HrLoan, self).create(vals_list)
 
     def action_compute_installment(self):

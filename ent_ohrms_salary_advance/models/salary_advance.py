@@ -114,7 +114,7 @@ class SalaryAdvance(models.Model):
     def create(self, vals_list):
         """ inheriting create method for adding sequence for the request. """
         for vals in vals_list:
-            vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
+            vals['name'] = self.env['ir.sequence'].next_by_code('salary.advance.seq') or ' '
         return super(SalaryAdvance, self).create(vals_list)
 
     def action_approve_request(self):
