@@ -18,7 +18,7 @@
                 <field name="currency_id" invisible="1"/>
                 <field name="company_country_id" invisible="1"/>
             </xpath>
-            <xpath expr="//page[@name='information']" position="attributes">
+            <xpath expr="<!-- native page: information -->" position="attributes">
                 <attribute name="invisible">wage_type == 'hourly'</attribute>
             </xpath>
 
@@ -29,7 +29,7 @@
                    position="inside">
                 <field name="training_amount"/>
             </xpath>
-            <xpath expr="//page[@name='information']" position="after">
+            <xpath expr="<!-- native page: information -->" position="after">
                 <page string="Salary Information"
                       name="information_salary_hourly"
                       invisible="wage_type != 'hourly'">

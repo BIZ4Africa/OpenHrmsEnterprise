@@ -32,7 +32,7 @@
                     </page>
                 </notebook>
             </xpath>
-            <xpath expr="//button[@name='action_approve']"
+            <xpath expr="<!-- native button: action_approve -->"
                    position='attributes'>
                 <attribute name="invisible">is_button_visibility != False
                 </attribute>
