@@ -22,7 +22,7 @@
 ################################################################################
 import babel
 from datetime import datetime, time
-from odoo import fields, models, tools
+from odoo import fields, models
 
 
 class HrPayslip(models.Model):
@@ -39,7 +39,7 @@ class HrPayslip(models.Model):
             tym = datetime.combine(fields.Date.from_string(date_from),
                                    time.min)
             locale = self.env.context.get('lang') or 'en_US'
-            month = tools.ustr(
+            month = str(
                 babel.dates.format_date(date=tym, format='MMMM-y',
                                         locale=locale))
             if line.loan_line_id:
