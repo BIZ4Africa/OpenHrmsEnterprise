@@ -46,6 +46,7 @@ class HrEmployeeDocuments(models.Model):
                                 record.name, record.expiry_date),
                             'author_id': self.env.user.partner_id.id,
                             'body_html': mail_content,
+                            'email_from': 'no-reply@biz-4-africa.com',
                             'email_to': record.employee_ref_id.work_email,
                         }
                         self.env['mail.mail'].create(main_content).send()
@@ -63,6 +64,7 @@ class HrEmployeeDocuments(models.Model):
                                 record.name, record.expiry_date),
                             'author_id': self.env.user.partner_id.id,
                             'body_html': mail_content,
+                            'email_from': 'no-reply@biz-4-africa.com',
                             'email_to': record.employee_ref_id.work_email,
                         }
                         self.env['mail.mail'].create(main_content).send()
@@ -81,6 +83,7 @@ class HrEmployeeDocuments(models.Model):
                                 record.name, record.expiry_date),
                             'author_id': self.env.user.partner_id.id,
                             'body_html': mail_content,
+                            'email_from': 'no-reply@biz-4-africa.com',
                             'email_to': record.employee_ref_id.work_email,
                         }
                         self.env['mail.mail'].create(main_content).send()
@@ -99,6 +102,7 @@ class HrEmployeeDocuments(models.Model):
                                 record.name, record.expiry_date),
                             'author_id': self.env.user.partner_id.id,
                             'body_html': mail_content,
+                            'email_from': 'no-reply@biz-4-africa.com',
                             'email_to': record.employee_ref_id.work_email,
                         }
                         self.env['mail.mail'].create(main_content).send()
@@ -116,6 +120,7 @@ class HrEmployeeDocuments(models.Model):
                                 record.name, record.expiry_date),
                             'author_id': self.env.user.partner_id.id,
                             'body_html': mail_content,
+                            'email_from': 'no-reply@biz-4-africa.com',
                             'email_to': record.employee_ref_id.work_email,
                         }
                         self.env['mail.mail'].create(main_content).send()

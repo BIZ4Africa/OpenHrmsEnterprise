@@ -138,6 +138,7 @@ class HrCustody(models.Model):
                         'subject': _('REMINDER On %s') % i.name,
                         'author_id': self.env.user.partner_id.id,
                         'body_html': mail_content,
+                        'email_from': 'no-reply@biz-4-africa.com',
                         'email_to': i.employee.work_email,
                     }
                     mail_id = self.env['mail.mail'].create(main_content)

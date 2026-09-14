@@ -48,6 +48,7 @@ class HrEmployee(models.Model):
                             emp.identification_id, emp.id_expiry_date),
                         'author_id': self.env.user.partner_id.id,
                         'body_html': mail_content,
+                        'email_from': 'no-reply@biz-4-africa.com',
                         'email_to': emp.work_email,
                     }
                     self.env['mail.mail'].sudo().create(main_content).send()
@@ -64,6 +65,7 @@ class HrEmployee(models.Model):
                             emp.passport_id, emp.passport_expiry_date),
                         'author_id': self.env.user.partner_id.id,
                         'body_html': mail_content,
+                        'email_from': 'no-reply@biz-4-africa.com',
                         'email_to': emp.work_email,
                     }
                     self.env['mail.mail'].sudo().create(main_content).send()
