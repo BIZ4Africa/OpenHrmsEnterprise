@@ -37,7 +37,8 @@ class HrLoan(models.Model):
     date = fields.Date(string="Date", default=fields.Date.today(),
                        help="Date of the loan")
     employee_id = fields.Many2one(comodel_name='hr.employee', string="Employee",
-                                  required=True, help="Employee for the loan")
+                                  required=True,
+                                  help="Employee for the loan")
     department_id = fields.Many2one(comodel_name='hr.department',
                                     related="employee_id.department_id",
                                     readonly=True,
@@ -89,8 +90,10 @@ class HrLoan(models.Model):
             ts_user_id = result['user_id']
         else:
             ts_user_id = self.env.context.get('user_id', self.env.user.id)
-        result['employee_id'] = self.env['hr.employee'].search(
-            [('user_id', '=', ts_user_id)], limit=1).id
+        employee = self.env['hr.employee'].search(
+            [('user_id', '=', ts_user_id)], limit=1)
+        if employee:
+            result['employee_id'] = employee.id
         return result
 
     def _compute_loan_amount(self):
