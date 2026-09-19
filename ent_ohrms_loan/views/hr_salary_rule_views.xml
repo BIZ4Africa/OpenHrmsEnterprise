@@ -7,8 +7,6 @@
         <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
         <field name="arch" type="xml">
             <field name="code" position="after">
-                <field name="company_id" options="{'no_create': True}"
-                       groups="base.group_multi_company" invisible="1"/>
             </field>
         </field>
     </record>
