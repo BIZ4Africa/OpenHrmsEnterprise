@@ -57,7 +57,7 @@ class HRInsurance(models.Model):
                              compute='get_status')
     company_id = fields.Many2one('res.company', string='Company', required=True,
                                  help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)
 
     def get_status(self):
         """Return the status of the instance."""

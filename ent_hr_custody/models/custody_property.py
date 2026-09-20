@@ -47,7 +47,7 @@ class CustodyProperty(models.Model):
              "Use this field anywhere a small image is required.")
     desc = fields.Html(string='Description', help="Description")
     company_id = fields.Many2one('res.company', string='Company', help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)
     property_selection = fields.Selection([('empty', 'No Connection'),
                                            ('product', 'Products')],
                                           default='empty',

@@ -55,12 +55,12 @@ class HrLoan(models.Model):
                                     index=True)
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
                                  help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)
     currency_id = fields.Many2one(comodel_name='res.currency',
                                   string='Currency', required=True,
                                   help="Currency",
                                   default=lambda self:
-                                  self.env.user.company_id.currency_id)
+                                  self.env.company.currency_id)
     job_position_id = fields.Many2one(comodel_name='hr.job',
                                       related="employee_id.job_id",
                                       readonly=True, string="Job Position",

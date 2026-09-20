@@ -75,11 +75,13 @@ class HrShiftSchedule(models.Model):
         }
 
     @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Inherits the create method to add extra functionalities while
         creating the record in the model hr.shift.schedule """
-        self._check_overlap(vals)
-        return super().create(vals)
+        for vals in vals_list:
+            self._check_overlap(vals)
+        return super().create(vals_list)
 
     def write(self, vals):
         """Inherits the write method to add extra functionalities while

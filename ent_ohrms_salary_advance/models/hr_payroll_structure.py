@@ -34,4 +34,4 @@ class HrPayrollStructure(models.Model):
                                   help="Salary advance after days")
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
                                  required=True, help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)

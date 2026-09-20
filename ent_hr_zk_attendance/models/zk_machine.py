@@ -49,7 +49,7 @@ class ZkMachine(models.Model):
                                  help='Working address of the partner')
     company_id = fields.Many2one(
         'res.company', string='Company',
-        default=lambda self: self.env.user.company_id.id,
+        default=lambda self: self.env.company.id,
         help='Company Address')
     active = fields.Boolean(string='Is Active', default=True)
 

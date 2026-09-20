@@ -34,15 +34,17 @@ class HrEmployeeDocument(models.Model):
                                          'checklist box become true')
 
     @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Supering the create function"""
-        result = super().create(vals)
-        if result.document_name_id.document_type == 'entry':
-            result.employee_ref.write(
-                {'entry_checklist_ids': [(4, result.document_name_id.id)]})
-        if result.document_name_id.document_type == 'exit':
-            result.employee_ref.write(
-                {'exit_checklist_ids': [(4, result.document_name_id.id)]})
+        result = super().create(vals_list)
+        for record in result:
+            if record.document_name_id.document_type == 'entry':
+                record.employee_ref.write(
+                    {'entry_checklist_ids': [(4, record.document_name_id.id)]})
+            if record.document_name_id.document_type == 'exit':
+                record.employee_ref.write(
+                    {'exit_checklist_ids': [(4, record.document_name_id.id)]})
         return result
 
     def unlink(self):

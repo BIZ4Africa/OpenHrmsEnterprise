@@ -52,7 +52,7 @@ class HrAnnouncement(models.Model):
                                       help='You can attach the copy of your '
                                            'Letter')
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
-                                 default=lambda self: self.env.user.company_id,
+                                 default=lambda self: self.env.company,
                                  readonly=True, help="Login user Company")
     is_announcement = fields.Boolean(string='Is general Announcement?',
                                      help="To set Announcement as general "

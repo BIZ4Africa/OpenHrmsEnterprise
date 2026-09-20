@@ -44,10 +44,10 @@ class SalaryAdvance(models.Model):
     currency_id = fields.Many2one(comodel_name='res.currency', string='Currency'
                                   , required=True, help="Select Currency",
                                   default=lambda
-                                      self: self.env.user.company_id.currency_id)
+                                      self: self.env.company.currency_id)
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
                                  required=True, help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)
     advance = fields.Float(string='Advance', help="Advance amount",
                            required=True)
     payment_method_id = fields.Many2one(comodel_name='account.journal',

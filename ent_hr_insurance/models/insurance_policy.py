@@ -34,4 +34,4 @@ class InsurancePolicy(models.Model):
                                                     "policy if any")
     company_id = fields.Many2one('res.company', string='Company',
                                  required=True, help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)

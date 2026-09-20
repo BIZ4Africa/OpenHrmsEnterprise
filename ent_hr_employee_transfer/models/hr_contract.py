@@ -32,11 +32,10 @@ class HrContract(models.Model):
         'employee.transfer', string='Transferred Employee',
         help="Transferred employee")
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """This is used to change the state"""
-        res = super().create(vals)
-        if res.emp_transfer_id:
-            res.emp_transfer_id.write(
-                {'state': 'done'})
+        res = super().create(vals_list)
+        for record in res.filtered(lambda r: r.emp_transfer_id):
+            record.emp_transfer_id.write({'state': 'done'})
         return res

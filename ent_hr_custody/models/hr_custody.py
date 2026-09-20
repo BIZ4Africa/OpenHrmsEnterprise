@@ -38,7 +38,7 @@ class HrCustody(models.Model):
     name = fields.Char(string='Code', copy=False, help="Code")
     company_id = fields.Many2one('res.company', 'Company', readonly=True,
                                  help="Company",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)
     quantity = fields.Integer(string="Quantity", default="1",
                               help="Quantity of the product")
     rejected_reason = fields.Text(string='Rejected Reason', copy=False,

@@ -146,9 +146,10 @@ class EmployeeTransfer(models.Model):
         self.state = 'cancel'
 
     @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Create Function Super"""
-        vals['name'] = "Transfer: " + self.env['hr.employee'].browse(
-            vals['employee_id']).name
-        res = super().create(vals)
-        return res
+        for vals in vals_list:
+            vals['name'] = "Transfer: " + self.env['hr.employee'].browse(
+                vals['employee_id']).name
+        return super().create(vals_list)

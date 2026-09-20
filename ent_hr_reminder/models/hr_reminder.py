@@ -58,4 +58,4 @@ class HrReminder(models.Model):
                               help="Expiry date to expires out the reminder")
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
                                  required=True, help="Company of the record",
-                                 default=lambda self: self.env.user.company_id)
+                                 default=lambda self: self.env.company)
