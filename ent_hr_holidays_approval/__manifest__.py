@@ -22,7 +22,7 @@
 ################################################################################
 {
     'name': 'Enterprise Open HRMS Leave Multi-Level Approval',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
     'category': 'Generic Modules/Human Resources',
     'summary': """Multilevel Approval for Leaves""",
     'description': 'Multilevel Approval for Leaves, leave approval, '
