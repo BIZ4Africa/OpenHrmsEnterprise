@@ -31,12 +31,25 @@ class HrLoan(models.Model):
 
     employee_account_id = fields.Many2one(comodel_name='account.account',
                                           string="Employee Account",
-                                          help="Select employee chart of "
-                                               "accounts")
+                                          help="Payroll payable account "
+                                               "(salary due to the employee). "
+                                               "Debited when the installment is "
+                                               "recovered on a payslip. Select "
+                                               "the employee chart of accounts")
     treasury_account_id = fields.Many2one(comodel_name='account.account',
                                           string="Treasury Account",
-                                          help="Select employee treasury "
-                                               "account details")
+                                          help="Bank/cash account that "
+                                               "disburses the loan. Credited on "
+                                               "disbursement. Select employee "
+                                               "treasury account details")
+    loan_account_id = fields.Many2one(comodel_name='account.account',
+                                      string="Loan Account",
+                                      help="Receivable account carrying the "
+                                           "employee loan while it is being "
+                                           "repaid: debited on disbursement, "
+                                           "credited on each payslip recovery. "
+                                           "Must be a different account from "
+                                           "the employee and treasury accounts")
     journal_id = fields.Many2one(comodel_name='account.journal',
                                  string="Journal",
                                  help="Select journal for employee")
@@ -48,6 +61,63 @@ class HrLoan(models.Model):
         selection_add=[('waiting_approval_2', 'Waiting Approval'), ('approve',)],
         ondelete={'waiting_approval_2': 'set default'},
     )
+
+    def _check_loan_accounts(self):
+        """ The three accounts of a loan are distinct by construction: the loan
+        receivable cannot be the treasury nor the payroll payable account.
+        """
+        self.ensure_one()
+        if (not self.employee_account_id or not self.treasury_account_id or
+                not self.loan_account_id or not self.journal_id):
+            raise UserError(
+                "You must enter employee account & Treasury account, Loan "
+                "account and journal to approve ")
+        accounts = (self.employee_account_id + self.treasury_account_id +
+                    self.loan_account_id)
+        if len(accounts) != 3:
+            raise UserError(
+                "The Employee account, the Treasury account and the Loan "
+                "account must be three different accounts: a loan needs a "
+                "receivable account distinct from the treasury and from the "
+                "payroll payable.")
+
+    def _loan_approve_vals(self, loan):
+        """ Build the disbursement ('octroi') move values for one loan.
+
+        Correct direction: **debit the loan receivable (the employee owes the
+        company), credit the treasury (the money left the bank)**. The vendor
+        release debited the treasury and credited the payroll payable, which
+        inflated the treasury and overstated the salary due.
+        """
+        line_name = 'Loan ' + loan.name + ' ' + loan.employee_id.name
+        move_ref = 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name
+        partner_id = loan.employee_id.work_contact_id.id or False
+        debit_vals = {
+            'name': line_name,
+            'account_id': loan.loan_account_id.id,
+            'journal_id': loan.journal_id.id,
+            'date': date.today(),
+            'debit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
+            'credit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
+            'loan_id': loan.id,
+            'partner_id': partner_id,
+        }
+        credit_vals = {
+            'name': line_name,
+            'account_id': loan.treasury_account_id.id,
+            'journal_id': loan.journal_id.id,
+            'date': date.today(),
+            'debit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
+            'credit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
+            'loan_id': loan.id,
+        }
+        return {
+            'ref': move_ref,
+            'narration': loan.employee_id.name,
+            'journal_id': loan.journal_id.id,
+            'date': date.today(),
+            'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)],
+        }
 
     def action_approve(self):
         """ This creates an invoice in account.move with loan request details.
@@ -63,46 +133,12 @@ class HrLoan(models.Model):
         if loan_approve:
             self.write({'state': 'waiting_approval_2'})
         else:
-            if (not self.employee_account_id or not self.treasury_account_id or
-                    not self.journal_id):
-                raise UserError(
-                    "You must enter employee account & Treasury account and"
-                    " journal to approve ")
+            self._check_loan_accounts()
             if not self.loan_line_ids:
                 raise UserError(
                     'You must compute Loan Request before Approved')
             for loan in self:
-                line_name = 'Loan ' + loan.name + ' ' + loan.employee_id.name
-                move_ref = 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name
-                debit_vals = {
-                    'name': line_name,
-                    'account_id': loan.treasury_account_id.id,
-                    'journal_id': loan.journal_id.id,
-                    'date': date.today(),
-                    'debit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
-                    'credit': loan.loan_amount < 0.0 and -loan.loan_amount
-                              or 0.0,
-                    'loan_id': loan.id,
-                }
-                credit_vals = {
-                    'name': line_name,
-                    'account_id': loan.employee_account_id.id,
-                    'journal_id': loan.journal_id.id,
-                    'date': date.today(),
-                    'debit': loan.loan_amount < 0.0 and
-                             -loan.loan_amount or 0.0,
-                    'credit': loan.loan_amount > 0.0 and
-                              loan.loan_amount or 0.0,
-                    'loan_id': loan.id,
-                    'partner_id': loan.employee_id.work_contact_id.id or False,
-                }
-                vals = {
-                    'ref': move_ref,
-                    'narration': loan.employee_id.name,
-                    'journal_id': loan.journal_id.id,
-                    'date': date.today(),
-                    'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
-                }
+                vals = loan._loan_approve_vals(loan)
                 move = self.env['account.move'].create(vals)
                 move.action_post()
                 loan.move_id = move.id
@@ -124,42 +160,11 @@ class HrLoan(models.Model):
     def action_double_approve(self):
         """ This creates account move for request in case of double approval.
         """
-        if (not self.employee_account_id or not self.treasury_account_id or not
-        self.journal_id):
-            raise UserError(
-                "You must enter employee account & Treasury account and "
-                "journal to approve ")
+        self._check_loan_accounts()
         if not self.loan_line_ids:
             raise UserError('You must compute Loan Request before Approved')
         for loan in self:
-            line_name = 'Loan ' + loan.name + ' ' + loan.employee_id.name
-            move_ref = 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name
-            debit_vals = {
-                'name': line_name,
-                'account_id': loan.treasury_account_id.id,
-                'journal_id': loan.journal_id.id,
-                'date': date.today(),
-                'debit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
-                'credit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
-                'loan_id': loan.id,
-            }
-            credit_vals = {
-                'name': line_name,
-                'account_id': loan.employee_account_id.id,
-                'journal_id': loan.journal_id.id,
-                'date': date.today(),
-                'debit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
-                'credit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
-                'loan_id': loan.id,
-                'partner_id': loan.employee_id.work_contact_id.id or False,
-            }
-            vals = {
-                'narration': loan.employee_id.name,
-                'ref': move_ref,
-                'journal_id': loan.journal_id.id,
-                'date': date.today(),
-                'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]
-            }
+            vals = loan._loan_approve_vals(loan)
             move = self.env['account.move'].create(vals)
             move.action_post()
             loan.move_id = move.id
