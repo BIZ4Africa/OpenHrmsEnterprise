@@ -21,8 +21,17 @@
 #
 ################################################################################
 from datetime import date
-from odoo import fields, models
+import logging
+
+from odoo import api, fields, models
 from odoo.exceptions import UserError
+
+_logger = logging.getLogger(__name__)
+
+# Account codes of the loan receivable ("personnel, avances") in the SYSCOHADA /
+# OHADA charts used by the BIZ4A instances. The module only *locates* an
+# existing account: it never creates one.
+LOAN_ACCOUNT_CODES = ('421100', '4211')
 
 
 class HrLoan(models.Model):
@@ -61,6 +70,42 @@ class HrLoan(models.Model):
         selection_add=[('waiting_approval_2', 'Waiting Approval'), ('approve',)],
         ondelete={'waiting_approval_2': 'set default'},
     )
+
+    @api.model
+    def _find_loan_account(self, company):
+        """Locate the loan receivable account of a company (never creates)."""
+        Account = self.env['account.account'].with_company(company)
+        for code in LOAN_ACCOUNT_CODES:
+            account = Account.search([('code', '=', code)], limit=1)
+            if account:
+                return account
+        return Account.browse()
+
+    @api.model
+    def _backfill_loan_account(self):
+        """Set the loan receivable account on every loan missing it.
+
+        Idempotent: a loan that already carries a loan account is left
+        untouched. Called by ``migrations/1.0.7/post-migrate.py`` so that an
+        upgraded database stays workable — without a receivable account a loan
+        cannot be approved any more.
+        """
+        filled = self.browse()
+        for loan in self.search([('loan_account_id', '=', False)]):
+            if not loan.company_id:
+                continue
+            account = self._find_loan_account(loan.company_id)
+            if not account:
+                _logger.warning(
+                    "ent_loan_accounting 1.0.7: no loan receivable account "
+                    "found for company %s (tried codes %s) — loan %s is left "
+                    "without a loan account and cannot be approved until one "
+                    "is set.", loan.company_id.display_name,
+                    LOAN_ACCOUNT_CODES, loan.name)
+                continue
+            loan.loan_account_id = account.id
+            filled |= loan
+        return filled
 
     def _check_loan_accounts(self):
         """ The three accounts of a loan are distinct by construction: the loan

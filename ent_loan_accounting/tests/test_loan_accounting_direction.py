@@ -153,6 +153,13 @@ class TestLoanAccountingDirection(TransactionCase):
         self.assertAlmostEqual(lines[self.loan_account].debit, 0.0)
 
     # ----------------------------------------------------------------- arming
+    def test_backfill_sets_the_loan_account(self):
+        """The 1.0.7 migration back-fill fills a loan with no loan account."""
+        self.loan.loan_account_id = False
+        filled = self.env['hr.loan']._backfill_loan_account()
+        self.assertIn(self.loan, filled)
+        self.assertEqual(self.loan.loan_account_id, self.loan_account)
+
     def test_arm_loan_recovery_is_idempotent(self):
         """A structure without the LO rule can be armed, once."""
         Structure = self.env['hr.payroll.structure']
