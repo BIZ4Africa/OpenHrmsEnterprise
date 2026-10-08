@@ -22,7 +22,20 @@
 ################################################################################
 from odoo import api, models
 
+import logging
+
+_logger = logging.getLogger(__name__)
+
 LOAN_RULE_CODE = 'LO'
+
+# Rule codes that already deduct a loan/advance from the payslip. When a
+# structure carries one of them, arming the OpenHRMS 'LO' rule on that same
+# structure would deduct the same installment twice. Measured on the SPORTS
+# EXPERTS instance (2026-10-08): the DRC payroll bridge
+# ``l10n_cd_hr_payroll_loan_bridge`` aggregates the unpaid installments into a
+# 'LOAN' payslip input, consumed by a 'LOAN' salary rule — so the OpenHRMS
+# route must not be armed next to it.
+COMPETING_LOAN_RULE_CODES = ('LOAN',)
 
 
 class HrPayrollStructure(models.Model):
@@ -51,8 +64,25 @@ class HrPayrollStructure(models.Model):
             ('struct_id', '=', self.id),
         ], limit=1)
 
+    def _competing_loan_rule(self):
+        """Return the loan deduction rule already present on this structure.
+
+        A structure that deducts loans through another code (the DRC payroll
+        bridge uses ``LOAN``) must not receive the OpenHRMS ``LO`` rule: both
+        would deduct the same installment.
+        """
+        self.ensure_one()
+        return self.env['hr.salary.rule'].search([
+            ('code', 'in', list(COMPETING_LOAN_RULE_CODES)),
+            ('struct_id', '=', self.id),
+        ], limit=1)
+
     def _arm_loan_recovery(self):
-        """Ensure each structure carries the ``LO`` rule. Idempotent."""
+        """Ensure each structure carries the ``LO`` rule. Idempotent.
+
+        A structure that already deducts loans through a competing rule code
+        (``COMPETING_LOAN_RULE_CODES``) is deliberately left alone.
+        """
         Rule = self.env['hr.salary.rule']
         created = Rule.browse()
         template = Rule.search([('code', '=', LOAN_RULE_CODE)], limit=1)
@@ -60,6 +90,15 @@ class HrPayrollStructure(models.Model):
             return created
         for structure in self:
             if structure._loan_recovery_rule():
+                continue
+            competing = structure._competing_loan_rule()
+            if competing:
+                _logger.warning(
+                    "ent_loan_accounting: payroll structure %s already deducts "
+                    "loans through rule(s) %s — the 'LO' rule is NOT armed "
+                    "there, it would deduct the same installment twice.",
+                    structure.display_name,
+                    ', '.join(competing.mapped('code')))
                 continue
             created |= template.copy({
                 'struct_id': structure.id,

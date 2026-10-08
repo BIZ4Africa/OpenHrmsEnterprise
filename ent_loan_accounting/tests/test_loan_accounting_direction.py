@@ -183,3 +183,37 @@ class TestLoanAccountingDirection(TransactionCase):
         # idempotent: a second call creates nothing
         self.assertFalse(structure._arm_loan_recovery())
         self.assertEqual(len(structure._loan_recovery_rule()), 1)
+
+    def test_arm_loan_recovery_skips_structure_with_competing_rule(self):
+        """A structure that already deducts loans (bridge 'LOAN' rule) is left
+        alone: arming 'LO' next to it would deduct the same installment twice.
+
+        Measured on SPORTS EXPERTS: the DRC payroll bridge
+        ``l10n_cd_hr_payroll_loan_bridge`` feeds a 'LOAN' payslip input consumed
+        by a 'LOAN' salary rule, present on the company payroll structures.
+        """
+        Structure = self.env['hr.payroll.structure']
+        Rule = self.env['hr.salary.rule']
+        template = Rule.search([('code', '=', 'LO')], limit=1)
+
+        structure = Structure.create({
+            'name': 'Bridge Loan Arming Test Structure',
+            'type_id': template.struct_id.type_id.id,
+        })
+        bridge_rule = Rule.create({
+            'name': 'Loan repayment (bridge)',
+            'code': 'LOAN',
+            'struct_id': structure.id,
+            'category_id': template.category_id.id,
+            'sequence': 123,
+            'condition_select': 'none',
+            'amount_select': 'fix',
+            'amount_fix': 0.0,
+        })
+        self.assertEqual(structure._competing_loan_rule(), bridge_rule)
+
+        created = structure._arm_loan_recovery()
+        self.assertFalse(created, "the 'LO' rule must not be armed there")
+        self.assertFalse(structure._loan_recovery_rule())
+        self.assertEqual(len(structure.rule_ids.filtered(
+            lambda rule: rule.code == 'LO')), 0)
