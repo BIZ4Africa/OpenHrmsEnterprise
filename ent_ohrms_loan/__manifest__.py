@@ -22,7 +22,7 @@
 ################################################################################
 {
     'name': 'Enterprise OpenHRMS Loan Management',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'category': 'Generic Modules/Human Resources',
     'summary': 'Manage Loan Requests',
     'description': """Seamlessly manage and track loan requests from your 
@@ -39,6 +39,7 @@
         'security/hr_loan_security.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
+        'data/ir_config_parameter_data.xml',
         'data/hr_payroll_structure_data.xml',
         'data/hr_salary_rule_data.xml',
         'data/hr_payslip_input_type_data.xml',
@@ -53,4 +54,5 @@
     'installable': True,
     'auto_install': False,
     'application': False,
+    'post_init_hook': 'post_init',
 }
