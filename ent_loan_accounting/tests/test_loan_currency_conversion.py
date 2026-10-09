@@ -23,7 +23,6 @@ Asserted here:
 
 The first test fails if an amount is posted without conversion.
 """
-import os
 from datetime import date
 
 from odoo.tests import tagged
@@ -256,30 +255,18 @@ class TestLoanDisbursementCurrency(TransactionCase):
             "a conversion without any rate must be reported: %s" % logs.output)
 
     # ------------------------------------------------------------------ trace
-    def test_migration_switches_the_conversion_on(self):
-        """The 1.0.8 migration really enables the switch on existing companies.
+    def test_conversion_defaults_are_on(self):
+        """The declared defaults: conversion on, entry date = approval day.
 
-        Odoo adds a Boolean column with ``DEFAULT false`` and only backfills
-        the rows that are still NULL, so the field ``default=True`` never
-        reaches a company that already exists: without this hook the fix would
-        ship and stay inert on the client instance.
+        The switch is a *setting* (turn it off to reproduce the legacy
+        posting), not a constant — but it must be on out of the box, otherwise
+        the fix would need a manual step on every database.
         """
-        from importlib.util import module_from_spec, spec_from_file_location
-        from odoo.modules.module import get_module_path
-
-        path = os.path.join(
-            get_module_path('ent_loan_accounting'),
-            'migrations', '1.0.8', 'post-migrate.py')
-        spec = spec_from_file_location('ent_loan_accounting_mig_108', path)
-        migration = module_from_spec(spec)
-        spec.loader.exec_module(migration)
-
-        self.company.ent_loan_currency_conversion = False
-        changed = migration.activate_currency_conversion(self.env)
-        self.assertIn(self.company, changed)
-        self.assertTrue(self.company.ent_loan_currency_conversion,
-                        "the migration must enable the conversion on an "
-                        "existing company")
+        company = self.env['res.company'].create({
+            'name': 'Loan Currency Defaults Test Co',
+        })
+        self.assertTrue(company.ent_loan_currency_conversion)
+        self.assertEqual(company.ent_loan_conversion_date, 'move_date')
 
     def test_unconverted_disbursement_trace_is_read_only(self):
         """The 1.0.8 migration reports the legacy entries, it never reposts."""

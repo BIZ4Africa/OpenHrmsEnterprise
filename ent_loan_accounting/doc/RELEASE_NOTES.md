@@ -19,7 +19,11 @@
   `ent_loan_currency_conversion` (default: enabled) and the entry date
   `ent_loan_conversion_date` (accounting entry date / loan date / first
   installment date). Exposed on `res.config.settings`; the decision is a
-  setting, not a redeployment.
+  setting, not a redeployment. No manual step on an existing database: Odoo
+  initialises a new column on the existing rows with the field default
+  (measured on a throwaway Odoo 18 database — column dropped, then a plain
+  `-u ent_loan_accounting` without any version change restores
+  `ent_loan_currency_conversion = true` on the existing company row).
 - The same rule applies to the alternative OpenHRMS recovery route
   (`hr.loan.line.action_paid_amount`), so the model does not carry two
   behaviours.
