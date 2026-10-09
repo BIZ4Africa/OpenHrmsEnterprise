@@ -215,7 +215,26 @@ class TestLoanAccountingDirection(TransactionCase):
         })
         self.assertEqual(structure._competing_loan_rule(), bridge_rule)
 
-        created = structure._arm_loan_recovery()
+        # The guard message is CAPTURED, never written to the build journal.
+        # The structure above is deliberately misconfigured — it carries a
+        # 'LOAN' rule, which is exactly what the guard must report; on a
+        # correctly configured environment the guard stays silent. Capturing
+        # keeps the proof (the message IS emitted, and it names the structure
+        # left untouched) while stopping a deliberately broken test object from
+        # colouring install.log: N2 rule — a guard blocks the business
+        # operation, it never marks the build (card t_fbe88d69).
+        with self.assertLogs(
+            'odoo.addons.ent_loan_accounting.models.hr_payroll_structure',
+            level='INFO',
+        ) as logs:
+            created = structure._arm_loan_recovery()
+
+        self.assertTrue(
+            any('already deducts loans' in line for line in logs.output),
+            "the guard must report the competing loan rule it skipped")
+        self.assertTrue(
+            any(structure.display_name in line for line in logs.output),
+            "the guard must name the structure it left untouched")
         self.assertFalse(created, "the 'LO' rule must not be armed there")
         self.assertFalse(structure._loan_recovery_rule())
         self.assertEqual(len(structure.rule_ids.filtered(
