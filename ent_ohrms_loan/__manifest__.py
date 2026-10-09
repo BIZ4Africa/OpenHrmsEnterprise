@@ -22,7 +22,7 @@
 ################################################################################
 {
     'name': 'Enterprise OpenHRMS Loan Management',
-    'version': '1.0.3',
+    'version': '1.0.4',
     'category': 'Generic Modules/Human Resources',
     'summary': 'Manage Loan Requests',
     'description': """Seamlessly manage and track loan requests from your 

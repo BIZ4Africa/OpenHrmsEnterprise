@@ -190,16 +190,18 @@ class HrLoan(models.Model):
         ambient company of the user: a loan of company B takes its reference
         from the series of company B even when it is created from company A.
 
-        A missing sequence is a configuration error: it is logged and raised,
-        never silently replaced by a blank name — that blank fallback is
-        exactly what kept the defect invisible.
+        A missing sequence is a configuration error: it raises a UserError on
+        the creating operation -- the user sees the refusal in the interface
+        and nothing is written -- and is never silently replaced by a blank
+        name, that blank fallback being exactly what kept the defect invisible.
+
+        The guard does not log: the operation is already refused, and an
+        ERROR/WARNING line emitted on a path walked by the installation or the
+        tests would only colour the build (N2 rule: block on the business
+        operation, never mark the build).
         """
         sequence = self._loan_sequence(company)
         if not sequence:
-            _logger.error(
-                "ent_ohrms_loan: company %s has no '%s' sequence — the loan "
-                "reference cannot be generated.", company.display_name,
-                self.LOAN_SEQUENCE_CODE)
             raise UserError(_(
                 "No loan reference sequence ('%s') is configured for the "
                 "company '%s'. Ask an administrator to provision the loan "

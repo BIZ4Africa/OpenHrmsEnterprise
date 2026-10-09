@@ -14,6 +14,11 @@ class TestHrLoanSequence(TransactionCase):
         cls.company_a = cls.env.ref('base.main_company')
         cls.company_b = cls.env['res.company'].create({
             'name': 'Loan sequence test company'})
+        # Self-contained fixture: the bench company owns its loan series from
+        # the start, exactly as a real company does (the module provisions one
+        # series per company at installation).  Only the non-regression test
+        # that deliberately removes the series then triggers the guard.
+        cls.env['hr.loan']._ensure_loan_sequences(cls.company_b)
         cls.employee = cls.env['hr.employee'].create({
             'name': 'Loan sequence test employee',
             'company_id': cls.company_b.id,

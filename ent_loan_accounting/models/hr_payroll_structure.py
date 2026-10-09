@@ -93,7 +93,12 @@ class HrPayrollStructure(models.Model):
                 continue
             competing = structure._competing_loan_rule()
             if competing:
-                _logger.warning(
+                # Traced at INFO, never at WARNING: this guard skips a rule, it
+                # does not fail an operation, and a WARNING emitted on a path
+                # walked by the installation or the tests colours the build
+                # (N2 rule: block on the business operation, never mark the
+                # build).
+                _logger.info(
                     "ent_loan_accounting: payroll structure %s already deducts "
                     "loans through rule(s) %s — the 'LO' rule is NOT armed "
                     "there, it would deduct the same installment twice.",
