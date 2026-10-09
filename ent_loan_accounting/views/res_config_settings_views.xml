@@ -23,6 +23,34 @@
                         </div>
                     </div>
                 </div>
+                <h2>Loan Disbursement Accounting</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="ent_loan_currency_conversion"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="ent_loan_currency_conversion"/>
+                            <div class="text-muted">
+                                Convert a loan expressed in another currency
+                                into the company currency at the rate of its
+                                entry date, and carry the loan currency on the
+                                entry (like the payslip entry that recovers the
+                                installments).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="ent_loan_conversion_date"/>
+                            <field name="ent_loan_conversion_date"/>
+                            <div class="text-muted">
+                                Date carried by the loan disbursement entry,
+                                and therefore the date of its currency rate.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </xpath>
         </field>
     </record>

@@ -126,6 +126,120 @@ class HrLoan(models.Model):
                 "receivable account distinct from the treasury and from the "
                 "payroll payable.")
 
+    # ------------------------------------------------------------------
+    # Accounting unit of the disbursement entry ('octroi')
+    # ------------------------------------------------------------------
+    # A loan is a document expressed in its own currency
+    # (``hr.loan.currency_id``, in practice the employee contract currency),
+    # while the company books are kept in the company currency. The payslip
+    # entry that recovers an installment converts the legal currency into the
+    # company currency (``res.company.convert_from_legal_currency``); the
+    # disbursement entry must do the same. Posted raw, the receivable is
+    # expressed in the wrong unit and no installment can ever close it.
+    #
+    # Measured on SPORTS EXPERTS 2026-10-09 (company 2 in USD, loan in CDF at
+    # 2 265 CDF/USD): the entry was D 421100 300 000 / C 521001 300 000 in USD
+    # for a 300 000 CDF loan (132,45 USD), while the recovery posted 44,15 USD
+    # per installment — 299 867,55 USD of the receivable could never be settled
+    # (card t_c6e17a81).
+
+    def _loan_disbursement_date(self):
+        """Date carried by the disbursement entry, and date of its rate.
+
+        Parametrable: ``res.company.ent_loan_conversion_date`` selects the
+        accounting entry date (approval day, loan date or first installment
+        date). Odoo applies the rate of the entry date.
+        """
+        self.ensure_one()
+        mode = self.company_id.ent_loan_conversion_date or 'move_date'
+        if mode == 'loan_date' and self.date:
+            return self.date
+        if mode == 'payment_date' and self.payment_date:
+            return self.payment_date
+        return fields.Date.context_today(self)
+
+    def _loan_needs_conversion(self):
+        """True when the loan currency differs from the company currency and
+        the conversion is enabled on the company."""
+        self.ensure_one()
+        if not self.company_id.ent_loan_currency_conversion:
+            return False
+        currency = self.currency_id or self.company_id.currency_id
+        return currency != self.company_id.currency_id
+
+    def _loan_company_currency_amount(self, amount, on_date=None):
+        """Convert ``amount`` (loan currency) into the company currency.
+
+        The conversion is a setting: with ``ent_loan_currency_conversion`` off
+        (or a loan already in the company currency) the amount is returned
+        untouched — the legacy raw posting, which is what the switch is for.
+
+        Uses the rate of ``on_date`` (default: the disbursement date). Without
+        any rate in the database Odoo converts 1:1 — the identity is not left
+        silent here: it is logged, so that a missing rate shows up instead of
+        producing an entry in the wrong unit.
+        """
+        self.ensure_one()
+        if not self._loan_needs_conversion():
+            return amount
+        company_currency = self.company_id.currency_id
+        currency = self.currency_id or company_currency
+        if currency == company_currency:
+            return amount
+        if on_date is None:
+            on_date = self._loan_disbursement_date()
+        converted = currency._convert(
+            amount, company_currency, self.company_id, on_date)
+        if amount and company_currency.is_zero(converted - amount):
+            _logger.warning(
+                "ent_loan_accounting: no %s rate found on %s — loan %s is "
+                "converted 1:1 (identity). Create the currency rate so that "
+                "the entry is posted in the right unit.",
+                currency.display_name, on_date, self.name)
+        return converted
+
+    def _loan_carries_currency(self):
+        """True when the disbursement entry can *carry* the loan currency.
+
+        Odoo gives the journal currency precedence over the document currency:
+        a CDF loan disbursed through a journal whose currency is USD cannot
+        carry CDF on its entry. The amount is converted anyway (the unit stays
+        right) and the situation is reported, because the amount is then not
+        traceable in the loan currency.
+        """
+        self.ensure_one()
+        if not self._loan_needs_conversion():
+            return False
+        journal_currency = self.journal_id.currency_id
+        if journal_currency and journal_currency != self.currency_id:
+            _logger.warning(
+                "ent_loan_accounting: journal %s is in %s and cannot carry the "
+                "%s loan %s — the disbursement is converted to the company "
+                "currency without carrying the loan currency. Use a journal of "
+                "the loan currency to keep the amount traceable in %s.",
+                self.journal_id.display_name, journal_currency.display_name,
+                self.currency_id.display_name, self.name,
+                self.currency_id.display_name)
+            return False
+        return True
+
+    @api.model
+    def _loans_with_unconverted_disbursement(self):
+        """Loans whose posted disbursement entry is not expressed in the loan
+        currency — a read-only trace for ``migrations/1.0.8/post-migrate.py``.
+
+        The module fixes the entries it creates from now on; it never reposts
+        an entry that is already posted (correcting history is an accounting
+        decision, not a technical one).
+        """
+        reported = self.browse()
+        for loan in self.search([('move_id', '!=', False)]):
+            if not loan._loan_needs_conversion():
+                continue
+            if loan.move_id.currency_id != loan.currency_id:
+                reported |= loan
+        return reported
+
     def _loan_approve_vals(self, loan):
         """ Build the disbursement ('octroi') move values for one loan.
 
@@ -133,36 +247,60 @@ class HrLoan(models.Model):
         company), credit the treasury (the money left the bank)**. The vendor
         release debited the treasury and credited the payroll payable, which
         inflated the treasury and overstated the salary due.
+
+        Unit: when the loan is expressed in a currency other than the company
+        currency, the two legs are converted at the rate of the disbursement
+        date and the entry carries the loan currency (``currency_id`` +
+        ``amount_currency``) so that the amount stays traceable in the loan
+        currency, exactly like the payslip entry that recovers the
+        installments.
         """
+        loan.ensure_one()
+        move_date = loan._loan_disbursement_date()
+        amount = loan.loan_amount
+        company_amount = loan._loan_company_currency_amount(amount, move_date)
+        carries_currency = loan._loan_carries_currency()
         line_name = 'Loan ' + loan.name + ' ' + loan.employee_id.name
         move_ref = 'Loan' + ' ' + loan.name + ' for ' + loan.employee_id.name
         partner_id = loan.employee_id.work_contact_id.id or False
-        debit_vals = {
-            'name': line_name,
-            'account_id': loan.loan_account_id.id,
-            'journal_id': loan.journal_id.id,
-            'date': date.today(),
-            'debit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
-            'credit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
-            'loan_id': loan.id,
-            'partner_id': partner_id,
-        }
-        credit_vals = {
-            'name': line_name,
-            'account_id': loan.treasury_account_id.id,
-            'journal_id': loan.journal_id.id,
-            'date': date.today(),
-            'debit': loan.loan_amount < 0.0 and -loan.loan_amount or 0.0,
-            'credit': loan.loan_amount > 0.0 and loan.loan_amount or 0.0,
-            'loan_id': loan.id,
-        }
-        return {
+
+        def _line_vals(account_id, debit, credit, amount_currency, partner):
+            vals = {
+                'name': line_name,
+                'account_id': account_id,
+                'journal_id': loan.journal_id.id,
+                'date': move_date,
+                'debit': debit,
+                'credit': credit,
+                'loan_id': loan.id,
+            }
+            if partner:
+                vals['partner_id'] = partner
+            if carries_currency:
+                vals['currency_id'] = loan.currency_id.id
+                vals['amount_currency'] = amount_currency
+            return vals
+
+        debit_vals = _line_vals(
+            loan.loan_account_id.id,
+            company_amount > 0.0 and company_amount or 0.0,
+            company_amount < 0.0 and -company_amount or 0.0,
+            amount, partner_id)
+        credit_vals = _line_vals(
+            loan.treasury_account_id.id,
+            company_amount < 0.0 and -company_amount or 0.0,
+            company_amount > 0.0 and company_amount or 0.0,
+            -amount, False)
+        vals = {
             'ref': move_ref,
             'narration': loan.employee_id.name,
             'journal_id': loan.journal_id.id,
-            'date': date.today(),
+            'date': move_date,
             'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)],
         }
+        if carries_currency:
+            vals['currency_id'] = loan.currency_id.id
+        return vals
 
     def action_approve(self):
         """ This creates an invoice in account.move with loan request details.

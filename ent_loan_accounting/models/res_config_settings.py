@@ -30,3 +30,11 @@ class ResConfigSettings(models.TransientModel):
     loan_approve = fields.Boolean(config_parameter="ent_loan_accounting.loan_approve",
                                   string="Approval from Accounting Department",
                                   help="Loan Approval from account manager")
+    ent_loan_currency_conversion = fields.Boolean(
+        related='company_id.ent_loan_currency_conversion',
+        readonly=False,
+        string="Convert the loan disbursement to the company currency")
+    ent_loan_conversion_date = fields.Selection(
+        related='company_id.ent_loan_conversion_date',
+        readonly=False,
+        string="Loan disbursement entry date")
