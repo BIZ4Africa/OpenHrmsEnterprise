@@ -240,6 +240,60 @@ class HrLoan(models.Model):
                 reported |= loan
         return reported
 
+    # ------------------------------------------------------------------
+    # Label (reference) of the recovery entry of an installment
+    # ------------------------------------------------------------------
+    # The NUMBER of an accounting entry belongs to its journal. The recovery
+    # route (``hr.loan.line.action_paid_amount``) used to force it
+    # ('LOAN/ <employee>/<month>'), which on Odoo 18 has two consequences:
+    #
+    # 1. the entry is REFUSED as soon as a group of digits of the label does
+    #    not match the entry date — account.sequence_mixin reads a name as a
+    #    *sequence* (measured on SPORTS EXPERTS, journal BNK1:
+    #    'LOAN/ DIAG W17 lot F (a supprimer)/...' — the '17' of W17 read as a
+    #    year, so the entry dated 10/09/2026 was rejected by
+    #    _constrains_date_sequence);
+    # 2. the journal ADOPTS the label as its numbering TEMPLATE: Odoo never
+    #    renumbers an entry that carries a name (account.move._compute_name),
+    #    and the following entry of the journal is then born from the loan
+    #    label instead of the journal sequence (same defect, same family, as
+    #    the one fixed on ``ent_ohrms_salary_advance``).
+    #
+    # The human label therefore lives in ``ref`` — and on the entry lines —
+    # and follows a *configurable* template, so the wording is a setting and
+    # not a new module version:
+    #
+    #   ir.config_parameter : ent_loan_accounting.recovery_move_ref_template
+    #   placeholders        : {reference} {employee} {period} {company}
+    #   default             : 'Loan {reference} for {employee} - {period}'
+    RECOVERY_REF_TEMPLATE_PARAM = 'ent_loan_accounting.recovery_move_ref_template'
+    RECOVERY_REF_TEMPLATE_DEFAULT = 'Loan {reference} for {employee} - {period}'
+
+    def _loan_recovery_move_ref(self, period=None, employee_name=None):
+        """Build the reference (label) of an installment recovery entry.
+
+        A broken template falls back on the default instead of blocking a
+        payroll operation; an empty ``period`` never leaves a dangling
+        separator.
+        """
+        self.ensure_one()
+        template = self.env['ir.config_parameter'].sudo().get_param(
+            self.RECOVERY_REF_TEMPLATE_PARAM) or self.RECOVERY_REF_TEMPLATE_DEFAULT
+        values = {
+            'reference': self.name or '',
+            'employee': employee_name or self.employee_id.name or '',
+            'period': period or '',
+            'company': self.company_id.name or '',
+        }
+        try:
+            ref = template.format(**values)
+        except (KeyError, IndexError, ValueError):
+            ref = self.RECOVERY_REF_TEMPLATE_DEFAULT.format(**values)
+        ref = ref.strip()
+        if not values['period']:
+            ref = ref.rstrip(' -').strip()
+        return ref
+
     def _loan_approve_vals(self, loan):
         """ Build the disbursement ('octroi') move values for one loan.
 

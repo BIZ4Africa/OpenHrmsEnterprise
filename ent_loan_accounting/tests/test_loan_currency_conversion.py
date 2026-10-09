@@ -146,14 +146,17 @@ class TestLoanDisbursementCurrency(TransactionCase):
         """3 × 100 000 TST @ 2 265 = 3 × 44,15 = 132,45 -> receivable at zero."""
         loan = self._make_loan(300000.0, currency=self.foreign)
         loan.action_approve()
-        # this legacy route forces the move name ('LOAN/ <employee>/<label>'),
-        # unique per journal, and the label must not look like a numeric month:
-        # the account sequence mixin would otherwise check it against the entry
-        # date. One label per installment, nothing else is asserted here.
-        labels = ['premiere-tranche', 'deuxieme-tranche', 'troisieme-tranche']
+        # plausible payroll periods: since 1.0.9 the label of the entry does
+        # not have to avoid looking like a date any more — it lives in 'ref'
+        # and on the entry lines, the entry number belongs to the journal
+        # (card t_0f8e2a4e).
+        labels = ['Octobre-2026', 'Novembre-2026', 'Decembre-2026']
         for installment, label in zip(loan.loan_line_ids, labels):
             installment.action_paid_amount(label)
-        moves = self.env['account.move'].search([('ref', '=', loan.name)])
+        moves = self.env['account.move'].search([
+            ('journal_id', '=', self.journal.id),
+            ('id', '!=', loan.move_id.id),
+        ])
         recovered = sum(
             sum(move.line_ids.filtered(
                 lambda line: line.account_id == self.receivable and line.credit
@@ -200,7 +203,10 @@ class TestLoanDisbursementCurrency(TransactionCase):
         loan.action_approve()
         installment = loan.loan_line_ids[:1]
         installment.action_paid_amount('October-2026')
-        move = self.env['account.move'].search([('ref', '=', loan.name)])
+        move = self.env['account.move'].search([
+            ('journal_id', '=', self.journal.id),
+            ('id', '!=', loan.move_id.id),
+        ])
         lines = self._lines_by_account(move)
         self.assertAlmostEqual(lines[self.payroll_payable].debit, 100000.0,
                                places=2)

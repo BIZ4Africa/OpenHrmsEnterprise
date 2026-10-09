@@ -42,6 +42,16 @@ class HrLoanLine(models.Model):
             is converted into the company currency at the rate of the entry
             date, and carries the loan currency when the journal allows it —
             same rule as the disbursement entry (``hr.loan``).
+
+            Name: the entry NUMBER belongs to the journal (``BNK1/2026/00005``)
+            and is **not** forced any more. The module used to write
+            ``'LOAN/ <employee>/<month>'`` on it, which the account sequence
+            mixin rejects as soon as a group of digits of the label does not
+            match the entry date, and which made the journal adopt the label as
+            its numbering template for the entries that follow (measured on
+            SPORTS EXPERTS, journal BNK1 — see
+            ``hr.loan._loan_recovery_move_ref``). The human label lives in
+            ``ref`` and on the entry lines.
         """
         for line in self:
             if line.loan_id.state != 'approve':
@@ -53,10 +63,13 @@ class HrLoanLine(models.Model):
             company_amount = loan._loan_company_currency_amount(amount, on_date)
             carries_currency = loan._loan_carries_currency()
             partner_id = line.employee_id.work_contact_id.id or False
+            line_name = ' '.join(
+                part for part in
+                ('Loan', loan.name, line.employee_id.name, month) if part)
 
             def _line_vals(account_id, debit, credit, amount_currency, partner):
                 vals = {
-                    'name': line.employee_id.name,
+                    'name': line_name,
                     'account_id': account_id,
                     'journal_id': loan.journal_id.id,
                     'date': on_date,
@@ -81,9 +94,15 @@ class HrLoanLine(models.Model):
                 company_amount > 0.0 and company_amount or 0.0,
                 -amount, partner_id)
             vals = {
-                'name': 'LOAN/' + ' ' + line.employee_id.name + '/' + month,
+                # NO free 'name' here on purpose: the entry number belongs to
+                # the journal ('BNK1/2026/00005'). account.sequence_mixin reads
+                # a name as a *sequence* — a forced label is refused by
+                # _constrains_date_sequence when its digits do not match the
+                # entry date, and the journal then adopts that label as its
+                # numbering TEMPLATE for every following entry.
                 'narration': line.employee_id.name,
-                'ref': loan.name,
+                'ref': loan._loan_recovery_move_ref(month,
+                                                    line.employee_id.name),
                 'journal_id': loan.journal_id.id,
                 'date': on_date,
                 'line_ids': [(0, 0, debit_vals), (0, 0, credit_vals)]

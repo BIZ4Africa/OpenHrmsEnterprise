@@ -121,16 +121,19 @@ class TestLoanAccountingDirection(TransactionCase):
         installment = self.loan.loan_line_ids[:1]
         self.assertAlmostEqual(installment.amount, 100000.0)
 
-        recovery = self.env['account.move'].search([
-            ('ref', '=', self.loan.name),
-        ])
+        # the recovery entry shares the journal of the loan: it is identified
+        # by the journal minus the disbursement entry (the entry number and
+        # the label changed in 1.0.9 — card t_0f8e2a4e)
+        recovery_domain = [
+            ('journal_id', '=', self.loan.journal_id.id),
+            ('id', '!=', self.loan.move_id.id),
+        ]
+        recovery = self.env['account.move'].search(recovery_domain)
         self.assertFalse(recovery, "no recovery entry exists yet")
 
         installment.action_paid_amount('January-2026')
 
-        recovery = self.env['account.move'].search([
-            ('ref', '=', self.loan.name),
-        ])
+        recovery = self.env['account.move'].search(recovery_domain)
         self.assertEqual(len(recovery), 1,
                          "the recovery must post exactly one entry")
         self.assertEqual(recovery.state, 'posted')
