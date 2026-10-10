@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Prefix of the loan references. Configurable: the global value below
+         is the default, and a per-company override lives under
+         'ent_ohrms_loan.loan_sequence_prefix_<company_id>'. The value is read
+         when a company's sequence is provisioned. -->
+    <record id="loan_sequence_prefix" model="ir.config_parameter">
+        <field name="key">ent_ohrms_loan.loan_sequence_prefix</field>
+        <field name="value">LO/</field>
+    </record>
+</odoo>

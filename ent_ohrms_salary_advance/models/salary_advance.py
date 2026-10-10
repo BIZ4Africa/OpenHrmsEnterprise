@@ -113,7 +113,14 @@ class SalaryAdvance(models.Model):
     def create(self, vals_list):
         """ inheriting create method for adding sequence for the request. """
         for vals in vals_list:
-            vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
+            # NOTE: `ir.sequence.get()` does not exist in 19.0 (the alias was
+            # removed after 18.0); `next_by_code` is the API of the series.
+            # The sequence of this module is not bound to a company
+            # (`company_id` is False in data/ir_sequence_data.xml), so
+            # `next_by_code` finds it from every company: the minimal
+            # translation is the whole fix here, exactly as the 18.0 series
+            # measured it (commit 0b29b2b).
+            vals['name'] = self.env['ir.sequence'].next_by_code('salary.advance.seq') or ' '
         return super().create(vals_list)
 
     def action_approve_request(self):

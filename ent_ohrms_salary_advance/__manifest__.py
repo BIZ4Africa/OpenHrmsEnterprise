@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Salary Advance",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": "Advance Salary In HR",
     "live_test_url": "https://youtu.be/fJ3RyE7RGz4",
