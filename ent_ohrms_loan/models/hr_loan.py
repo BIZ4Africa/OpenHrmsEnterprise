@@ -19,11 +19,15 @@
 #    USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 ################################################################################
+import logging
+
 from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class HrLoan(models.Model):
@@ -31,6 +35,14 @@ class HrLoan(models.Model):
     _name = 'hr.loan'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Loan Request"
+
+    # Reference series of the loans. One sequence is provisioned **per
+    # company**: a reference series belongs to a single entity, so a loan of
+    # company B is numbered from the series of company B.
+    LOAN_SEQUENCE_CODE = 'hr.loan.seq'
+    # Configuration parameter holding the prefix of the loan references. A
+    # per-company override exists under '<param>_<company_id>'.
+    LOAN_SEQUENCE_PREFIX_PARAM = 'ent_ohrms_loan.loan_sequence_prefix'
 
     name = fields.Char(string="Loan Name", default="/", readonly=True,
                        help="Name of the loan")
@@ -112,6 +124,121 @@ class HrLoan(models.Model):
             loan.balance_amount = balance_amount
             loan.total_paid_amount = total_paid
 
+    # --- Loan reference sequence (one series per company) -----------------
+
+    @api.model
+    def _loan_sequence_prefix(self, company):
+        """Prefix of the loan references of ``company``.
+
+        Configurable, in order of precedence:
+
+        * ``ent_ohrms_loan.loan_sequence_prefix_<company_id>`` — per company;
+        * ``ent_ohrms_loan.loan_sequence_prefix`` — global default;
+        * ``LO/`` — the historical prefix of the module.
+        """
+        Parameter = self.env['ir.config_parameter'].sudo()
+        return (
+            Parameter.get_param(
+                '%s_%s' % (self.LOAN_SEQUENCE_PREFIX_PARAM, company.id))
+            or Parameter.get_param(self.LOAN_SEQUENCE_PREFIX_PARAM)
+            or 'LO/'
+        )
+
+    @api.model
+    def _loan_sequence(self, company):
+        """The loan sequence owned by ``company`` (never a shared one)."""
+        return self.env['ir.sequence'].sudo().search(
+            [('code', '=', self.LOAN_SEQUENCE_CODE),
+             ('company_id', '=', company.id)], limit=1)
+
+    @api.model
+    def _ensure_loan_sequences(self, companies=None):
+        """Guarantee one loan sequence per company, idempotently.
+
+        A company that already owns a sequence is left untouched, so the hook
+        runs at install and at every upgrade without ever creating a
+        duplicate. Each sequence is explicitly bound to its company — no
+        company-less (shared) series is created, and no company is left
+        relying on the series of another one. Returns the created sequences.
+        """
+        Sequence = self.env['ir.sequence'].sudo()
+        if companies is None:
+            companies = self.env['res.company'].with_context(
+                active_test=False).search([])
+        created = Sequence.browse()
+        for company in companies:
+            if self._loan_sequence(company):
+                continue
+            sequence = Sequence.create({
+                'name': 'Loan Request - %s' % company.name,
+                'code': self.LOAN_SEQUENCE_CODE,
+                'prefix': self._loan_sequence_prefix(company),
+                'padding': 4,
+                'number_increment': 1,
+                'number_next_actual': 1,
+                'implementation': 'standard',
+                'company_id': company.id,
+            })
+            created |= sequence
+            _logger.info(
+                "ent_ohrms_loan: loan sequence %s created for company %s "
+                "(prefix %r).", sequence.id, company.display_name,
+                sequence.prefix)
+        return created
+
+    @api.model
+    def _next_loan_sequence(self, company):
+        """Draw the next loan reference of ``company``.
+
+        The series is identified by the company of the loan, not by the
+        ambient company of the user: a loan of company B takes its reference
+        from the series of company B even when it is created from company A.
+
+        A missing sequence is a configuration error: it raises a UserError on
+        the creating operation -- the user sees the refusal in the interface
+        and nothing is written -- and is never silently replaced by a blank
+        name, that blank fallback being exactly what kept the defect invisible.
+
+        The guard does not log: the operation is already refused, and an
+        ERROR/WARNING line emitted on a path walked by the installation or the
+        tests would only colour the build (N2 rule: block on the business
+        operation, never mark the build).
+        """
+        sequence = self._loan_sequence(company)
+        if not sequence:
+            raise UserError(_(
+                "No loan reference sequence ('%s') is configured for the "
+                "company '%s'. Ask an administrator to provision the loan "
+                "sequences of every company before creating a loan."
+            ) % (self.LOAN_SEQUENCE_CODE, company.display_name))
+        return sequence.with_company(company).next_by_id()
+
+    @api.model
+    def _backfill_empty_loan_names(self):
+        """Name the loans that carry no usable reference.
+
+        Only loans whose ``name`` is empty or the module placeholder ('/',
+        ' ') are touched; each is named once, from the sequence of **its own**
+        company. Idempotent (an already named loan is never renamed) and
+        strictly limited to ``hr.loan.name``: no accounting entry is written,
+        so the labels of entries already posted are left as they were.
+        Returns the loans renamed.
+        """
+        renamed = self.browse()
+        for loan in self.search([]):
+            if (loan.name or '').strip() not in ('', '/'):
+                continue
+            if not loan.company_id:
+                continue
+            previous = loan.name
+            name = self._next_loan_sequence(loan.company_id)
+            loan.with_company(loan.company_id).write({'name': name})
+            renamed |= loan
+            _logger.info(
+                "ent_ohrms_loan: loan %s (company %s) renamed from %r to %r.",
+                loan.id, loan.company_id.display_name, previous, name)
+        return renamed
+
     @api.model_create_multi
     def create(self, vals_list):
         """Creates new HR loan records with the provided values."""
@@ -123,7 +250,19 @@ class HrLoan(models.Model):
             if loan_count:
                 raise ValidationError(
                     _("The employee has already a pending installment"))
-            values['name'] = self.env['ir.sequence'].get('hr.loan.seq') or ' '
+            company = self.env['res.company'].browse(
+                values.get('company_id')
+                or self.env.context.get('default_company_id')
+                or self.env.company.id)
+            # A reference already supplied by the caller (a dependent module
+            # for instance) is kept as is; only the module placeholder ('/',
+            # ' ' or empty) is replaced, from the sequence of the loan's own
+            # company. A missing sequence raises -- never a blank fallback.
+            # NOTE: `ir.sequence.get()` does not exist in 19.0 (removed after
+            # 18.0); the reference is drawn from the sequence of the loan's
+            # own company.
+            if not values.get('name') or values.get('name') in ('/', ' '):
+                values['name'] = self._next_loan_sequence(company)
         return super().create(vals_list)
 
     def action_compute_installment(self):

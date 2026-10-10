@@ -1,13 +1,20 @@
 <?xml version="1.0" ?>
-<odoo noupdate="1">
-    <!--	Sequence for loan request-->
-        <record id="hr_loan_sequence" model="ir.sequence">
-            <field name="name">Loan Request</field>
-            <field name="code">hr.loan.seq</field>
-            <field name="prefix">LO/</field>
-            <field name="padding">4</field>
-            <field name="number_increment">1</field>
-            <field name="number_next_actual">1</field>
-            <field name="implementation">standard</field>
-        </record>
+<odoo>
+    <!--
+        Loan reference sequences.
+
+        One sequence per company is provisioned in code (see
+        ent_ohrms_loan.hooks.post_init for the installation and
+        migrations/1.0.2/post-migrate.py for the upgrade): a reference series
+        belongs to a single entity.
+
+        The historical record that used to live here had no company_id, so
+        Odoo bound it to the company active at installation time (the field
+        default is the ambient company). Odoo's next_by_code only looks at
+        company_id IN (current company, NULL): every other company found no
+        sequence, and its loans were created with a blank name (' ') and
+        unreadable accounting labels ("Loan   for <employee>"). Removing an
+        XML record never deletes an existing row, so nothing already
+        installed is lost.
+    -->
 </odoo>
