@@ -32,6 +32,7 @@
         "hr_timesheet",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/contract_history_views.xml",
         "views/department_history_views.xml",
         "views/hr_employee_views.xml",

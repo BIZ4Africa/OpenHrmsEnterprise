@@ -36,6 +36,7 @@
         "hr_holidays",
     ],
     "data": [
+        "security/hr_attendance_security.xml",
         "security/hr_department_security.xml",
         "security/hr_expense_security.xml",
         "security/hr_leave_security.xml",

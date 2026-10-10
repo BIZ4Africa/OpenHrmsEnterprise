@@ -31,6 +31,7 @@
     "live_test_url": "https://youtu.be/tOG92cMa4Rg",
     "depends": ["hr"],
     "data": [
+        "security/hr_reminder_security.xml",
         "security/ir.model.access.csv",
         "views/hr_reminder_views.xml",
     ],

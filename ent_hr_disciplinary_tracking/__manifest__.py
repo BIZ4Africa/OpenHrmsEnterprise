@@ -30,6 +30,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["mail", "hr"],
     "data": [
+        "security/security.xml",
         "security/ir.model.access.csv",
         "views/disciplinary_action_views.xml",
         "views/discipline_category_views.xml",

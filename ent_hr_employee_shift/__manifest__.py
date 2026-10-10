@@ -30,6 +30,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr_payroll", "resource", "hr"],
     "data": [
+        "security/ir.model.access.csv",
         "security/hr_shift_schedule_rule.xml",
         "views/hr_employee_views.xml",
         "views/resource_calendar_views.xml",

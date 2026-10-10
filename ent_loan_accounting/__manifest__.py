@@ -40,6 +40,7 @@
         'ent_ohrms_loan'
     ],
     'data': [
+        'security/hr_loan_security.xml',
         'security/ir.model.access.csv',
         'views/hr_loan_views.xml',
         'views/res_config_settings_views.xml',

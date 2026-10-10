@@ -31,6 +31,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "hr", "mail"],
     "data": [
+        "security/hr_announcement_security.xml",
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "data/ir_cron_data.xml",

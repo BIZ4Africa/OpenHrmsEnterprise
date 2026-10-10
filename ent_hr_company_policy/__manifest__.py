@@ -29,6 +29,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "ent_hrms_dashboard"],
     "data": [
+        "security/res_company_policy_security.xml",
         "security/ir.model.access.csv",
         "views/res_company_policy_views.xml",
         "views/res_company_views.xml",

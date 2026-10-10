@@ -32,6 +32,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr_holidays"],
     "data": [
+        "data/mail_alias_data.xml",
         "views/res_config_settings_views.xml",
     ],
     "images": ["static/description/banner.jpg"],
