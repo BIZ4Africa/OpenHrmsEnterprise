@@ -213,9 +213,13 @@ class SalaryAdvance(models.Model):
                 'credit': amount > 0.0 and amount or 0.0,
             }
             vals = {
-                'name': 'Salary Advance Of ' + ' ' + request_name,
+                # NO free 'name' here on purpose: the entry number belongs
+                # to the journal (e.g. 'BNK1/2026/00004'). Setting a free
+                # name made Odoo skip the journal numbering, and the journal
+                # then adopted that free name as its numbering TEMPLATE for
+                # every following entry (measured on SPORTS EXPERTS).
                 'narration': request_name,
-                'ref': reference,
+                'ref': request._advance_move_ref(reference, request_name),
                 'journal_id': journal_id,
                 'date': timenow,
                 'line_ids': [(0, 0, debit_line), (0, 0, credit_line)]
@@ -224,3 +228,35 @@ class SalaryAdvance(models.Model):
             move.action_post()
         self.write({'state': 'approve'})
         return True
+
+    # ------------------------------------------------------------------
+    # Label (reference) of the accounting entry of a salary advance
+    # ------------------------------------------------------------------
+    # The entry NUMBER ('name') is left to the journal on purpose: it is the
+    # journal's own numbering (e.g. 'BNK1/2026/00004'). The human label lives
+    # in 'ref' and follows a *configurable* template, so the customer can
+    # change the wording without a new module version:
+    #
+    #   ir.config_parameter : ent_ohrms_salary_advance.move_ref_template
+    #   placeholders        : {reference} {employee} {company}
+    #   default             : 'Salary advance {reference} for {employee}'
+    #
+    # Same shape as the loan module ref ('Loan LO/0001 for <employee>').
+    ADVANCE_REF_TEMPLATE_PARAM = 'ent_ohrms_salary_advance.move_ref_template'
+    ADVANCE_REF_TEMPLATE_DEFAULT = 'Salary advance {reference} for {employee}'
+
+    def _advance_move_ref(self, reference=None, employee_name=None):
+        """Build the reference (label) of the advance's accounting entry."""
+        self.ensure_one()
+        template = self.env['ir.config_parameter'].sudo().get_param(
+            self.ADVANCE_REF_TEMPLATE_PARAM) or self.ADVANCE_REF_TEMPLATE_DEFAULT
+        values = {
+            'reference': reference or '',
+            'employee': employee_name or '',
+            'company': self.company_id.name or '',
+        }
+        try:
+            return template.format(**values)
+        except (KeyError, IndexError, ValueError):
+            # A broken template must never block a payroll operation.
+            return self.ADVANCE_REF_TEMPLATE_DEFAULT.format(**values)
