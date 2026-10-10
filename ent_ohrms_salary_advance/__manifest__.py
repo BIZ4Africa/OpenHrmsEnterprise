@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Salary Advance",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "category": "Generic Modules/Human Resources",
     "summary": "Advance Salary In HR",
     "live_test_url": "https://youtu.be/fJ3RyE7RGz4",
@@ -35,6 +35,7 @@
         "ent_ohrms_loan",
     ],
     "data": [
+        "security/salary_advance_security.xml",
         "security/ir.model.access.csv",
         "data/hr_salary_rule_data.xml",
         "data/hr_payslip_input_type_data.xml",
