@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Multi-Company",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Enables Multi-Company""",
 "author": "Cybrosys Techno Solutions,Open HRMS",

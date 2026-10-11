@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise HR Company Policy",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "category": "Generic Modules/Human Resources",
     "summary": "Manage and organize company policies within HR system",
 "author": "Cybrosys Techno Solutions,Open HRMS",

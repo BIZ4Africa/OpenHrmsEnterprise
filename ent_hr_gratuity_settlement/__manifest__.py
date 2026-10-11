@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Gratuity Settlement",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Employee Gratuity Settlement""",
 "author": "Cybrosys Techno Solutions,Open HRMS",

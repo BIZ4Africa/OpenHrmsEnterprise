@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Service Request",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resource",
     "summary": """Allow Employees To Raise A Service Request""",
 "author": "Cybrosys Techno Solutions,Open HRMS",

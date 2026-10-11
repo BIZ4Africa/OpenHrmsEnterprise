@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Insurance",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Employee Insurance Management for Open HRMS.""",
 "author": "Cybrosys Techno Solutions",

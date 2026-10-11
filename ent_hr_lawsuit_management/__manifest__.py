@@ -23,7 +23,7 @@
 ###############################################################################
 {
     "name": "Enterprise Open HRMS Legal Actions",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Managing Legal Actions""",
 "author": "Cybrosys Techno Solutions,Open HRMS",

@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Employee Info",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Adding Advanced Fields In Employee Master""",
     "author": "Cybrosys Techno Solutions,Open HRMS",

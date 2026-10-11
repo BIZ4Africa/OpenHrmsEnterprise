@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Disciplinary Tracking",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Employee Disciplinary Tracking Management 
     Reason/Action/Explanation""",

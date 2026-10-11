@@ -1,5 +1,21 @@
 ## Module <ent_hr_company_policy>
 
+#### 11.10.2026
+#### Version 1.0.3
+##### FIX
+
+- `security/res_company_policy_security.xml` is declared again in the manifest.
+  Commit `900b76a` ("Remove orphaned string continuations from 25 manifests")
+  dropped the declaration while the file stayed in the tree, so nothing loaded
+  it:
+  - 1 `ir.rule`: `res_company_policy_rule_user` (name=Company Policy Multi
+    Company Rule, model_id=model_res_company_policy, global=True)
+- Version bumped on purpose: Odoo only reloads a module whose manifest version
+  is greater than the installed one (`ir_module_module.update_list`:
+  `parse_version(terp['version']) > parse_version(mod.latest_version)`), so
+  without this bump the restored declarations would silently never reach the
+  instances where the module is already installed.
+
 #### 10.10.2026
 #### Version 1.0.2
 ##### FIX

@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Leave Multi-Level Approval",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Multilevel Approval for Leaves""",
     "author": "Cybrosys Techno Solutions,Open HRMS",

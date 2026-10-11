@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Official Announcements",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Managing Official Announcements""",
 "live_test_url": "https://www.youtube.com/watch?v=4gy3Jqn46SQ&feature=youtu.be",
