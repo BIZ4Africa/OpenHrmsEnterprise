@@ -1,5 +1,49 @@
 ## Module <ent_loan_accounting>
 
+#### 11.10.2026
+#### Version 1.0.12
+##### FIX
+
+- `security/ir.model.access.csv` and `security/hr_loan_security.xml` are
+  declared again in the manifest. Commit `900b76a` ("Remove orphaned string
+  continuations from 25 manifests") dropped the declarations while the files
+  stayed in the tree, so nothing loaded them:
+  - `security/ir.model.access.csv`:
+    - `access_account_move_officer` -> `account.model_account_move`: read, write,
+      create, unlink for `hr.group_hr_user`
+    - `access_account_journal_officer` -> `account.model_account_journal`: read,
+      write, create, unlink for `hr.group_hr_user`
+    - `access_account_move_line_officer` -> `account.model_account_move_line`:
+      read, write, create, unlink for `hr.group_hr_user`
+    - `access_account_account_type_officer` ->
+      `account.model_account_account_type`: read, write, create, unlink for
+      `hr.group_hr_user`
+    - `access_hr_loan_manager` -> `model_hr_loan`: read, write, create, unlink
+      for `hr.group_hr_manager`
+    - `access_hr_loan_line_manager` -> `model_hr_loan_line`: read, write, create,
+      unlink for `hr.group_hr_manager`
+    - `access_account_move_manager` -> `account.model_account_move`: read, write,
+      create, unlink for `hr.group_hr_manager`
+    - `access_account_journal_manager` -> `account.model_account_journal`: read,
+      write, create, unlink for `hr.group_hr_manager`
+    - `access_account_move_line_manager` -> `account.model_account_move_line`:
+      read, write, create, unlink for `hr.group_hr_manager`
+    - `access_account_account_type_manager` ->
+      `account.model_account_account_type`: read, write, create, unlink for
+      `hr.group_hr_manager`
+    - `access_hr_loan_accountant` -> `model_hr_loan`: read, write, create for
+      `account.group_account_user`
+    - `access_hr_loan_line_accountant` -> `model_hr_loan_line`: read, write,
+      create for `account.group_account_user`
+  - `security/hr_loan_security.xml`:
+    - 1 `ir.rule`: `ir_rule_loan_form_modification` (name=Loan Forms Modification
+      Accounts, model_id=model_hr_loan)
+- Version bumped on purpose: Odoo only reloads a module whose manifest version
+  is greater than the installed one (`ir_module_module.update_list`:
+  `parse_version(terp['version']) > parse_version(mod.latest_version)`), so
+  without this bump the restored declarations would silently never reach the
+  instances where the module is already installed.
+
 #### 09.10.2026
 #### Version 18.0.1.0.9
 ##### FIX
