@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Employee History",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """History Of Employees In Your Company""",
 "author": "Cybrosys Techno Solutions,Open HRMS",
@@ -32,6 +32,7 @@
         "hr_timesheet",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/contract_history_views.xml",
         "views/department_history_views.xml",
         "views/hr_employee_views.xml",

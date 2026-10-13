@@ -23,7 +23,7 @@
 ###############################################################################
 {
     "name": "Enterprise Open HRMS Custody",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Manage the company properties when it is in the 
     custody of an employee""",
@@ -34,6 +34,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "hr", "mail", "ent_hr_employee_updation", "product", "stock"],
     "data": [
+        "security/custody_property_security.xml",
         "security/hr_custody_security.xml",
         "security/ir.model.access.csv",
         "data/ir_cron_data.xml",

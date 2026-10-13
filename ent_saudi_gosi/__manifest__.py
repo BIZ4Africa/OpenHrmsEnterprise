@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS GOSI",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resource",
     "summary": """GOSI Contribution for Saudi Government""",
 "author": "Cybrosys Techno Solutions,Open HRMS",
@@ -30,6 +30,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr", "ent_ohrms_loan", "hr_payroll"],
     "data": [
+        "security/ir.model.access.csv",
         "data/res_partner_data.xml",
         "data/hr_salary_rule_category_data.xml",
         "data/hr_payroll_structure_data.xml",

@@ -21,7 +21,7 @@
 ################################################################################
 {
     'name': 'Enterprise OpenHRMS Loan Accounting',
-    'version': '1.0.5',
+    'version': '1.0.6',
     'category': 'Generic Modules/Human Resources',
     'summary': 'Open HRMS Loan Accounting',
     'description': """Manage Loan Request of Employees.Double Layer Approval 
@@ -40,6 +40,7 @@
         'ent_ohrms_loan'
     ],
     'data': [
+        'security/hr_loan_security.xml',
         'security/ir.model.access.csv',
         'views/hr_loan_views.xml',
         'views/res_config_settings_views.xml',

@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Disciplinary Tracking",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Employee Disciplinary Tracking Management 
     Reason/Action/Explanation""",
@@ -30,6 +30,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["mail", "hr"],
     "data": [
+        "security/security.xml",
         "security/ir.model.access.csv",
         "views/disciplinary_action_views.xml",
         "views/discipline_category_views.xml",

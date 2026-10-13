@@ -20,7 +20,7 @@
 ################################################################################
 {
     "name": "Enterprise HRMS Biometric Device Integration",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "live_test_url": "https://youtu.be/RHSHHU7nzTo",
     "summary": "Integrating Biometric Device With HR Attendance (Face + Thumb)",
@@ -30,6 +30,7 @@
     "website": "https://www.cybrosys.com",
     "depends": ["base_setup", "hr_attendance", "ent_hr_employee_updation"],
     "data": [
+        "security/ir.model.access.csv",
         "data/ir_cron_data.xml",
         "views/hr_employee_views.xml",
         "views/zk_machine_views.xml",

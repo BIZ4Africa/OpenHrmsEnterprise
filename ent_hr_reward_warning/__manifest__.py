@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Official Announcements",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Managing Official Announcements""",
 "live_test_url": "https://www.youtube.com/watch?v=4gy3Jqn46SQ&feature=youtu.be",
@@ -31,6 +31,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "hr", "mail"],
     "data": [
+        "security/hr_announcement_security.xml",
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "data/ir_cron_data.xml",

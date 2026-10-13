@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise HRMS Employee Background Verification",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Verify the background details of an Employee """,
     "author": "Cybrosys Techno Solutions, Open HRMS",
@@ -36,6 +36,7 @@
         "website",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/mail_template_data.xml",
         "views/employee_verification_views.xml",
         "views/res_partner_views.xml",

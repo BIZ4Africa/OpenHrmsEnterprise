@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS - HR Dashboard",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Open HRMS HR dashboard,facilitates with various 
      metrics helping easy to view, understand, and share data. Experience the 
@@ -45,6 +45,7 @@
         "base",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "report/hr_employee_broad_factor_reports.xml",
         "views/hr_leave_views.xml",
         "views/ent_hrms_dashboard_menus.xml",

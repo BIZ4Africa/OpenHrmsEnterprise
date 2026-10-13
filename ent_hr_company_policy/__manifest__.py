@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise HR Company Policy",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "category": "Generic Modules/Human Resources",
     "summary": "Manage and organize company policies within HR system",
 "author": "Cybrosys Techno Solutions,Open HRMS",
@@ -29,6 +29,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["base", "ent_hrms_dashboard"],
     "data": [
+        "security/res_company_policy_security.xml",
         "security/ir.model.access.csv",
         "views/res_company_policy_views.xml",
         "views/res_company_views.xml",

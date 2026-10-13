@@ -20,7 +20,7 @@
 ########################################################################################
 {
     "name": "Enterprise Open HRMS Gratuity Settlement",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Employee Gratuity Settlement""",
 "author": "Cybrosys Techno Solutions,Open HRMS",
@@ -29,6 +29,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr", "hr_payroll", "accountant", "hr_holidays"],
     "data": [
+        "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "views/hr_gratuity_views.xml",
         "views/hr_gratuity_accounting_configuration_views.xml",

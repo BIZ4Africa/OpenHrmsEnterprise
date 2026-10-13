@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Checklist",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Manages Employee's Entry & Exit Process""",
 "author": "Cybrosys Techno Solutions, Open HRMS",
@@ -30,6 +30,7 @@
     "website": "https://www.cybrosys.com",
     "depends": ["ent_employee_documents_expiry", "mail", "hr"],
     "data": [
+        "security/ir.model.access.csv",
         "data/mail_activity_plan_template_data.xml",
         "data/mail_activity_plan_data.xml",
         "views/employee_check_list_views.xml",

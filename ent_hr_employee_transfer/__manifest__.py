@@ -22,7 +22,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Company Transfer",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": "This module is used to transfer employee between companies",
     "author": "Cybrosys Techno solutions,Open HRMS",
@@ -31,6 +31,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr", "ent_hr_employee_updation"],
     "data": [
+        "security/ent_hr_employee_transfer_security.xml",
         "security/ir.model.access.csv",
         "views/employee_transfer_views.xml",
     ],

@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Multi-Company",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Enables Multi-Company""",
 "author": "Cybrosys Techno Solutions,Open HRMS",
@@ -36,6 +36,7 @@
         "hr_holidays",
     ],
     "data": [
+        "security/hr_attendance_security.xml",
         "security/hr_department_security.xml",
         "security/hr_expense_security.xml",
         "security/hr_leave_security.xml",

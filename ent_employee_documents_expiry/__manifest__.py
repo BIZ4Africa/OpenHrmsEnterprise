@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Documents",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Manages Employee Documents With Expiry Notifications.""",
 "live_test_url": "https://www.youtube.com/watch?v=Wc__1NkMHko&feature=youtu.be",
@@ -31,6 +31,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["hr"],
     "data": [
+        "data/ir_cron_data.xml",
         "security/ir.model.access.csv",
         "views/hr_document_views.xml",
         "views/document_type_views.xml",

@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "OpenHRMS Reminders Todo",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": "HR Reminder For OHRMS",
 "author": "Cybrosys Techno solutions,Open HRMS",
@@ -31,6 +31,7 @@
     "live_test_url": "https://youtu.be/tOG92cMa4Rg",
     "depends": ["hr"],
     "data": [
+        "security/hr_reminder_security.xml",
         "security/ir.model.access.csv",
         "views/hr_reminder_views.xml",
     ],

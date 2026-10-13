@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise Open HRMS Employee Insurance",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Human Resources",
     "summary": """Employee Insurance Management for Open HRMS.""",
 "author": "Cybrosys Techno Solutions",
@@ -30,6 +30,7 @@
     "website": "https://www.openhrms.com",
     "depends": ["ent_ohrms_loan", "ent_hr_employee_updation"],
     "data": [
+        "security/ent_hr_insurance_security.xml",
         "security/ir.model.access.csv",
         "data/hr_salary_rule_data.xml",
         "views/hr_employee_views.xml",
