@@ -1,5 +1,21 @@
 ## Module <ent_ohrms_service_request>
 
+#### 13.10.2026
+#### Version 1.0.3
+##### FIX
+
+- `product` is declared in `depends`. `models/service_request.py` declares
+  `service_product_id = fields.Many2one('product.product')` (also used by
+  `views/service_request_views.xml` and by the report values), but the 19.0
+  manifest did not pull `product` in — the 18.0 manifest depended on `stock`,
+  which brought it. When `product` is not installed, loading the model raises
+
+      AssertionError: Field service.request.service_product_id with unknown comodel_name 'product.product'
+
+  and the module cannot be installed. Counter-measure: fresh database,
+  `-i ent_ohrms_service_request` -> `exit=0`, module `installed 1.0.3`, no
+  ERROR/CRITICAL line.
+
 #### 11.10.2026
 #### Version 1.0.2
 ##### FIX
