@@ -36,6 +36,14 @@
         "hr_holidays",
     ],
     "data": [
+        # La 18.0 la declare (ligne 44) et la 19.0 avait retire CETTE SEULE
+        # ligne en gardant les cinq autres : la regle `hr_attendance_company`
+        # n'existait donc plus, et l'enregistrement qui la desactive dans
+        # l10n_cd_hr_multicompany echouait a l'installation —
+        #   Exception: Cannot update missing record
+        #   'ent_hr_multi_company.hr_attendance_company'
+        # -> registre non charge, base non initialisee (mesure build 40045923).
+        "security/hr_attendance_security.xml",
         "security/hr_department_security.xml",
         "security/hr_expense_security.xml",
         "security/hr_leave_security.xml",
