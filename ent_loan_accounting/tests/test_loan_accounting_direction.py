@@ -1,0 +1,266 @@
+# -*- coding: utf-8 -*-
+"""Non-regression guard on the DIRECTION of the two employee-loan legs, and on
+the arming of the ``LO`` payslip deduction rule (the anti-double-deduction
+guard).
+
+19.0 port of the 18.0 tests (work ``ent_loan_accounting 18.0.1.0.7`` and
+``18.0.1.0.11``, commits ``b93337bdee`` and ``8547b8320c``):
+
+* the fixture is the 19.0 employment model (``hr.version``, formerly
+  ``hr.contract``);
+* the imports are the 19.0 form and the class carries the 19.0 tags
+  (``post_install``, ``-at_install``);
+* the anti-double-deduction guard is CAPTURED (``assertLogs``) so that a
+  deliberately misconfigured test structure never writes a WARNING into
+  ``install.log`` — a guard blocks the business operation, it never marks the
+  build.
+
+Defect measured on the SPORTS EXPERTS instance (W15, 2026-10-08), module
+``ent_loan_accounting`` 1.0.6: the disbursement ('octroi') move was posted
+``D treasury / C payroll payable`` — the bank was debited (treasury inflated by
+the loan amount) and the salary due to the employee was credited. The recovery
+('récupération') move credited the treasury a second time.
+
+Correct direction, asserted here:
+
+* disbursement: ``D loan receivable / C treasury``
+* recovery (payslip installment): ``D payroll payable / C loan receivable``
+
+The test fails if the direction flips back, or if the ``LO`` rule is armed on a
+structure that already deducts loans through a competing rule.
+"""
+from datetime import date
+
+from odoo.tests import tagged
+from odoo.tests.common import TransactionCase
+
+ENT_LOAN_ACCOUNTING_STRUCTURE_LOG = (
+    'odoo.addons.ent_loan_accounting.models.hr_payroll_structure')
+
+
+@tagged('post_install', '-at_install')
+class TestLoanAccountingDirection(TransactionCase):
+    """Direction of the loan disbursement and of the first recovery."""
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.company = cls.env.company
+        cls.loan_account = cls._get_or_create_account(
+            '421100', 'Personnel, avances', 'asset_receivable')
+        cls.employee_account = cls._get_or_create_account(
+            '422000', 'Personnel, remunerations dues', 'liability_payable')
+        cls.treasury_account = cls._get_or_create_account(
+            '521001', 'Banque', 'asset_cash')
+        cls.journal = cls.env['account.journal'].create({
+            'name': 'Loan Direction Test Journal',
+            'code': 'LDTJ',
+            'type': 'general',
+        })
+        cls.employee = cls.env['hr.employee'].create({
+            'name': 'Loan Direction Test Employee',
+            'company_id': cls.company.id,
+        })
+        # 19.0 employment model: hr.version replaced hr.contract.
+        cls.env['hr.version'].create({
+            'name': 'Loan Direction Test Contract',
+            'employee_id': cls.employee.id,
+            'company_id': cls.company.id,
+            'contract_date_start': date(2024, 1, 1),
+            'date_version': date(2024, 1, 1),
+            'wage': 100000.0,
+        })
+
+    @classmethod
+    def _get_or_create_account(cls, code, name, account_type):
+        account = cls.env['account.account'].search(
+            [('code', '=', code)], limit=1)
+        if not account:
+            account = cls.env['account.account'].create({
+                'code': code,
+                'name': name,
+                'account_type': account_type,
+            })
+        return account
+
+    def setUp(self):
+        super().setUp()
+        self.loan = self.env['hr.loan'].create({
+            'employee_id': self.employee.id,
+            'company_id': self.company.id,
+            'currency_id': self.company.currency_id.id,
+            'loan_amount': 300000.0,
+            'installment': 3,
+            'payment_date': date(2026, 1, 31),
+            'treasury_account_id': self.treasury_account.id,
+            'employee_account_id': self.employee_account.id,
+            'loan_account_id': self.loan_account.id,
+            'journal_id': self.journal.id,
+        })
+        self.loan.action_compute_installment()
+
+    def _lines_by_account(self, move):
+        return {line.account_id: line for line in move.line_ids}
+
+    # ---------------------------------------------------------------- octroi
+    def test_disbursement_debits_loan_and_credits_treasury(self):
+        """D loan receivable / C treasury — never the reverse."""
+        self.loan.action_approve()
+        move = self.loan.move_id
+        self.assertTrue(move, "the approval must post a disbursement move")
+        self.assertEqual(move.state, 'posted')
+        self.assertAlmostEqual(
+            sum(move.line_ids.mapped('debit')),
+            sum(move.line_ids.mapped('credit')),
+            msg="the disbursement entry must be balanced")
+
+        lines = self._lines_by_account(move)
+        self.assertIn(self.loan_account, lines,
+                      "the loan receivable must carry the disbursement")
+        self.assertIn(self.treasury_account, lines,
+                      "the treasury must carry the disbursement")
+        self.assertNotIn(
+            self.employee_account, lines,
+            "the payroll payable must NOT be touched at disbursement")
+
+        self.assertAlmostEqual(lines[self.loan_account].debit, 300000.0)
+        self.assertAlmostEqual(lines[self.loan_account].credit, 0.0)
+        self.assertAlmostEqual(lines[self.treasury_account].credit, 300000.0)
+        # the exact defect of 1.0.6: the treasury was debited
+        self.assertAlmostEqual(
+            lines[self.treasury_account].debit, 0.0,
+            msg="the treasury must never be debited by a loan disbursement")
+
+    def test_disbursement_refuses_without_loan_account(self):
+        """A loan without a receivable account cannot produce an entry."""
+        self.loan.loan_account_id = False
+        with self.assertRaises(Exception):
+            self.loan.action_approve()
+
+    # ------------------------------------------------------------ recuperation
+    def test_recovery_debits_payroll_and_credits_loan(self):
+        """D payroll payable / C loan receivable — the treasury is untouched."""
+        self.loan.action_approve()
+        self.env.cr.flush()
+        installment = self.loan.loan_line_ids[:1]
+        self.assertAlmostEqual(installment.amount, 100000.0)
+
+        # the recovery entry shares the journal of the loan: it is identified
+        # by the journal minus the disbursement entry (the entry number and
+        # the label changed with the recovery move name guard — the number
+        # belongs to the journal)
+        recovery_domain = [
+            ('journal_id', '=', self.loan.journal_id.id),
+            ('id', '!=', self.loan.move_id.id),
+        ]
+        recovery = self.env['account.move'].search(recovery_domain)
+        self.assertFalse(recovery, "no recovery entry exists yet")
+
+        installment.action_paid_amount('January-2026')
+
+        recovery = self.env['account.move'].search(recovery_domain)
+        self.assertEqual(len(recovery), 1,
+                         "the recovery must post exactly one entry")
+        self.assertEqual(recovery.state, 'posted')
+        self.assertAlmostEqual(
+            sum(recovery.line_ids.mapped('debit')),
+            sum(recovery.line_ids.mapped('credit')))
+
+        lines = self._lines_by_account(recovery)
+        self.assertIn(self.employee_account, lines,
+                      "the payroll payable must be debited by the recovery")
+        self.assertIn(self.loan_account, lines,
+                      "the loan receivable must be credited by the recovery")
+        self.assertNotIn(
+            self.treasury_account, lines,
+            "the treasury must NOT be touched by a payslip recovery")
+
+        self.assertAlmostEqual(lines[self.employee_account].debit, 100000.0)
+        self.assertAlmostEqual(lines[self.employee_account].credit, 0.0)
+        self.assertAlmostEqual(lines[self.loan_account].credit, 100000.0)
+        self.assertAlmostEqual(lines[self.loan_account].debit, 0.0)
+
+    # ----------------------------------------------------------------- arming
+    def test_backfill_sets_the_loan_account(self):
+        """The migration back-fill fills a loan with no loan account."""
+        self.loan.loan_account_id = False
+        filled = self.env['hr.loan']._backfill_loan_account()
+        self.assertIn(self.loan, filled)
+        self.assertEqual(self.loan.loan_account_id, self.loan_account)
+
+    def test_arm_loan_recovery_is_idempotent(self):
+        """A structure without the LO rule can be armed, once."""
+        Structure = self.env['hr.payroll.structure']
+        Rule = self.env['hr.salary.rule']
+        template = Rule.search([('code', '=', 'LO')], limit=1)
+        self.assertTrue(template,
+                        "ent_ohrms_loan must provide the reference LO rule")
+
+        structure = Structure.create({
+            'name': 'Loan Arming Test Structure',
+            'type_id': template.struct_id.type_id.id,
+        })
+        self.assertFalse(structure._loan_recovery_rule())
+
+        created = structure._arm_loan_recovery()
+        self.assertEqual(len(created), 1)
+        self.assertEqual(created.code, 'LO')
+        self.assertEqual(created.struct_id, structure)
+        self.assertEqual(created.condition_select, 'python')
+
+        # idempotent: a second call creates nothing
+        self.assertFalse(structure._arm_loan_recovery())
+        self.assertEqual(len(structure._loan_recovery_rule()), 1)
+
+    def test_arm_loan_recovery_skips_structure_with_competing_rule(self):
+        """A structure that already deducts loans (bridge 'LOAN' rule) is left
+        alone: arming 'LO' next to it would deduct the same installment twice.
+
+        Measured on SPORTS EXPERTS: the DRC payroll bridge
+        ``l10n_cd_hr_payroll_loan_bridge`` feeds a 'LOAN' payslip input consumed
+        by a 'LOAN' salary rule, present on the company payroll structures.
+        """
+        Structure = self.env['hr.payroll.structure']
+        Rule = self.env['hr.salary.rule']
+        template = Rule.search([('code', '=', 'LO')], limit=1)
+
+        structure = Structure.create({
+            'name': 'Bridge Loan Arming Test Structure',
+            'type_id': template.struct_id.type_id.id,
+        })
+        bridge_rule = Rule.create({
+            'name': 'Loan repayment (bridge)',
+            'code': 'LOAN',
+            'struct_id': structure.id,
+            'category_id': template.category_id.id,
+            'sequence': 123,
+            'condition_select': 'none',
+            'amount_select': 'fix',
+            'amount_fix': 0.0,
+        })
+        self.assertEqual(structure._competing_loan_rule(), bridge_rule)
+
+        # The guard message is CAPTURED, never written to the build journal.
+        # The structure above is deliberately misconfigured — it carries a
+        # 'LOAN' rule, which is exactly what the guard must report; on a
+        # correctly configured environment the guard stays silent. Capturing
+        # keeps the proof (the message IS emitted, and it names the structure
+        # left untouched) while stopping a deliberately broken test object from
+        # colouring install.log: N2 rule — a guard blocks the business
+        # operation, it never marks the build.
+        with self.assertLogs(
+            ENT_LOAN_ACCOUNTING_STRUCTURE_LOG,
+            level='INFO',
+        ) as logs:
+            created = structure._arm_loan_recovery()
+
+        self.assertTrue(
+            any('already deducts loans' in line for line in logs.output),
+            "the guard must report the competing loan rule it skipped")
+        self.assertTrue(
+            any(structure.display_name in line for line in logs.output),
+            "the guard must name the structure it left untouched")
+        self.assertFalse(created, "the 'LO' rule must not be armed there")
+        self.assertFalse(structure._loan_recovery_rule())
+        self.assertEqual(len(structure.rule_ids.filtered(
+            lambda rule: rule.code == 'LO')), 0)
