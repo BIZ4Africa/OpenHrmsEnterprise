@@ -24,6 +24,7 @@ from . import (
     account_move_line,
     hr_loan,
     hr_loan_line,
+    hr_payroll_structure,
     hr_payslip,
     res_config_settings,
 )
