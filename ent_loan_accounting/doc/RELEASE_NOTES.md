@@ -1,6 +1,42 @@
 ## Module <ent_loan_accounting>
 
 #### 17.10.2026
+#### Version 19.0.1.0.8
+##### FIX
+
+- **Name of the recovery entry** (`hr.loan.line.action_paid_amount`, the
+  OpenHRMS route; 19.0 port of the 18.0 work `ent_loan_accounting 18.0.1.0.9`,
+  commit `001c16c74d`): the module no longer forces the number of the
+  accounting entry (`'LOAN/ <employee>/<month>'`). `account.sequence_mixin`
+  reads a name as a *sequence*:
+  - the entry is **refused** as soon as a group of digits of the label does not
+    match the entry date — measured on SPORTS EXPERTS, journal BNK1:
+    `ValidationError: The Date (10/09/2026) … isn't aligned with the existing
+    sequence number (LOAN/ DIAG W17 lot F (a supprimer)/DIAG-lot-F)` (the `17`
+    of `W17` read as a year) — card t_0f8e2a4e;
+  - the journal **adopts** the label as its numbering TEMPLATE: Odoo never
+    renumbers an entry that carries a name, so the next entry of the journal
+    was born from the loan label (measured locally: the entry following an
+    installment was named `LOAN/ <employee>/premiere-tranche1`).
+  The entry NUMBER now comes from the journal (`BNK1/2026/00005`); the human
+  label lives in `ref` and on the entry lines, like the disbursement entry.
+- **Configurable label**: `ir.config_parameter`
+  `ent_loan_accounting.recovery_move_ref_template`, placeholders
+  `{reference} {employee} {period} {company}`, default
+  `'Loan {reference} for {employee} - {period}'`. A broken template falls back
+  on the default instead of blocking a payroll operation, and an empty period
+  never leaves a dangling separator.
+- The accounting unit rule of 1.0.7 is unchanged (conversion at the entry date,
+  loan currency carried when the journal allows it) — the two routes share
+  `hr.loan._loan_company_currency_amount`.
+- Non-regression tests: `tests/test_loan_recovery_move_name.py` fails if the
+  entry of an installment cannot be posted on a **bank** journal, if its number
+  is not the journal numbering, if the entry following it in the journal
+  inherits a loan label, or if the label stops following its template.
+
+## Module <ent_loan_accounting>
+
+#### 17.10.2026
 #### Version 19.0.1.0.7
 ##### FIX
 
