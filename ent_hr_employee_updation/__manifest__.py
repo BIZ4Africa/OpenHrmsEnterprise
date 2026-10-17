@@ -21,7 +21,7 @@
 ################################################################################
 {
     "name": "Enterprise OpenHRMS Employee Info",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "category": "Generic Modules/Human Resources",
     "summary": """Adding Advanced Fields In Employee Master""",
     "author": "Cybrosys Techno Solutions,Open HRMS",
@@ -30,6 +30,13 @@
     "website": "https://www.openhrms.com",
     "depends": ["mail", "hr_gamification", "hr"],
     "data": [
+        # ACL en TETE : un modele doit porter ses droits avant que les vues
+        # et les donnees ne le manipulent. Ce fichier existait deja mais
+        # n'etait PAS declare ici : il n'etait donc jamais charge, et Odoo
+        # reclame a chaque build des droits pour les modeles que ce module
+        # DEFINIT (mesure : warning depuis le 16/10, sans effet des lignes
+        # ajoutees au CSV tant qu'il n'est pas declare).
+        "security/ir.model.access.csv",
         "data/hr_employee_relation_data.xml",
         "data/ir_cron_data.xml",
         "views/hr_contract_views.xml",
