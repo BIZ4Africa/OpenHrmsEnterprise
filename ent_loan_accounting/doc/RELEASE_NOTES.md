@@ -1,5 +1,99 @@
 ## Module <ent_loan_accounting>
 
+#### 17.10.2026
+#### Version 19.0.1.0.8
+##### FIX
+
+- **Name of the recovery entry** (`hr.loan.line.action_paid_amount`, the
+  OpenHRMS route; 19.0 port of the 18.0 work `ent_loan_accounting 18.0.1.0.9`,
+  commit `001c16c74d`): the module no longer forces the number of the
+  accounting entry (`'LOAN/ <employee>/<month>'`). `account.sequence_mixin`
+  reads a name as a *sequence*:
+  - the entry is **refused** as soon as a group of digits of the label does not
+    match the entry date — measured on SPORTS EXPERTS, journal BNK1:
+    `ValidationError: The Date (10/09/2026) … isn't aligned with the existing
+    sequence number (LOAN/ DIAG W17 lot F (a supprimer)/DIAG-lot-F)` (the `17`
+    of `W17` read as a year) — card t_0f8e2a4e;
+  - the journal **adopts** the label as its numbering TEMPLATE: Odoo never
+    renumbers an entry that carries a name, so the next entry of the journal
+    was born from the loan label (measured locally: the entry following an
+    installment was named `LOAN/ <employee>/premiere-tranche1`).
+  The entry NUMBER now comes from the journal (`BNK1/2026/00005`); the human
+  label lives in `ref` and on the entry lines, like the disbursement entry.
+- **Configurable label**: `ir.config_parameter`
+  `ent_loan_accounting.recovery_move_ref_template`, placeholders
+  `{reference} {employee} {period} {company}`, default
+  `'Loan {reference} for {employee} - {period}'`. A broken template falls back
+  on the default instead of blocking a payroll operation, and an empty period
+  never leaves a dangling separator.
+- The accounting unit rule of 1.0.7 is unchanged (conversion at the entry date,
+  loan currency carried when the journal allows it) — the two routes share
+  `hr.loan._loan_company_currency_amount`.
+- Non-regression tests: `tests/test_loan_recovery_move_name.py` fails if the
+  entry of an installment cannot be posted on a **bank** journal, if its number
+  is not the journal numbering, if the entry following it in the journal
+  inherits a loan label, or if the label stops following its template.
+
+## Module <ent_loan_accounting>
+
+#### 17.10.2026
+#### Version 19.0.1.0.7
+##### FIX
+
+- **Accounting unit of the loan disbursement ('octroi')** (19.0 port of the
+  18.0 work `ent_loan_accounting 18.0.1.0.8`, commit `d7354313e6`): a loan
+  expressed in a currency other than the company currency is no longer posted
+  raw in the company currency. The two legs are converted at the rate of the
+  entry date and the entry carries the loan currency (`currency_id` +
+  `amount_currency`), exactly like the payslip entry that recovers the
+  installments.
+  Measured on SPORTS EXPERTS 2026-10-09 (company 2 in USD, loan in CDF at
+  2 265 CDF/USD): the entry was `D 421100 300 000 / C 521001 300 000` **USD**
+  for a 300 000 CDF loan (132,45 USD) while the recovery posted 44,15 USD per
+  installment — 299 867,55 USD of the receivable could never be settled, the
+  receivable was not reconcilable (card t_c6e17a81).
+- **Parametrable, per company** (Settings > Accounting): the switch
+  `ent_loan_currency_conversion` (default: enabled) and the entry date
+  `ent_loan_conversion_date` (accounting entry date / loan date / first
+  installment date). Exposed on `res.config.settings`; the decision is a
+  setting, not a redeployment. No manual step on an existing database: Odoo
+  initialises a new column on the existing rows with the field default.
+- The same rule applies to the alternative OpenHRMS recovery route
+  (`hr.loan.line.action_paid_amount`), so the model does not carry two
+  behaviours.
+- A conversion without any rate in the database is **reported** in the log
+  instead of staying silent (Odoo converts 1:1 in that case).
+- `migrations/1.0.7/post-migrate.py` reports (read-only, never reposts) the
+  loans whose already posted disbursement entry is not expressed in the loan
+  currency: correcting an existing entry is an accounting decision.
+- Non-regression tests: `tests/test_loan_currency_conversion.py` fails if an
+  amount is posted without conversion, if the installments do not settle the
+  converted disbursement, or if the switch / entry date settings are ignored.
+
+#### 17.10.2026
+#### Version 19.0.1.0.6
+##### FIX
+
+- **Anti-double-deduction guard when arming the 'LO' payslip rule**
+  (19.0 port of the 18.0 work `ent_loan_accounting 18.0.1.0.7`, commit
+  `b93337bdee`): `hr.payroll.structure._arm_loan_recovery()` copies the
+  reference `LO` deduction rule onto the structures of a company whose
+  structures never carried it (a multi-company database runs its own copies).
+  A structure that already deducts loans through a **competing rule code**
+  (`COMPETING_LOAN_RULE_CODES = ('LOAN',)` — the DRC payroll bridge
+  `l10n_cd_hr_payroll_loan_bridge`) is deliberately **left untouched**: arming
+  `LO` next to it would deduct the same installment twice. The guard is traced
+  at INFO (`_logger.info`, never WARNING) and the module test captures it, so a
+  deliberately misconfigured structure never colours `install.log`.
+- `migrations/1.0.6/post-migrate.py`: back-fills `loan_account_id` (idempotent,
+  already run by 1.0.5) and arms the `LO` rule **only** on the companies that
+  opted in through `ent_loan_accounting.arm_loan_recovery_company_<company_id>`.
+  Nothing is armed by default.
+- Non-regression tests: `tests/test_loan_accounting_direction.py` fails if
+  either accounting leg flips back, if the `LO` rule is armed on a structure
+  that already deducts loans through a competing rule, or if the arming stops
+  being idempotent.
+
 #### 10.10.2026
 #### Version 19.0.1.0.5
 ##### FIX
@@ -23,10 +117,6 @@
   loans from the company chart (codes 421100 / 4211) through
   `hr.loan._backfill_loan_account()`, so an upgraded database stays usable.
 - The `loan_account_id` field is added to the Accounting page of the loan form.
-
-Not ported from `18.0.1.0.7`: the opt-in arming of the 'LO' payslip deduction
-rule (`hr.payroll.structure`), a distinct concern — named here so it is not
-mistaken for done.
 
 #### 26.03.2025
 #### Version 18.0.1.0.0
