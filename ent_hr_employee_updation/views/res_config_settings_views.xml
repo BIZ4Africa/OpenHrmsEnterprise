@@ -6,22 +6,19 @@
         </field>
         <field name="model">res.config.settings</field>
         <field name="priority" eval="90"/>
-        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form" position="inside">
-                <app data-string="Employees" string="Employees" name="hr"
-                     groups="hr.group_hr_manager">
-                    <block title="Contract" id="notice_period_block">
-                        <setting string="Notice Period" id="notice_period_setting"
-                                 help="Enable notice period for employee contracts">
-                            <field name="notice_period"/>
-                        </setting>
-                        <setting string="Notice Period Days" id="notice_period_days_setting"
-                                 invisible="notice_period == False">
-                            <field name="no_of_days" class="w-25"/><span>days</span>
-                        </setting>
-                    </block>
-                </app>
+            <xpath expr="//app[@name='hr']" position="inside">
+                <block title="Contract" id="notice_period_block">
+                    <setting string="Notice Period" id="notice_period_setting"
+                             help="Enable notice period for employee contracts">
+                        <field name="notice_period"/>
+                    </setting>
+                    <setting string="Notice Period Days" id="notice_period_days_setting"
+                             invisible="notice_period == False">
+                        <field name="no_of_days" class="w-25"/><span>days</span>
+                    </setting>
+                </block>
             </xpath>
         </field>
     </record>
